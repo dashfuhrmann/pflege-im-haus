@@ -1,0 +1,137 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "camera",
+				"type": "Text"
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "test"
+			},
+			"sub_heading_1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat ad id dolore non id voluptate cillum pariatur laborum occaecat anim et."
+						}
+					}
+				]
+			},
+			"sub_heading_2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ex fugiat ut ut dolor tempor tempor deserunt proident eu aute sit dolore. Nostrud ut veniam fugiat."
+						}
+					}
+				]
+			},
+			"sub_heading_3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua consectetur cupidatat eiusmod fugiat veniam officia minim incididunt ipsum aliquip nulla. Est consequat labore cupidatat reprehenderit elit do consequat. Occaecat et magna occaecat fugiat reprehenderit sunt cillum sint mollit exercitation minim sit est dolore reprehenderit."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"subheading",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Culpa adipisicing proident consectetur consequat sit culpa sint exercitation dolor velit. Ullamco in id reprehenderit in duis nulla dolor ut nostrud pariatur laboris deserunt qui."
+									}
+								}
+							]
+						}
+					],
+					[
+						"icon",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "2"
+						}
+					],
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTM0NjUxODZ8MA&ixlib=rb-4.0.3&q=85",
+							"alt": "assorted sliced citrus fruits on brown wooden chopping board",
+							"origin": {
+								"id": "1CsaVdwfIew",
+								"url": "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTM0NjUxODZ8MA&ixlib=rb-4.0.3&q=85",
+								"width": 3709,
+								"height": 5563
+							},
+							"width": 3709,
+							"height": 5563,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw5fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTM0NjUxODZ8MA&ixlib=rb-4.0.3&q=85",
+							"alt": "sliced orange fruit on white ceramic plate",
+							"origin": {
+								"id": "pCjw_ygKCv0",
+								"url": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw5fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTM0NjUxODZ8MA&ixlib=rb-4.0.3&q=85",
+								"width": 3648,
+								"height": 5472
+							},
+							"width": 3648,
+							"height": 5472,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	}
+]

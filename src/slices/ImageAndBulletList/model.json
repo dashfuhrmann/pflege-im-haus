@@ -1,0 +1,95 @@
+{
+  "id": "image_and_bullet_list",
+  "type": "SharedSlice",
+  "name": "ImageAndBulletList",
+  "description": "ImageAndBulletList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3,strong,em"
+          }
+        },
+        "subheading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subheading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading4,strong,em"
+          }
+        },
+        "card_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Card Heading",
+            "placeholder": ""
+          }
+        },
+        "card_description": {
+          "type": "Text",
+          "config": {
+            "label": "Card Description",
+            "placeholder": ""
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {
+        "icon": {
+          "type": "Select",
+          "config": {
+            "label": "Icon",
+            "placeholder": "",
+            "options": [
+              "Plus",
+              "Bell",
+              "Camera",
+              "Book"
+            ]
+          }
+        },
+        "icon_description": {
+          "type": "Text",
+          "config": {
+            "label": "Icon Description",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}
