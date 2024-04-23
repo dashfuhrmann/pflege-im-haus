@@ -72,7 +72,7 @@ export default async function Footer() {
                   {address.name}
                 </span>
                 <span className="text-lg">
-                  {address.plz} {address.street}
+                  {address.plz + " " + address.street}
                 </span>
                 <span className="text-lg">{address.town}</span>
               </li>

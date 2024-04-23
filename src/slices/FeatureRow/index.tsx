@@ -30,7 +30,7 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="flex-col"
     >
-      <span className="w-full text-center text-3xl">
+      <span className="w-full text-center text-6xl text-gray-700">
         <PrismicRichText field={slice.primary.heading} />
       </span>
       <ul className="flex flex-col md:flex-row w-full gap-4">
