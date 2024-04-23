@@ -2,7 +2,6 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import React from "react";
-import { Plus } from "react-icons/fi";
 
 type AccordionItemProps = Content.ImageAndAccordionRowSliceDefaultItem;
 
