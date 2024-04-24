@@ -75,10 +75,9 @@
             "label": "Icon",
             "placeholder": "",
             "options": [
-              "Plus",
-              "Bell",
-              "Camera",
-              "Book"
+              "ipad",
+              "solarPanel",
+              "mobility"
             ]
           }
         },

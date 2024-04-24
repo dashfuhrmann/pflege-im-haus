@@ -499,7 +499,14 @@ export interface FeatureGridSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   icon: prismic.SelectField<
-    "socialCare" | "machineLearning" | "education" | "research"
+    | "socialCare"
+    | "machineLearning"
+    | "education"
+    | "research"
+    | "gloves"
+    | "injection"
+    | "report"
+    | "stethoscope"
   >;
 }
 
@@ -792,7 +799,7 @@ export interface ImageAndBulletListSliceDefaultItem {
    * - **API ID Path**: image_and_bullet_list.items[].icon
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  icon: prismic.SelectField<"Plus" | "Bell" | "Camera" | "Book">;
+  icon: prismic.SelectField<"ipad" | "solarPanel" | "mobility">;
 
   /**
    * Icon Description field in *ImageAndBulletList → Items*

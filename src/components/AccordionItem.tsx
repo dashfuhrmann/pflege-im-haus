@@ -80,7 +80,23 @@ function AccordionItem(props: AccordionItemProps) {
             }
           }
         >
-          <PrismicRichText field={props.description} />
+          <PrismicRichText
+            field={props.description}
+            components={{
+              list: ({ children }) => (
+                <ol className="list-disc ml-4">{children}</ol>
+              ),
+              oList: ({ children }) => (
+                <ol className="list-decimal ml-4">{children}</ol>
+              ),
+              oListItem: ({ children }) => (
+                <li className="text-balance">{children}</li>
+              ),
+              listItem: ({ children }) => (
+                <li className="text-balance">{children}</li>
+              ),
+            }}
+          />
         </div>
       </div>
     </div>

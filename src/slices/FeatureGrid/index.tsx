@@ -5,6 +5,10 @@ import machineLearning from "../../public/machineLearning.svg";
 import socialCare from "../../public/socialCare.svg";
 import research from "../../public/research.svg";
 import education from "../../public/education.svg";
+import gloves from "../../public/gloves.svg";
+import injection from "../../public/injection.svg";
+import report from "../../public/report.svg";
+import stethoscope from "../../public/stethoscope.svg";
 import Image from "next/image";
 
 const icons = {
@@ -12,6 +16,10 @@ const icons = {
   machineLearning: machineLearning,
   socialCare: socialCare,
   research: research,
+  gloves: gloves,
+  injection: injection,
+  report: report,
+  stethosscope: stethoscope,
 };
 
 /**
@@ -57,7 +65,23 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
                 {item.heading}
               </h1>
               <div className="text-lg font-normal text-left">
-                <PrismicRichText field={item.description} />
+                <PrismicRichText
+                  field={item.description}
+                  components={{
+                    list: ({ children }) => (
+                      <ol className="list-disc ml-4">{children}</ol>
+                    ),
+                    oList: ({ children }) => (
+                      <ol className="list-decimal ml-4">{children}</ol>
+                    ),
+                    oListItem: ({ children }) => (
+                      <li className="text-balance">{children}</li>
+                    ),
+                    listItem: ({ children }) => (
+                      <li className="text-balance">{children}</li>
+                    ),
+                  }}
+                />
               </div>
             </div>
           </li>

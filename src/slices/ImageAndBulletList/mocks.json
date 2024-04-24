@@ -79,7 +79,7 @@
 						"icon",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "Bell",
+							"value": "solarPanel",
 							"type": "Select"
 						}
 					],
