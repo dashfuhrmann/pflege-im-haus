@@ -1,105 +1,78 @@
 "use client";
-import { Content } from "@prismicio/client";
+import { Content, KeyTextField, RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import React from "react";
+import A11yAccordion from "./A11yAccordion";
 
 type AccordionItemProps = Content.ImageAndAccordionRowSliceDefaultItem;
 
+function AccordionTitle(props: { heading: KeyTextField; isOpen: boolean }) {
+  return (
+    <div className="flex w-full flex-row justify-between p-4 items-center border-2 border-black rounded-3xl">
+      <h1 className="text-3xl text-bold">{props.heading}</h1>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="black"
+        stroke="black"
+      >
+        <path
+          d="M8 1V15"
+          strokeWidth="2"
+          strokeLinecap="square"
+          strokeLinejoin="round"
+          style={{
+            transform: props.isOpen ? "rotate(90deg)" : undefined,
+            transition: "transform 350ms linear",
+            transformOrigin: "center",
+          }}
+        ></path>
+        <path
+          d="M1 8H15"
+          strokeWidth="2"
+          strokeLinecap="square"
+          strokeLinejoin="round"
+        ></path>
+      </svg>
+    </div>
+  );
+}
+
+function AccordionContent(props: { description: RichTextField }) {
+  return (
+    <div id="content" className="border-2 border-black rounded-3xl p-4">
+      <PrismicRichText
+        field={props.description}
+        components={{
+          list: ({ children }) => (
+            <ol className="list-disc ml-4">{children}</ol>
+          ),
+          oList: ({ children }) => (
+            <ol className="list-decimal ml-4">{children}</ol>
+          ),
+          oListItem: ({ children }) => (
+            <li className="text-balance">{children}</li>
+          ),
+          listItem: ({ children }) => (
+            <li className="text-balance">{children}</li>
+          ),
+        }}
+      />
+    </div>
+  );
+}
+
 function AccordionItem(props: AccordionItemProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [drawerHeight, setDrawerHeight] = React.useState(0);
-
-  //write a function that over 500ms adds 50px per 100ms startiung from 0
-  function heightFunction() {
-    setIsOpen(!isOpen);
-    if (!isOpen) {
-      let height = 0;
-      for (let i = 0; i <= 250; i += 50) {
-        height += 50;
-        setDrawerHeight(height);
-      }
-    } else {
-      let height = 250;
-      for (let i = 250; i > 0; i -= 50) {
-        height -= 50;
-        setDrawerHeight(height);
-      }
-    }
-  }
 
   return (
-    <div
-      className={`border-2 border-black rounded-3xl -mb-[2px]`}
-      onClick={() => {
-        heightFunction();
-      }}
-    >
-      <div className="flex flex-row justify-between p-4 items-center">
-        <h1 className="text-3xl text-bold">{props.heading}</h1>
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="black"
-          stroke="black"
-        >
-          <path
-            d="M8 1V15"
-            strokeWidth="2"
-            strokeLinecap="square"
-            strokeLinejoin="round"
-            style={{
-              transform: isOpen ? "rotate(90deg)" : undefined,
-              transition: "transform 350ms linear",
-              transformOrigin: "center",
-            }}
-          ></path>
-          <path
-            d="M1 8H15"
-            strokeWidth="2"
-            strokeLinecap="square"
-            strokeLinejoin="round"
-          ></path>
-        </svg>
-        {/* <Plus /> */}
-      </div>
-      <div
-        id="content"
-        style={{
-          transition: "max-height 350ms linear",
-          maxHeight: drawerHeight,
-          overflow: "hidden",
-        }}
-      >
-        <div
-          className="p-4"
-          style={
-            {
-              // visibility: isOpen ? 'visible' : 'hidden',
-              // transition: isOpen ? 'visibility 100ms linear 200ms' : 'visibility 100ms linear 200ms',
-            }
-          }
-        >
-          <PrismicRichText
-            field={props.description}
-            components={{
-              list: ({ children }) => (
-                <ol className="list-disc ml-4">{children}</ol>
-              ),
-              oList: ({ children }) => (
-                <ol className="list-decimal ml-4">{children}</ol>
-              ),
-              oListItem: ({ children }) => (
-                <li className="text-balance">{children}</li>
-              ),
-              listItem: ({ children }) => (
-                <li className="text-balance">{children}</li>
-              ),
-            }}
-          />
-        </div>
-      </div>
-    </div>
+    <A11yAccordion
+      title={AccordionTitle({ heading: props.heading, isOpen })}
+      content={AccordionContent({ description: props.description })}
+      isOpenCallback={setIsOpen}
+      id="an-accordion"
+    />
   );
 }
 

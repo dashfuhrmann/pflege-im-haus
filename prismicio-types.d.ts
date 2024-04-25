@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | TimeLineSlice
   | ImageBannerSlice
   | CardGridSlice
   | ImageAndBulletListSlice
@@ -1042,6 +1043,103 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Primary content in *TimeLine → Items*
+ */
+export interface TimeLineSliceDefaultItem {
+  /**
+   * Heading field in *TimeLine → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: time_line.items[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Text field in *TimeLine → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: time_line.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TimeLine Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TimeLineSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<TimeLineSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TimeLine*
+ */
+type TimeLineSliceVariation = TimeLineSliceDefault;
+
+/**
+ * TimeLine Shared Slice
+ *
+ * - **API ID**: `time_line`
+ * - **Description**: TimeLine
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TimeLineSlice = prismic.SharedSlice<
+  "time_line",
+  TimeLineSliceVariation
+>;
+
+/**
+ * Primary content in *Wheel → Items*
+ */
+export interface WheelSliceDefaultItem {
+  /**
+   * Text field in *Wheel → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: wheel.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Wheel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WheelSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<WheelSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Wheel*
+ */
+type WheelSliceVariation = WheelSliceDefault;
+
+/**
+ * Wheel Shared Slice
+ *
+ * - **API ID**: `wheel`
+ * - **Description**: Wheel
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WheelSlice = prismic.SharedSlice<"wheel", WheelSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1100,6 +1198,14 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      TimeLineSlice,
+      TimeLineSliceDefaultItem,
+      TimeLineSliceVariation,
+      TimeLineSliceDefault,
+      WheelSlice,
+      WheelSliceDefaultItem,
+      WheelSliceVariation,
+      WheelSliceDefault,
     };
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Content } from "@prismicio/client";
+import { Content, KeyTextField } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -13,56 +13,49 @@ import {
   FiArrowUp,
   FiX,
 } from "react-icons/fi";
+import A11yAccordion from "./A11yAccordion";
 
 type NavbarProps = {
   settings: Content.SettingsDocument;
 };
 
+function AccordionTitle(props: { label: KeyTextField; openingState: boolean }) {
+  return (
+    <span className="flex w-full flex-row items-center justify-between font-bold uppercase text-lg">
+      {props.label}
+
+      {props.openingState === false ? <FiArrowDown /> : <FiArrowUp />}
+    </span>
+  );
+}
+
+function AccordionContent(props: {
+  openingState: boolean;
+  settings: Content.SettingsDocumentDataNavigationMenuItem[];
+}) {
+  return (
+    <div className={`flex flex-col w-[90%] ml-auto`}>
+      <ul>
+        {props.settings.map((item) => (
+          <li key={item.label} className="block">
+            <Link
+              href={"/"}
+              className="flex flex-row gap-4 p-6 justify-between font-bold uppercase text-base hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
+            >
+              <span>{item.label}</span>
+              <FiArrowRight />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function Navbar({ settings }: NavbarProps) {
   const container = useRef(null);
   const [navBarState, setNavbarState] = useState(false);
   const [openingState, setOpeningState] = useState(false);
-
-  const elToAnimate = useRef<HTMLElement | null>(null);
-
-  const handleStateChange = () => {
-    elToAnimate.current = document.getElementById("Leistungen");
-    // currentIndex.current = index;
-    // setOpeningState((prevState) =>
-    //   prevState.map((item, idx) => (idx === index ? !item : item)),
-    // );
-    setOpeningState(!openingState);
-  };
-
-  gsap.registerPlugin(useGSAP);
-
-  useEffect(() => {
-    const elHeight = document.getElementById("Leistungen")?.scrollHeight;
-    const tl = gsap.timeline();
-
-    if (!elToAnimate || !elHeight) return;
-    if (openingState) {
-      gsap.set(elToAnimate.current, {
-        height: 0,
-        overflow: "hidden",
-        maxHeight: "100%",
-      });
-
-      tl.to(elToAnimate.current, {
-        keyframes: [{ duration: 0.3, height: elHeight }],
-      });
-    } else {
-      gsap.set(elToAnimate.current, {
-        height: elHeight,
-        overflow: "hidden",
-        maxHeight: "100%",
-      });
-
-      tl.to(elToAnimate.current, {
-        keyframes: [{ duration: 0.3, height: 0 }],
-      });
-    }
-  }, [openingState]);
 
   return (
     <nav className="relative" ref={container}>
@@ -188,23 +181,14 @@ export default function Navbar({ settings }: NavbarProps) {
           </button>
         </div>
         <ul className="h-full">
+          <li></li>
           {settings.data.navigation.map((heading, index) => (
-            <li key={index}>
-              <h3 className="flex border-b-2 border-solid border-slate-500 p-6">
-                {heading.label === "Leistungen" ? (
-                  <button
-                    className="flex w-full"
-                    onClick={() => {
-                      handleStateChange();
-                    }}
-                  >
-                    <span className="flex w-full flex-row items-center justify-between font-bold uppercase text-lg">
-                      {heading.label}
-
-                      {openingState === false ? <FiArrowDown /> : <FiArrowUp />}
-                    </span>
-                  </button>
-                ) : (
+            <>
+              <li
+                key={index}
+                className="flex border-b-2 border-solid border-slate-500 p-6"
+              >
+                {heading.label !== "Leistungen" ? (
                   <PrismicNextLink
                     field={heading.link}
                     className="flex w-full flex-row items-center justify-between font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
@@ -212,32 +196,22 @@ export default function Navbar({ settings }: NavbarProps) {
                     {heading.label}
                     <FiArrowRight />
                   </PrismicNextLink>
+                ) : (
+                  <A11yAccordion
+                    title={AccordionTitle({
+                      label: heading.label,
+                      openingState,
+                    })}
+                    content={AccordionContent({
+                      settings: settings.data.navigation_menu,
+                      openingState,
+                    })}
+                    id={"test"}
+                    isOpenCallback={setOpeningState}
+                  />
                 )}
-              </h3>
-
-              {heading.label === "Leistungen" ? (
-                <div
-                  className={`relative bg-white ${openingState ? "block" : ""} ${openingState ? "h-full" : "h-0"} overflow-hidden`}
-                  id="Leistungen"
-                >
-                  <div className={`flex flex-col w-[90%] ml-auto`}>
-                    <ul>
-                      {settings.data.navigation_menu.map((item) => (
-                        <li key={item.label} className="block">
-                          <Link
-                            href={"/"}
-                            className="flex flex-row gap-4 p-6 justify-between font-bold uppercase text-base hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
-                          >
-                            <span>{item.label}</span>
-                            <FiArrowRight />
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ) : null}
-            </li>
+              </li>
+            </>
           ))}
         </ul>
       </div>

@@ -27,6 +27,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "time_line": {
+              "type": "SharedSlice"
+            },
             "image_banner": {
               "type": "SharedSlice"
             },

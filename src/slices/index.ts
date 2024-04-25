@@ -11,4 +11,6 @@ export const components = {
   image_banner: dynamic(() => import("./ImageBanner")),
   image_slider: dynamic(() => import("./ImageSlider")),
   rich_text: dynamic(() => import("./RichText")),
+  time_line: dynamic(() => import("./TimeLine")),
+  wheel: dynamic(() => import("./Wheel")),
 };
