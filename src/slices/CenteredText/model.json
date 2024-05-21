@@ -1,8 +1,8 @@
 {
-  "id": "wheel",
+  "id": "centered_text",
   "type": "SharedSlice",
-  "name": "Wheel",
-  "description": "Wheel",
+  "name": "CenteredText",
+  "description": "CenteredText",
   "variations": [
     {
       "id": "default",
@@ -19,42 +19,39 @@
             "placeholder": ""
           }
         },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "image": {
-          "type": "Image",
-          "config": {
-            "label": "Image",
-            "constraint": {},
-            "thumbnails": []
-          }
-        }
-      },
-      "items": {
-        "heading": {
+        "subheading": {
           "type": "Text",
           "config": {
-            "label": "Heading",
+            "label": "Subheading",
             "placeholder": ""
           }
         },
-        "description": {
+        "text": {
           "type": "StructuredText",
           "config": {
-            "label": "Description",
+            "label": "Text",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
+        },
+        "backgroundcolor": {
+          "type": "Select",
+          "config": {
+            "label": "BackgroundColor",
+            "placeholder": "",
+            "options": [
+              "weiß",
+              "grau",
+              "dunkelblau",
+              "graublau",
+              "hellgrün"
+            ],
+            "default_value": "weiß"
+          }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

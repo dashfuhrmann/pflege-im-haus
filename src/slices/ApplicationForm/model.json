@@ -1,0 +1,26 @@
+{
+  "id": "application_form",
+  "type": "SharedSlice",
+  "name": "ApplicationForm",
+  "description": "ApplicationForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "job_title": {
+          "type": "Text",
+          "config": {
+            "label": "Job Title",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

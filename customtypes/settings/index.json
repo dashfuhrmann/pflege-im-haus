@@ -52,10 +52,10 @@
           }
         }
       },
-      "navigation_menu": {
+      "leistungen_menu": {
         "type": "Group",
         "config": {
-          "label": "Navigation Menu",
+          "label": "Leistungen Menu",
           "repeat": true,
           "fields": {
             "label": {
@@ -70,6 +70,31 @@
               "config": {
                 "label": "Link",
                 "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "jobs_menu": {
+        "type": "Group",
+        "config": {
+          "label": "Jobs Menu",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": false,
                 "select": null
               }
             }

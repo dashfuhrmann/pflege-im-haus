@@ -55,7 +55,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
                   width={120}
                   height={120}
                   className="flex-grow-1 mx-auto p-4"
-                  src={icons[item.icon as keyof typeof icons].src}
+                  src={icons[item.icon as keyof typeof icons]}
                   alt="icon"
                 />
               )}

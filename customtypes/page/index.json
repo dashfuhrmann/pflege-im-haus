@@ -27,6 +27,21 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "application_card": {
+              "type": "SharedSlice"
+            },
+            "hero_banner": {
+              "type": "SharedSlice"
+            },
+            "centered_text": {
+              "type": "SharedSlice"
+            },
+            "full_width_image": {
+              "type": "SharedSlice"
+            },
+            "image_and_call_to_action": {
+              "type": "SharedSlice"
+            },
             "time_line": {
               "type": "SharedSlice"
             },

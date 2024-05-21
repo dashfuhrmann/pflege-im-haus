@@ -1,0 +1,22 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"job_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "golden",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

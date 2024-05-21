@@ -1,8 +1,8 @@
 {
-  "id": "wheel",
+  "id": "image_and_call_to_action",
   "type": "SharedSlice",
-  "name": "Wheel",
-  "description": "Wheel",
+  "name": "ImageAndCallToAction",
+  "description": "ImageAndCallToAction",
   "variations": [
     {
       "id": "default",
@@ -12,22 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "heading": {
-          "type": "Text",
-          "config": {
-            "label": "Heading",
-            "placeholder": ""
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
         "image": {
           "type": "Image",
           "config": {
@@ -35,9 +19,7 @@
             "constraint": {},
             "thumbnails": []
           }
-        }
-      },
-      "items": {
+        },
         "heading": {
           "type": "Text",
           "config": {
@@ -48,13 +30,29 @@
         "description": {
           "type": "StructuredText",
           "config": {
-            "label": "Description",
+            "label": "description",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "link_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link Label",
+            "placeholder": ""
+          }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

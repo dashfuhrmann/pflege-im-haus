@@ -1,0 +1,45 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Für die Unterstützung im Rahmen der Pflegeleistungen und pflegerischer Betreuungsleistungen braucht es keine ärztliche Anordnung. Diese Leistungen können von privaten Pflegepersonen oder von einem Pflegedienst erbracht werden. Für die finanzielle Übernahme dieser Leistungen muss ein Pflegegrad anerkannt sein. Hierfür muss ein Antrag bei der Krankenkasse gestellt werden. Nach der anschließenden Einschätzung über die Selbstständigkeit des Pflegebedürftigen wird über den Pflegegrad entschieden.\n",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sowohl bei Fragen zum Pflegegrad als auch bei der Entscheidung, welche Leistungen notwendig sein könnten, kann ein Beratungsgespräch mit uns vereinbart werden. Wir helfen Ihnen gerne weiter.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"backgroundcolor": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "weiß"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Unterstützung bei Pflegeleistungen"
+			},
+			"subheading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Wir beraten Sie gerne zu Pflegegrad und notwendigen Leistungen"
+			}
+		},
+		"items": []
+	}
+]

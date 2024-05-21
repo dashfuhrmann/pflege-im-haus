@@ -1,28 +1,61 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import { KeyTextField, RichTextField } from "@prismicio/client";
+import { PrismicRichText } from "@prismicio/react";
+import React, { ReactNode, useRef, useState } from "react";
+import { Colors } from "@/colors";
 
 type AccordionProps = {
   id: string;
-  title: React.ReactNode;
-  content: React.ReactNode;
-  isOpenCallback: (isOpen: boolean) => void;
+  title: KeyTextField;
+  content: ReactNode;
+  initalOpen?: boolean;
 };
 
-function A11yAccordion(props: AccordionProps) {
-  const { id, title, content, isOpenCallback } = props;
+function AccordionTitle(props: { heading: KeyTextField; isOpen: boolean }) {
+  return (
+    <div className="flex w-full flex-row justify-between p-4 items-center border-2 border-black ">
+      <span className="text-3xl font-semibold">{props.heading}</span>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        className="fill-dunkelblau stroke-dunkelblau"
+      >
+        <path
+          d="M8 1V15"
+          strokeWidth="2"
+          strokeLinecap="square"
+          strokeLinejoin="round"
+          style={{
+            transform: props.isOpen ? "rotate(90deg)" : undefined,
+            transition: "transform 350ms linear",
+            transformOrigin: "center",
+          }}
+        ></path>
+        <path
+          d="M1 8H15"
+          strokeWidth="2"
+          strokeLinecap="square"
+          strokeLinejoin="round"
+        ></path>
+      </svg>
+    </div>
+  );
+}
 
-  const [isOpen, setIsOpen] = useState(false);
+function A11yAccordion(props: AccordionProps) {
+  const { id, title, content, initalOpen } = props;
+
+  const [isOpen, setIsOpen] = useState(initalOpen || false);
 
   const contentRef = useRef<HTMLDivElement | null>(null);
 
   const setOpenState = () => {
     if (isOpen) {
       setIsOpen(false);
-      isOpenCallback(false);
     } else {
       setIsOpen(true);
-      isOpenCallback(true);
     }
   };
 
@@ -52,7 +85,7 @@ function A11yAccordion(props: AccordionProps) {
           onClick={setOpenState}
           onKeyDown={handleKeyDown}
         >
-          {title}
+          <AccordionTitle heading={title} isOpen={isOpen} />
         </button>
       </h3>
       <div
@@ -63,6 +96,7 @@ function A11yAccordion(props: AccordionProps) {
           overflow: "hidden",
           height: isOpen ? contentRef.current?.scrollHeight : 0,
           transition: "height 0.3s",
+          border: isOpen ? "2px solid black" : "none",
         }}
         ref={contentRef}
       >

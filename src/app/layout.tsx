@@ -1,14 +1,15 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { DM_Sans } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const dm_sans = DM_Sans({
+const dm_sans = Hanken_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-dm-sans",
+  variable: "--font-hk-grotesk",
 });
 
 export default function RootLayout({

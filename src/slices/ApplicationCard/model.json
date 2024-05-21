@@ -1,8 +1,8 @@
 {
-  "id": "wheel",
+  "id": "application_card",
   "type": "SharedSlice",
-  "name": "Wheel",
-  "description": "Wheel",
+  "name": "ApplicationCard",
+  "description": "ApplicationCard",
   "variations": [
     {
       "id": "default",
@@ -12,39 +12,64 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "heading": {
+        "job_title": {
           "type": "Text",
           "config": {
-            "label": "Heading",
+            "label": "Job Title",
             "placeholder": ""
           }
         },
-        "description": {
+        "address": {
           "type": "StructuredText",
           "config": {
-            "label": "Description",
+            "label": "Address",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "working_hours": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Working Hours",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "image": {
+        "start_date": {
+          "type": "Text",
+          "config": {
+            "label": "Start Date",
+            "placeholder": ""
+          }
+        },
+        "address_image": {
           "type": "Image",
           "config": {
-            "label": "Image",
+            "label": "Address Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "working_hours_image": {
+          "type": "Image",
+          "config": {
+            "label": "Working Hours Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "start_date_image": {
+          "type": "Image",
+          "config": {
+            "label": "Start Date Image",
             "constraint": {},
             "thumbnails": []
           }
         }
       },
       "items": {
-        "heading": {
-          "type": "Text",
-          "config": {
-            "label": "Heading",
-            "placeholder": ""
-          }
-        },
         "description": {
           "type": "StructuredText",
           "config": {

@@ -30,7 +30,7 @@ export default async function Footer() {
           </div>
         </div>
         <div className="flex flex-row gap-8">
-          <ul className="flex flex-col gap-2">
+          {/* <ul className="flex flex-col gap-2">
             {settings.data.navigation_menu.map((link, index) => (
               <li key={index}>
                 <PrismicNextLink
@@ -41,7 +41,7 @@ export default async function Footer() {
                 </PrismicNextLink>
               </li>
             ))}
-          </ul>
+          </ul> */}
 
           <ul className="flex flex-row gap-8">
             {settings.data.navigation.map((link, index) => {

@@ -42,10 +42,13 @@ function ImageSection({
 
   return (
     <div className="flex flex-col md:flex-row w-full gap-4 md:gap-0">
-      <div className="flex w-full md:w-1/2">
+      <div className="flex w-full md:w-1/2 max-h-[600px]">
         <PrismicNextImage
           field={image}
-          className="rounded-2xl h-[600px] w-full relative object-cover"
+          layout="responsive"
+          width={image.dimensions?.width}
+          height={image.dimensions?.height}
+          className="rounded-2xl"
         />
       </div>
       <div className="flex flex-col w-full md:w-1/2 gap-6 md:pl-32 pl-0">

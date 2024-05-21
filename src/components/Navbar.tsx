@@ -31,7 +31,9 @@ function AccordionTitle(props: { label: KeyTextField; openingState: boolean }) {
 
 function AccordionContent(props: {
   openingState: boolean;
-  settings: Content.SettingsDocumentDataNavigationMenuItem[];
+  settings:
+    | Content.SettingsDocumentDataLeistungenMenuItem[]
+    | Content.SettingsDocumentDataJobsMenuItem[];
 }) {
   return (
     <div className={`flex flex-col w-[90%] ml-auto`}>
@@ -52,10 +54,15 @@ function AccordionContent(props: {
   );
 }
 
+type MenuStrings = "leistungen_menu" | "jobs_menu";
+type Data = keyof Content.SettingsDocumentData;
+
 export default function Navbar({ settings }: NavbarProps) {
   const container = useRef(null);
   const [navBarState, setNavbarState] = useState(false);
   const [openingState, setOpeningState] = useState(false);
+
+  console.log(settings.data);
 
   return (
     <nav className="relative" ref={container}>
@@ -72,29 +79,34 @@ export default function Navbar({ settings }: NavbarProps) {
 
             <span className="sr-only">Pflege im Haus Sandrock-Höhle</span>
           </Link>
-          {settings.data.navigation.map((link) => {
-            if (link.label === "Leistungen") {
+          {settings.data.navigation.map((link, index) => {
+            if (link.label === "Leistungen" || link.label === "Jobs") {
+              const keyToSelect: Data =
+                link.label === "Leistungen" ? "leistungen_menu" : "jobs_menu";
+              const arrayToSelect:
+                | Content.SettingsDocumentDataJobsMenuItem[]
+                | Content.SettingsDocumentDataLeistungenMenuItem[] =
+                settings.data[keyToSelect];
               return (
                 <li
                   className="group cursor-pointer font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
-                  key={link.label}
+                  key={index}
                 >
                   {link.label}
                   <div className="opacity-0 absolute z-50 mt-4 flex max-w-full flex-wrap gap-8 bg-white p-12 shadow-[0_4px_6px_-1px_#0000001a] transition-all duration-500 ease-in group-hover:opacity-100">
                     <ul className="grid grid-cols-3 gap-12 mr-auto">
-                      {settings.data.navigation_menu.map(
-                        (productGroup, index) => (
-                          <li key={index}>
-                            <PrismicNextLink
-                              field={productGroup.link}
-                              className="font-normal normal-case text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline flex flex-row items-center justify-between gap-4"
-                            >
-                              {productGroup.label}
-                              <FiArrowRight />
-                            </PrismicNextLink>
-                          </li>
-                        )
-                      )}
+                      {arrayToSelect.map((item, index) => (
+                        <li key={item.label}>
+                          <PrismicNextLink
+                            key={index}
+                            field={item.link}
+                            className="font-normal normal-case text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline flex flex-row items-center justify-between gap-4"
+                          >
+                            {item.label}
+                            <FiArrowRight />
+                          </PrismicNextLink>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </li>
@@ -103,7 +115,7 @@ export default function Navbar({ settings }: NavbarProps) {
 
             if (link.label !== "Impressum" && link.label !== "Datenschutz") {
               return (
-                <li key={link.label}>
+                <li key={index}>
                   <PrismicNextLink
                     field={link.link}
                     className="font-bold uppercase text-lg hover:text-slate-700 hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
@@ -183,35 +195,29 @@ export default function Navbar({ settings }: NavbarProps) {
         <ul className="h-full">
           <li></li>
           {settings.data.navigation.map((heading, index) => (
-            <>
-              <li
-                key={index}
-                className="flex border-b-2 border-solid border-slate-500 p-6"
-              >
-                {heading.label !== "Leistungen" ? (
-                  <PrismicNextLink
-                    field={heading.link}
-                    className="flex w-full flex-row items-center justify-between font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
-                  >
-                    {heading.label}
-                    <FiArrowRight />
-                  </PrismicNextLink>
-                ) : (
-                  <A11yAccordion
-                    title={AccordionTitle({
-                      label: heading.label,
-                      openingState,
-                    })}
-                    content={AccordionContent({
-                      settings: settings.data.navigation_menu,
-                      openingState,
-                    })}
-                    id={"test"}
-                    isOpenCallback={setOpeningState}
-                  />
-                )}
-              </li>
-            </>
+            <li
+              key={index}
+              className="flex border-b-2 border-solid border-slate-500 p-6"
+            >
+              {heading.label !== "Leistungen" ? (
+                <PrismicNextLink
+                  field={heading.link}
+                  className="flex w-full flex-row items-center justify-between font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
+                >
+                  {heading.label}
+                  <FiArrowRight />
+                </PrismicNextLink>
+              ) : (
+                <A11yAccordion
+                  title={heading.label}
+                  content={AccordionContent({
+                    settings: settings.data.jobs_menu,
+                    openingState,
+                  })}
+                  id={"test"}
+                />
+              )}
+            </li>
           ))}
         </ul>
       </div>

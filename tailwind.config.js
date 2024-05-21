@@ -10,6 +10,10 @@ module.exports = {
       colors: {
         primary: "#0e5082",
         secondary: "#88c6aa",
+        hellgrün: "#8ac8ad",
+        grau: "#b0b5b5",
+        dunkelblau: "#084a7b",
+        graublau: "#5a7d96",
       },
       fontFamily: {
         sans: ["var(--font-dm-sans)"],
@@ -17,4 +21,5 @@ module.exports = {
     },
   },
   // plugins: [require("@tailwindcss/typography")],
+  plugins: [require("tailwindcss-react-aria-components")],
 };
