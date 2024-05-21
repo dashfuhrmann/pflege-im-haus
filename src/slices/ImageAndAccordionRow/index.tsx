@@ -1,5 +1,4 @@
 import A11yAccordion from "@/components/A11yAccordion";
-import Accordion from "@/components/Accordion";
 import BoundedFull from "@/components/BoundedFull";
 import { Content, KeyTextField, RichTextField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
