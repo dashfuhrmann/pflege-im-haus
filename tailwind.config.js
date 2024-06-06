@@ -16,7 +16,7 @@ module.exports = {
         graublau: "#5a7d96",
       },
       fontFamily: {
-        sans: ["var(--font-dm-sans)"],
+        sans: ["var(--font-hk-grotesk)"],
       },
     },
   },

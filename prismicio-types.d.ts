@@ -759,12 +759,12 @@ export interface FeatureGridSliceDefaultItem {
   /**
    * Heading field in *FeatureGrid → Items*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: feature_grid.items[].heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.KeyTextField;
+  heading: prismic.RichTextField;
 
   /**
    * Description field in *FeatureGrid → Items*

@@ -31,14 +31,6 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"heading",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "hot",
-							"type": "Text"
-						}
-					],
-					[
 						"description",
 						{
 							"__TYPE__": "StructuredTextContent",
@@ -58,6 +50,20 @@
 							"__TYPE__": "FieldContent",
 							"value": "research",
 							"type": "Select"
+						}
+					],
+					[
+						"heading",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Sunt id fugiat aliqua adipisicing aliqua elit. Eiusmod consequat sit mollit. Exercitation reprehenderit ad do ea."
+									}
+								}
+							]
 						}
 					]
 				]

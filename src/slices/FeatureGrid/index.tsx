@@ -10,6 +10,7 @@ import injection from "../../public/injection.svg";
 import report from "../../public/report.svg";
 import stethoscope from "../../public/stethoscope.svg";
 import Image from "next/image";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 
 const icons = {
   education: education,
@@ -61,27 +62,11 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <h1 className="text-xl font-bold text-gray-500 text-left">
-                {item.heading}
-              </h1>
-              <div className="text-lg font-normal text-left">
-                <PrismicRichText
-                  field={item.description}
-                  components={{
-                    list: ({ children }) => (
-                      <ol className="list-disc ml-4">{children}</ol>
-                    ),
-                    oList: ({ children }) => (
-                      <ol className="list-decimal ml-4">{children}</ol>
-                    ),
-                    oListItem: ({ children }) => (
-                      <li className="text-balance">{children}</li>
-                    ),
-                    listItem: ({ children }) => (
-                      <li className="text-balance">{children}</li>
-                    ),
-                  }}
-                />
+              <div className="text-gray-500 text-left">
+                <RichTextWithComponents richText={item.heading} />
+              </div>
+              <div className="text-left">
+                <RichTextWithComponents richText={item.description} />
               </div>
             </div>
           </li>

@@ -28,19 +28,15 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
         heading6: ({ children }) => (
           <h6 className="text-base font-bold text-balance">{children}</h6>
         ),
-        list: ({ children }) => <ol className="list-disc ml-12">{children}</ol>,
+        list: ({ children }) => <ol className="list-disc ml-4">{children}</ol>,
         oList: ({ children }) => (
-          <ol className="list-decimal ml-12">{children}</ol>
+          <ol className="list-decimal ml-4">{children}</ol>
         ),
         oListItem: ({ children }) => (
-          <li className="text-balance marker:text-secondary text-lg">
-            {children}
-          </li>
+          <li className="text-balance  text-lg">{children}</li>
         ),
         listItem: ({ children }) => (
-          <li className="text-balance marker:text-secondary text-lg">
-            {children}
-          </li>
+          <li className="text-balance text-lg">{children}</li>
         ),
       }}
     />

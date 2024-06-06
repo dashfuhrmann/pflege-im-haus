@@ -14,7 +14,9 @@ type AccordionProps = {
 
 function AccordionTitle(props: { heading: KeyTextField; isOpen: boolean }) {
   return (
-    <div className="flex w-full flex-row justify-between p-4 items-center border-2 border-black ">
+    <div
+      className={`flex w-full flex-row gap-4 justify-between p-4 items-center ${props.isOpen ? "border-2 border-black rounded-t-2xl border-b-0" : "border-2 border-black rounded-2xl"}`}
+    >
       <span className="text-3xl font-semibold">{props.heading}</span>
       <svg
         width="16"
@@ -78,7 +80,7 @@ function A11yAccordion(props: AccordionProps) {
       <h3>
         <button
           type="button"
-          style={{ width: "100%" }}
+          style={{ width: "100%", borderBottom: "none" }}
           aria-expanded={true}
           aria-controls="section-1"
           id={id}
@@ -96,8 +98,8 @@ function A11yAccordion(props: AccordionProps) {
           overflow: "hidden",
           height: isOpen ? contentRef.current?.scrollHeight : 0,
           transition: "height 0.3s",
-          border: isOpen ? "2px solid black" : "none",
         }}
+        className={`${isOpen ? "border-2 border-black rounded-b-2xl border-t-0" : ""}`}
         ref={contentRef}
       >
         {content}

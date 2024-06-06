@@ -62,8 +62,6 @@ export default function Navbar({ settings }: NavbarProps) {
   const [navBarState, setNavbarState] = useState(false);
   const [openingState, setOpeningState] = useState(false);
 
-  console.log(settings.data);
-
   return (
     <nav className="relative" ref={container}>
       {/* Desktop Navbar */}
@@ -93,7 +91,7 @@ export default function Navbar({ settings }: NavbarProps) {
                   key={index}
                 >
                   {link.label}
-                  <div className="opacity-0 absolute z-50 mt-4 flex max-w-full flex-wrap gap-8 bg-white p-12 shadow-[0_4px_6px_-1px_#0000001a] transition-all duration-500 ease-in group-hover:opacity-100">
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute z-50 mt-4  max-w-full flex-wrap gap-8 bg-white p-12 shadow-[0_4px_6px_-1px_#0000001a] transition-all duration-500 ease-in">
                     <ul className="grid grid-cols-3 gap-12 mr-auto">
                       {arrayToSelect.map((item, index) => (
                         <li key={item.label}>
@@ -157,7 +155,6 @@ export default function Navbar({ settings }: NavbarProps) {
       <div className="z-40 mx-auto flex w-full flex-row items-center gap-4 bg-white lg:hidden ml-6">
         <button
           onClick={() => {
-            console.log("setNavbarState(true)");
             setNavbarState(true);
           }}
         >
