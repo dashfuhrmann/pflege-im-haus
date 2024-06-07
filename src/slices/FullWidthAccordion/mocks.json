@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Esse velit proident velit reprehenderit proident pariatur culpa id aute."
+									}
+								}
+							]
+						}
+					],
+					[
+						"heading",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "available",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

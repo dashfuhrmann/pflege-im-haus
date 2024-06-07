@@ -17,7 +17,7 @@ const ImageAndText = (props: {
 }) => {
   return (
     <div className="flex w-full flex-row gap-4 p-4 bg-secondary">
-      <div className="flex rounded-full bg-white items-center justify-center">
+      <div className="flex flex-shrink-0 rounded-full bg-white items-center justify-center">
         <PrismicNextImage
           field={props.image}
           width={props.image.dimensions?.width}

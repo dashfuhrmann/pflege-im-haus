@@ -909,6 +909,61 @@ export type FeatureRowSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *FullWidthAccordion → Items*
+ */
+export interface FullWidthAccordionSliceDefaultItem {
+  /**
+   * Heading field in *FullWidthAccordion → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_accordion.items[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *FullWidthAccordion → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_accordion.items[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for FullWidthAccordion Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FullWidthAccordionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<FullWidthAccordionSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FullWidthAccordion*
+ */
+type FullWidthAccordionSliceVariation = FullWidthAccordionSliceDefault;
+
+/**
+ * FullWidthAccordion Shared Slice
+ *
+ * - **API ID**: `full_width_accordion`
+ * - **Description**: FullWidthAccordion
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FullWidthAccordionSlice = prismic.SharedSlice<
+  "full_width_accordion",
+  FullWidthAccordionSliceVariation
+>;
+
+/**
  * Primary content in *FullWidthImage → Primary*
  */
 export interface FullWidthImageSliceDefaultPrimary {
@@ -1222,22 +1277,22 @@ export interface ImageAndBulletListSliceDefaultItem {
   /**
    * Icon field in *ImageAndBulletList → Items*
    *
-   * - **Field Type**: Select
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: image_and_bullet_list.items[].icon
-   * - **Documentation**: https://prismic.io/docs/field#select
+   * - **API ID Path**: image_and_bullet_list.items[].iconimage
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  icon: prismic.SelectField<"ipad" | "solarPanel" | "mobility">;
+  iconimage: prismic.ImageField<never>;
 
   /**
    * Icon Description field in *ImageAndBulletList → Items*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: image_and_bullet_list.items[].icon_description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  icon_description: prismic.KeyTextField;
+  icon_description: prismic.RichTextField;
 }
 
 /**
@@ -1781,6 +1836,10 @@ declare module "@prismicio/client" {
       FeatureRowSliceDefaultItem,
       FeatureRowSliceVariation,
       FeatureRowSliceDefault,
+      FullWidthAccordionSlice,
+      FullWidthAccordionSliceDefaultItem,
+      FullWidthAccordionSliceVariation,
+      FullWidthAccordionSliceDefault,
       FullWidthImageSlice,
       FullWidthImageSliceDefaultPrimary,
       FullWidthImageSliceVariation,

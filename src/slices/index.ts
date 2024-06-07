@@ -9,6 +9,7 @@ export const components = {
   centered_text: dynamic(() => import("./CenteredText")),
   feature_grid: dynamic(() => import("./FeatureGrid")),
   feature_row: dynamic(() => import("./FeatureRow")),
+  full_width_accordion: dynamic(() => import("./FullWidthAccordion")),
   full_width_image: dynamic(() => import("./FullWidthImage")),
   hero_banner: dynamic(() => import("./HeroBanner")),
   image_and_accordion_row: dynamic(() => import("./ImageAndAccordionRow")),

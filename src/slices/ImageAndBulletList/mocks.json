@@ -76,19 +76,41 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"icon",
+						"iconimage",
 						{
-							"__TYPE__": "FieldContent",
-							"value": "solarPanel",
-							"type": "Select"
+							"__TYPE__": "ImageContent",
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+								"width": 4000,
+								"height": 4000
+							},
+							"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+							"width": 4000,
+							"height": 4000,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"thumbnails": {}
 						}
 					],
 					[
 						"icon_description",
 						{
-							"__TYPE__": "FieldContent",
-							"value": "shall",
-							"type": "Text"
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Excepteur excepteur aute sunt laboris nisi commodo mollit consequat sint ad ullamco excepteur enim. Consectetur reprehenderit esse laborum excepteur ea duis reprehenderit voluptate irure id ex in incididunt ipsum occaecat."
+									}
+								}
+							]
 						}
 					]
 				]

@@ -22,7 +22,7 @@ function AccordionTitle(props: { heading: KeyTextField; isOpen: boolean }) {
         width="16"
         height="16"
         viewBox="0 0 16 16"
-        className="fill-dunkelblau stroke-dunkelblau"
+        className="fill-black stroke-black"
       >
         <path
           d="M8 1V15"

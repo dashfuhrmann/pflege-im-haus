@@ -28,12 +28,12 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           className="w-full grayscale-[40%] max-h-[600px] object-cover"
         />
       </div>
-      <div className="absolute top-[25%] w-full flex flex-col justify-center items-center gap-4">
+      <div className="absolute top-[50%] -translate-y-[75%] w-full flex flex-col justify-center items-center gap-4">
         <h1 className="text-5xl text-white font-bold">
           {slice.primary.heading}
         </h1>
         <span className="bg-dunkelblau rounded-full w-20 h-2" />
-        <div className="text-gray-100 font-bold text-2xl text-balance max-w-md">
+        <div className="text-gray-100 font-bold text-3xl text-balance max-w-md">
           {slice.primary.subheading}
         </div>
         {isFilled.keyText(slice.primary.link_label) && (
