@@ -1,12 +1,6 @@
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import React from "react";
-
-import * as Icons from "react-icons/fi";
-import ipad from "../public/ipad.svg";
-import mobility from "../public/mobility.svg";
-import solarPanel from "../public/solarPanel.svg";
-import Image from "next/image";
 import RichTextWithComponents from "./RichTextWithComponents";
 
 function ImageSection({

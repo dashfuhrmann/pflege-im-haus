@@ -51,20 +51,11 @@
           }
         },
         "icon": {
-          "type": "Select",
+          "type": "Image",
           "config": {
             "label": "Icon",
-            "placeholder": "",
-            "options": [
-              "socialCare",
-              "machineLearning",
-              "education",
-              "research",
-              "gloves",
-              "injection",
-              "report",
-              "stethoscope"
-            ]
+            "constraint": {},
+            "thumbnails": []
           }
         }
       }

@@ -779,21 +779,12 @@ export interface FeatureGridSliceDefaultItem {
   /**
    * Icon field in *FeatureGrid → Items*
    *
-   * - **Field Type**: Select
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
    * - **API ID Path**: feature_grid.items[].icon
-   * - **Documentation**: https://prismic.io/docs/field#select
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  icon: prismic.SelectField<
-    | "socialCare"
-    | "machineLearning"
-    | "education"
-    | "research"
-    | "gloves"
-    | "injection"
-    | "report"
-    | "stethoscope"
-  >;
+  icon: prismic.ImageField<never>;
 }
 
 /**

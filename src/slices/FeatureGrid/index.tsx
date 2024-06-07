@@ -1,27 +1,8 @@
 import BoundedFull from "@/components/BoundedFull";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import machineLearning from "../../public/machineLearning.svg";
-import socialCare from "../../public/socialCare.svg";
-import research from "../../public/research.svg";
-import education from "../../public/education.svg";
-import gloves from "../../public/gloves.svg";
-import injection from "../../public/injection.svg";
-import report from "../../public/report.svg";
-import stethoscope from "../../public/stethoscope.svg";
-import Image from "next/image";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
-
-const icons = {
-  education: education,
-  machineLearning: machineLearning,
-  socialCare: socialCare,
-  research: research,
-  gloves: gloves,
-  injection: injection,
-  report: report,
-  stethosscope: stethoscope,
-};
+import { PrismicNextImage } from "@prismicio/next";
 
 /**
  * Props for `FeatureGrid`.
@@ -52,12 +33,11 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
           >
             <div className="flex justify-center bg-gray-200 rounded-full h-[160px] min-w-[160px] items-center">
               {item.icon && (
-                <Image
+                <PrismicNextImage
                   width={120}
                   height={120}
                   className="flex-grow-1 mx-auto p-4"
-                  src={icons[item.icon as keyof typeof icons]}
-                  alt="icon"
+                  field={item.icon}
                 />
               )}
             </div>
