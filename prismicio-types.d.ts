@@ -1285,14 +1285,14 @@ export interface ImageAndBulletListSliceDefaultItem {
   iconimage: prismic.ImageField<never>;
 
   /**
-   * Icon Description field in *ImageAndBulletList → Items*
+   * Description field in *ImageAndBulletList → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: image_and_bullet_list.items[].icon_description
+   * - **API ID Path**: image_and_bullet_list.items[].description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  icon_description: prismic.RichTextField;
+  description: prismic.RichTextField;
 }
 
 /**

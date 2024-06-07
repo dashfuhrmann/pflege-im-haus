@@ -77,10 +77,10 @@
             "thumbnails": []
           }
         },
-        "icon_description": {
+        "description": {
           "type": "StructuredText",
           "config": {
-            "label": "Icon Description",
+            "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

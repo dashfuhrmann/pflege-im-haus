@@ -78,7 +78,6 @@
 					[
 						"iconimage",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
@@ -96,18 +95,21 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
 					[
-						"icon_description",
+						"description",
 						{
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Excepteur excepteur aute sunt laboris nisi commodo mollit consequat sint ad ullamco excepteur enim. Consectetur reprehenderit esse laborum excepteur ea duis reprehenderit voluptate irure id ex in incididunt ipsum occaecat."
+										"text": "Qui ullamco nulla consequat dolore nulla veniam culpa quis ipsum qui ipsum mollit."
 									}
 								}
 							]

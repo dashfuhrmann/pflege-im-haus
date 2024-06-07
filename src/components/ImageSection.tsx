@@ -54,7 +54,9 @@ function ImageSection({
                   height={64}
                 />
               )}
-              <RichTextWithComponents richText={item.icon_description} />
+              {isFilled.richText(item.description) && (
+                <RichTextWithComponents richText={item.description} />
+              )}
             </li>
           ))}
         </ul>
