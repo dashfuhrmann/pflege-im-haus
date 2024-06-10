@@ -2,6 +2,7 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import BoundedFull from "@/components/BoundedFull";
 import { PrismicNextImage } from "@prismicio/next";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 
 /**
  * Props for `TimeLine`.
@@ -19,19 +20,19 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
     >
       <div className="container w-full h-full flex flex-col md:flex-row">
         <div className="flex flex-col w-full md:w-2/5 gap-4">
-          <h1 className="font-bold text-3xl text-center">
-            <>{slice.primary.heading}</>
-          </h1>
-          <div className="text-lg text-center">
+          <div className="text-center">
+            <RichTextWithComponents richText={slice.primary.heading} />
+          </div>
+          <div className="text-center">
             <PrismicRichText field={slice.primary.description} />
           </div>
-          <div className="flex-shrink-0 bg-gray-200 mx-auto rounded-full h-[240px] w-[240px] p-4">
+          {/* <div className="flex-shrink-0 bg-gray-200 mx-auto rounded-full h-[240px] w-[240px] p-4">
             <PrismicNextImage
               field={slice.primary.image}
               width={240}
               height={240}
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="relative wrap overflow-hidden p-10 h-full w-full md:w-3/5">
