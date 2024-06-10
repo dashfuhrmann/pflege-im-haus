@@ -1,5 +1,6 @@
 import A11yAccordion from "@/components/A11yAccordion";
 import BoundedFull from "@/components/BoundedFull";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content, RichTextField } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
@@ -11,7 +12,10 @@ export type FullWidthAccordionProps =
 
 function AccordionContent(props: { content: RichTextField }) {
   return (
-    <div id="content" className="p-4 font-medium text-lg leading-relaxed">
+    <div
+      id="content"
+      className="p-4 font-medium text-lg leading-relaxed bg-white"
+    >
       <PrismicRichText
         field={props.content}
         components={{
@@ -43,14 +47,16 @@ const FullWidthAccordion = ({
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-secondary flex-col"
+      className="bg-gray-200 flex-col"
     >
+      <RichTextWithComponents richText={slice.primary.heading} />
       {slice.items.map((item, index) => (
         <A11yAccordion
           id="accordion"
           key={index}
           title={item.heading}
           content={AccordionContent({ content: item.content })}
+          backgroundColor="bg-white"
         />
       ))}
     </BoundedFull>

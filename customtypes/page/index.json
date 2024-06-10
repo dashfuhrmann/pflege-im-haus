@@ -27,6 +27,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "full_width_accordion": {
+              "type": "SharedSlice"
+            },
             "application_card": {
               "type": "SharedSlice"
             },

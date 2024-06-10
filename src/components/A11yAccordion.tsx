@@ -10,12 +10,17 @@ type AccordionProps = {
   title: KeyTextField;
   content: ReactNode;
   initalOpen?: boolean;
+  backgroundColor?: string;
 };
 
-function AccordionTitle(props: { heading: KeyTextField; isOpen: boolean }) {
+function AccordionTitle(props: {
+  heading: KeyTextField;
+  isOpen: boolean;
+  backgroundColor?: string;
+}) {
   return (
     <div
-      className={`flex w-full flex-row gap-4 justify-between p-4 items-center ${props.isOpen ? "border-2 border-black rounded-t-2xl border-b-0" : "border-2 border-black rounded-2xl"}`}
+      className={`flex w-full flex-row gap-4 justify-between rounded-2xl p-4 items-center transition-all ${props.isOpen ? "rounded-b-none" : ""} ${props.backgroundColor}`}
     >
       <span className="text-3xl font-semibold">{props.heading}</span>
       <svg
@@ -47,7 +52,7 @@ function AccordionTitle(props: { heading: KeyTextField; isOpen: boolean }) {
 }
 
 function A11yAccordion(props: AccordionProps) {
-  const { id, title, content, initalOpen } = props;
+  const { id, title, content, initalOpen, backgroundColor } = props;
 
   const [isOpen, setIsOpen] = useState(initalOpen || false);
 
@@ -76,18 +81,23 @@ function A11yAccordion(props: AccordionProps) {
         flexGrow: 1,
         flexDirection: "column",
       }}
+      className={`border-2 border-black rounded-2xl transition-all`}
     >
       <h3>
         <button
           type="button"
-          style={{ width: "100%", borderBottom: "none" }}
+          style={{ width: "100%" }}
           aria-expanded={true}
           aria-controls="section-1"
           id={id}
           onClick={setOpenState}
           onKeyDown={handleKeyDown}
         >
-          <AccordionTitle heading={title} isOpen={isOpen} />
+          <AccordionTitle
+            heading={title}
+            isOpen={isOpen}
+            backgroundColor={backgroundColor}
+          />
         </button>
       </h3>
       <div
@@ -99,8 +109,8 @@ function A11yAccordion(props: AccordionProps) {
           height: isOpen ? contentRef.current?.scrollHeight : 0,
           transition: "height 0.3s",
         }}
-        className={`${isOpen ? "border-2 border-black rounded-b-2xl border-t-0" : ""}`}
         ref={contentRef}
+        className="rounded-b-2xl"
       >
         {content}
       </div>

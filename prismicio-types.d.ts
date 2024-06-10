@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | FullWidthAccordionSlice
   | ApplicationCardSlice
   | HeroBannerSlice
   | CenteredTextSlice
@@ -900,6 +901,21 @@ export type FeatureRowSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *FullWidthAccordion → Primary*
+ */
+export interface FullWidthAccordionSliceDefaultPrimary {
+  /**
+   * Heading field in *FullWidthAccordion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_accordion.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
  * Primary content in *FullWidthAccordion → Items*
  */
 export interface FullWidthAccordionSliceDefaultItem {
@@ -933,7 +949,7 @@ export interface FullWidthAccordionSliceDefaultItem {
  */
 export type FullWidthAccordionSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<FullWidthAccordionSliceDefaultPrimary>,
   Simplify<FullWidthAccordionSliceDefaultItem>
 >;
 
@@ -1828,6 +1844,7 @@ declare module "@prismicio/client" {
       FeatureRowSliceVariation,
       FeatureRowSliceDefault,
       FullWidthAccordionSlice,
+      FullWidthAccordionSliceDefaultPrimary,
       FullWidthAccordionSliceDefaultItem,
       FullWidthAccordionSliceVariation,
       FullWidthAccordionSliceDefault,
