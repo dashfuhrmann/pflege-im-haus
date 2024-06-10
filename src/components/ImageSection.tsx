@@ -28,7 +28,6 @@ function ImageSection({
           layout="responsive"
           width={image.dimensions?.width}
           height={image.dimensions?.height}
-          className="rounded-2xl"
         />
       </div>
       <div className="flex flex-col w-full md:w-1/2 gap-6 md:pl-12 pl-0">
@@ -36,10 +35,7 @@ function ImageSection({
         <span className="text-xl mt-4">{cardDescription}</span>
         <ul className="flex flex-col gap-4">
           {items.map((item, index) => (
-            <li
-              key={index}
-              className="flex flex-row items-center justify-center gap-4"
-            >
+            <li key={index} className="flex flex-row items-center gap-4">
               {item.iconimage && (
                 <PrismicNextImage
                   className="flex-shrink-0"
