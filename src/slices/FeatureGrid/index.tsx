@@ -22,7 +22,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       <div className="w-full text-center text-6xl">
         <PrismicRichText field={slice.primary.heading} />
       </div>
-      <div className="w-full text-center text-3xl text-gray-700">
+      <div className="w-full text-center text-3xl text-black">
         <PrismicRichText field={slice.primary.subheading} />
       </div>
       <ul className="grid grid-cols-1 md:grid-cols-2">
@@ -42,7 +42,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <div className="text-gray-500 text-left">
+              <div className="text-black text-left">
                 <RichTextWithComponents richText={item.heading} />
               </div>
               <div className="text-left">
