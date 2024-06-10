@@ -22,7 +22,7 @@ function AccordionTitle(props: {
     <div
       className={`flex w-full flex-row gap-4 justify-between rounded-2xl p-4 items-center transition-all ${props.isOpen ? "rounded-b-none" : ""} ${props.backgroundColor}`}
     >
-      <span className="text-3xl font-semibold">{props.heading}</span>
+      <span className="text-3xl font-semibold text-left">{props.heading}</span>
       <svg
         width="16"
         height="16"
