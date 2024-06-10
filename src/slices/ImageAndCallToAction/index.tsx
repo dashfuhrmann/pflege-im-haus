@@ -31,10 +31,10 @@ const ImageAndCallToAction = ({
             width={slice.primary.image.dimensions?.width}
             height={slice.primary.image.dimensions?.height}
             field={slice.primary.image}
-            className="rounded-2xl object-cover w-full relative"
+            className="rounded-2xl relative"
           />
         </div>
-        <div className="flex w-full flex-col md:w-1/2 md:justify-between md:gap-0 gap-4 pl-12 pr-12">
+        <div className="flex w-full flex-col justify-center md:w-1/2 md:gap-4 gap-4 pl-12 pr-12">
           <h3 className="w-fit text-3xl font-bold after:block after:h-1 after:bg-secondary after:rounded-xl">
             {slice.primary.heading}
           </h3>
