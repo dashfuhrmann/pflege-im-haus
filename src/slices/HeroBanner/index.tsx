@@ -17,15 +17,13 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="h-[500px]"
     >
-      <div className="relative w-full h-[500px]">
+      <div className="flex relative w-full max-h-[500px]">
         <PrismicNextImage
           layout="responsive"
           field={slice.primary.image}
           width={slice.primary.image.dimensions?.width}
           height={slice.primary.image.dimensions?.height}
-          className="w-auto h-auto max-w-full max-h-full grayscale-[40%]"
         />
       </div>
       <div className="absolute top-[25%] -translate-y-[25%] w-full flex flex-col justify-center items-center gap-4">
