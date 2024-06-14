@@ -7,9 +7,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading3",
+						"type": "paragraph",
 						"content": {
-							"text": "Citizen"
+							"text": "Amet irure dolor eu id ipsum amet ut sit do mollit. Ut ad labore quis quis id sunt cupidatat est nulla voluptate laboris."
 						}
 					}
 				]
@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Amet est id ea nisi eu consequat aliquip officia."
+							"text": "Nostrud qui et mollit dolore et mollit commodo qui nostrud ut incididunt mollit. Consequat Lorem exercitation adipisicing do duis ad. Non tempor cupidatat est veniam labore."
 						}
 					}
 				]
@@ -61,7 +61,6 @@
 					[
 						"icon",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
@@ -79,6 +78,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]

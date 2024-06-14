@@ -18,7 +18,7 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading3,strong,em,heading1,heading2,heading4,heading5,heading6"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "subheading": {
@@ -27,7 +27,7 @@
             "label": "Subheading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading4,strong,em,paragraph,heading1,heading2,heading3,heading5,heading6"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },

@@ -1762,6 +1762,16 @@ export type RichTextSlice = prismic.SharedSlice<
  */
 export interface TimeLineSliceDefaultPrimary {
   /**
+   * Heading field in *TimeLine → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: time_line.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
    * Description field in *TimeLine → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1780,16 +1790,6 @@ export interface TimeLineSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
-
-  /**
-   * Heading field in *TimeLine → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: time_line.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading: prismic.RichTextField;
 }
 
 /**
