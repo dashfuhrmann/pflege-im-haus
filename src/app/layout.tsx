@@ -1,6 +1,5 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
-import { DM_Sans } from "next/font/google";
 import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";

@@ -53,6 +53,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "since",
 				"type": "Text"
+			},
+			"heading_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur deserunt anim et velit ut id ex ipsum laborum reprehenderit. Ex ipsum eiusmod occaecat aliqua esse."
+						}
+					}
+				]
 			}
 		},
 		"items": []

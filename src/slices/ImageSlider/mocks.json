@@ -45,6 +45,17 @@
 						}
 					}
 				]
+			},
+			"title_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum minim sit do commodo et amet eu."
+						}
+					}
+				]
 			}
 		},
 		"items": [

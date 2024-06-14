@@ -40,6 +40,20 @@
 							"value": "available",
 							"type": "Text"
 						}
+					],
+					[
+						"heading_richtext",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aliquip elit excepteur quis ad fugiat mollit laborum minim quis ipsum sint aute labore labore. Proident ullamco irure tempor deserunt labore voluptate laboris dolore aliqua nisi veniam quis. Consequat nostrud pariatur cillum mollit dolore deserunt ipsum cillum tempor ullamco nulla exercitation velit."
+									}
+								}
+							]
+						}
 					]
 				]
 			}

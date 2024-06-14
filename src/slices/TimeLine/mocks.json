@@ -74,6 +74,20 @@
 								}
 							]
 						}
+					],
+					[
+						"heading_richtext",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Commodo consectetur irure ipsum non nostrud mollit ipsum fugiat reprehenderit aute consectetur pariatur in dolore."
+									}
+								}
+							]
+						}
 					]
 				]
 			}

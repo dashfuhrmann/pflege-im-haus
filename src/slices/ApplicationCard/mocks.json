@@ -105,6 +105,28 @@
 				"credits": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"title_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Deserunt esse laborum consectetur dolore incididunt consectetur consequat ullamco labore irure."
+						}
+					}
+				]
+			},
+			"start_date_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing officia fugiat laboris ipsum ad duis sint eiusmod elit reprehenderit mollit cillum occaecat occaecat aliqua."
+						}
+					}
+				]
 			}
 		},
 		"items": [

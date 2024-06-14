@@ -26,7 +26,7 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading3,strong,em"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "subheading": {
@@ -35,7 +35,7 @@
             "label": "Subheading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading4,strong,em"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "card_heading": {
@@ -45,11 +45,29 @@
             "placeholder": ""
           }
         },
+        "card_heading_richtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card Heading Richtext",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
         "card_description": {
           "type": "Text",
           "config": {
             "label": "Card Description",
             "placeholder": ""
+          }
+        },
+        "card_description_richtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card Description Richtext",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "button_text": {

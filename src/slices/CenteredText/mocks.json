@@ -38,6 +38,28 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Wir beraten Sie gerne zu Pflegegrad und notwendigen Leistungen"
+			},
+			"heading_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Veniam incididunt aliqua exercitation commodo incididunt voluptate veniam fugiat dolor."
+						}
+					}
+				]
+			},
+			"subheading_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit consectetur reprehenderit anim exercitation. Eiusmod labore sunt voluptate voluptate quis est voluptate ut cillum nulla."
+						}
+					}
+				]
 			}
 		},
 		"items": []

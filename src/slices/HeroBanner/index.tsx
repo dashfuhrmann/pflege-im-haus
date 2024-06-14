@@ -26,7 +26,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           height={slice.primary.image.dimensions?.height}
         />
       </div>
-      <div className="absolute top-[25%] -translate-y-[25%] w-full flex flex-col justify-center items-center gap-4">
+      <div className="absolute top-[50%] -translate-y-[50%] w-full flex flex-col justify-center items-center gap-4">
         <h1 className="text-5xl text-white font-bold">
           {slice.primary.heading}
         </h1>

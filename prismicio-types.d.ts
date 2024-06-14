@@ -399,6 +399,16 @@ export interface ApplicationCardSliceDefaultPrimary {
   job_title: prismic.KeyTextField;
 
   /**
+   * Title Richtext field in *ApplicationCard → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_card.primary.title_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_richtext: prismic.RichTextField;
+
+  /**
    * Address field in *ApplicationCard → Primary*
    *
    * - **Field Type**: Rich Text
@@ -427,6 +437,16 @@ export interface ApplicationCardSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   start_date: prismic.KeyTextField;
+
+  /**
+   * Start Date Richtext field in *ApplicationCard → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_card.primary.start_date_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  start_date_richtext: prismic.RichTextField;
 
   /**
    * Address Image field in *ApplicationCard → Primary*
@@ -564,6 +584,16 @@ export interface CardGridSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
+   * Heading RichText field in *CardGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.primary.heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
    * Description field in *CardGrid → Primary*
    *
    * - **Field Type**: Rich Text
@@ -597,6 +627,16 @@ export interface CardGridSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   name: prismic.KeyTextField;
+
+  /**
+   * Name Richtext field in *CardGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.items[].name_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name_richtext: prismic.RichTextField;
 
   /**
    * Quote field in *CardGrid → Items*
@@ -664,6 +704,16 @@ export interface CenteredTextSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
+   * Heading Richtext field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: centered_text.primary.heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
    * Subheading field in *CenteredText → Primary*
    *
    * - **Field Type**: Text
@@ -672,6 +722,16 @@ export interface CenteredTextSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   subheading: prismic.KeyTextField;
+
+  /**
+   * Subheading Richtext field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: centered_text.primary.subheading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading_richtext: prismic.RichTextField;
 
   /**
    * Text field in *CenteredText → Primary*
@@ -930,6 +990,16 @@ export interface FullWidthAccordionSliceDefaultItem {
   heading: prismic.KeyTextField;
 
   /**
+   * Heading Richtext field in *FullWidthAccordion → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_accordion.items[].heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
    * Content field in *FullWidthAccordion → Items*
    *
    * - **Field Type**: Rich Text
@@ -1052,6 +1122,16 @@ export interface HeroBannerSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
+   * Heading Richtext field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
    * Subheading field in *HeroBanner → Primary*
    *
    * - **Field Type**: Text
@@ -1060,6 +1140,16 @@ export interface HeroBannerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   subheading: prismic.KeyTextField;
+
+  /**
+   * Subheading Richtext field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.subheading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading_richtext: prismic.RichTextField;
 
   /**
    * Link field in *HeroBanner → Primary*
@@ -1162,6 +1252,16 @@ export interface ImageAndAccordionRowSliceDefaultItem {
   heading: prismic.KeyTextField;
 
   /**
+   * Heading Richtext field in *ImageAndAccordionRow → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_and_accordion_row.items[].heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
    * Description field in *ImageAndAccordionRow → Items*
    *
    * - **Field Type**: Rich Text
@@ -1247,6 +1347,16 @@ export interface ImageAndBulletListSliceDefaultPrimary {
   card_heading: prismic.KeyTextField;
 
   /**
+   * Card Heading Richtext field in *ImageAndBulletList → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_and_bullet_list.primary.card_heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  card_heading_richtext: prismic.RichTextField;
+
+  /**
    * Card Description field in *ImageAndBulletList → Primary*
    *
    * - **Field Type**: Text
@@ -1255,6 +1365,16 @@ export interface ImageAndBulletListSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   card_description: prismic.KeyTextField;
+
+  /**
+   * Card Description Richtext field in *ImageAndBulletList → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_and_bullet_list.primary.card_description_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  card_description_richtext: prismic.RichTextField;
 
   /**
    * Button Text field in *ImageAndBulletList → Primary*
@@ -1355,6 +1475,16 @@ export interface ImageAndCallToActionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading: prismic.KeyTextField;
+
+  /**
+   * Heading Richtext field in *ImageAndCallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_and_call_to_action.primary.heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
 
   /**
    * description field in *ImageAndCallToAction → Primary*
@@ -1467,26 +1597,6 @@ export type ImageBannerSlice = prismic.SharedSlice<
  */
 export interface ImageSliderSliceDefaultPrimary {
   /**
-   * Button Link field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_link: prismic.LinkField;
-
-  /**
-   * Button Label field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  button_label: prismic.KeyTextField;
-
-  /**
    * Title field in *ImageSlider → Primary*
    *
    * - **Field Type**: Text
@@ -1495,6 +1605,16 @@ export interface ImageSliderSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
+
+  /**
+   * Title Richtext field in *ImageSlider → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.primary.title_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_richtext: prismic.RichTextField;
 
   /**
    * Sub Heading 1 field in *ImageSlider → Primary*
@@ -1525,6 +1645,26 @@ export interface ImageSliderSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   sub_heading_3: prismic.RichTextField;
+
+  /**
+   * Button Link field in *ImageSlider → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Button Label field in *ImageSlider → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
 }
 
 /**
@@ -1665,6 +1805,16 @@ export interface TimeLineSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading: prismic.KeyTextField;
+
+  /**
+   * Heading Richtext field in *TimeLine → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: time_line.items[].heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
 
   /**
    * Text field in *TimeLine → Items*

@@ -30,9 +30,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading3",
+						"type": "paragraph",
 						"content": {
-							"text": "Thick"
+							"text": "Ad eiusmod ipsum est excepteur commodo tempor adipisicing anim. Excepteur reprehenderit enim eu laboris in sint est commodo dolore id voluptate irure cupidatat nulla. Lorem nulla ut est."
 						}
 					}
 				]
@@ -41,9 +41,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading4",
+						"type": "paragraph",
 						"content": {
-							"text": "Journey"
+							"text": "Ex labore ipsum dolore."
 						}
 					}
 				]
@@ -69,6 +69,28 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://prismic.io"
 				}
+			},
+			"card_heading_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit id consequat dolore proident elit laboris labore eiusmod culpa laboris officia id et adipisicing quis. Duis non in sunt ea pariatur do occaecat enim enim exercitation ex occaecat anim nisi do. Dolor culpa exercitation do anim sit aliquip."
+						}
+					}
+				]
+			},
+			"card_description_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ad cupidatat duis ut labore duis reprehenderit non magna laboris laboris dolor reprehenderit cillum incididunt."
+						}
+					}
+				]
 			}
 		},
 		"items": [

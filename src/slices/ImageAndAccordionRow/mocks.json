@@ -74,6 +74,20 @@
 								}
 							]
 						}
+					],
+					[
+						"heading_richtext",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Duis cillum nulla elit anim sint Lorem tempor quis duis consequat amet aliquip et est ea."
+									}
+								}
+							]
+						}
 					]
 				]
 			}

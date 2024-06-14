@@ -19,11 +19,29 @@
             "placeholder": ""
           }
         },
+        "heading_richtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Richtext",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
         "subheading": {
           "type": "Text",
           "config": {
             "label": "Subheading",
             "placeholder": ""
+          }
+        },
+        "subheading_richtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subheading Richtext",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "text": {

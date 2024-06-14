@@ -41,6 +41,17 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"heading_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod anim est velit reprehenderit nulla do ipsum cupidatat ad labore nisi ipsum cillum aliqua ipsum. Ut commodo nisi in. Ea ex sunt enim cillum aute pariatur sunt anim."
+						}
+					}
+				]
 			}
 		},
 		"items": [
@@ -72,7 +83,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
@@ -90,7 +100,24 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
+						}
+					],
+					[
+						"name_richtext",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Nisi velit ex reprehenderit exercitation deserunt officia ad tempor officia officia aute deserunt ut."
+									}
+								}
+							]
 						}
 					]
 				]

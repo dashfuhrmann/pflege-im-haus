@@ -47,6 +47,28 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Jetzt bewerben"
+			},
+			"heading_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nulla quis Lorem enim nostrud voluptate duis mollit laboris cillum voluptate eu reprehenderit. Consectetur eiusmod Lorem consectetur adipisicing eiusmod dolor voluptate qui. Proident voluptate reprehenderit duis enim Lorem."
+						}
+					}
+				]
+			},
+			"subheading_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Deserunt esse enim culpa consectetur ad dolore proident excepteur mollit do incididunt ullamco excepteur laboris anim."
+						}
+					}
+				]
 			}
 		},
 		"items": []

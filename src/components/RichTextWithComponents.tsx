@@ -3,6 +3,7 @@ import { PrismicRichText } from "@prismicio/react";
 import React from "react";
 
 const RichTextWithComponents = (props: { richText: RichTextField }) => {
+  // use div for each element passd children to the component
   return (
     <PrismicRichText
       field={props.richText}
@@ -13,12 +14,8 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
         heading1: ({ children }) => (
           <h1 className="text-4xl font-bold text-balance">{children}</h1>
         ),
-        heading2: ({ children }) => (
-          <h2 className="text-3xl font-bold text-balance">{children}</h2>
-        ),
-        heading3: ({ children }) => (
-          <h3 className="text-2xl font-bold text-balance">{children}</h3>
-        ),
+        heading2: ({ children }) => <h2 className="text-3xl">{children}</h2>,
+        heading3: ({ children }) => <h3 className="text-2xl">{children}</h3>,
         heading4: ({ children }) => (
           <h4 className="text-xl font-bold text-balance">{children}</h4>
         ),
