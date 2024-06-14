@@ -37,7 +37,7 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
 
         <div className="relative wrap overflow-hidden p-10 h-full w-full md:w-3/5">
           {/* <div
-            className="border-2 absolute border-opacity-20 border-gray-700 h-full"
+            className="border-2 absolute border-opacity-20 border-black h-full"
             style={{ left: "50%" }}
           ></div> */}
           {slice.items.map((item, index) => (
@@ -54,7 +54,7 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
                 </span>
 
                 {slice.items.length - 1 !== index ? (
-                  <div className="absolute mt-8 h-[calc(100%-32px)] w-1 bg-gray-700"></div>
+                  <div className="absolute mt-8 h-[calc(100%-32px)] w-1 bg-black"></div>
                 ) : null}
               </div>
               <div className="order-1 bg-secondary rounded-lg shadow-xl w-5/12 px-6 py-4">

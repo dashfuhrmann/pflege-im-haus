@@ -35,7 +35,7 @@ export default async function Footer() {
               <li key={index}>
                 <PrismicNextLink
                   field={link.link}
-                  className="text-xl text-gray-700 hover:underline hover:decoration-slate-700 hover:decoration-offset-2"
+                  className="text-xl text-black hover:underline hover:decoration-slate-700 hover:decoration-offset-2"
                 >
                   {link.label}
                 </PrismicNextLink>
@@ -50,7 +50,7 @@ export default async function Footer() {
                   <li key={index}>
                     <PrismicNextLink
                       field={link.link}
-                      className="text-xl text-gray-700 hover:underline hover:decoration-slate-700 hover:decoration-offset-2"
+                      className="text-xl text-black hover:underline hover:decoration-slate-700 hover:decoration-offset-2"
                     >
                       {link.label}
                     </PrismicNextLink>
@@ -88,9 +88,9 @@ export default async function Footer() {
           <span className="text-lg">{settings.data.email}</span>
         </div>
       </div>
-      <hr className="mt-12 h-1 bg-gray-700 border-0 w-full" />
+      <hr className="mt-12 h-1 bg-black border-0 w-full" />
       <div className="flex flex-row justify-between">
-        <span className="text-xl text-gray-700 text-center">
+        <span className="text-xl text-black text-center">
           {settings.data.copyright}
         </span>
         <ul className="flex flex-row gap-4">
@@ -100,7 +100,7 @@ export default async function Footer() {
                 <li key={index}>
                   <PrismicNextLink
                     field={link.link}
-                    className="text-xl text-gray-700 hover:underline hover:decoration-slate-700 hover:decoration-offset-2"
+                    className="text-xl text-black hover:underline hover:decoration-slate-700 hover:decoration-offset-2"
                   >
                     {link.label}
                   </PrismicNextLink>

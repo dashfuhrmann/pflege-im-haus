@@ -36,7 +36,7 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
       <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-1/2 gap-y-8 gap-x-12">
         {slice.items.map((testemonial, index) => (
           <div
-            className="flex flex-col w-full gap-4 justify-center border-2 rounded-2xl border-gray-700 p-8"
+            className="flex flex-col w-full gap-4 justify-center border-2 rounded-2xl border-black p-8"
             key={index}
           >
             <div className="flex-shrink-0 bg-gray-200 mx-auto rounded-full p-4 items-center justify-center">

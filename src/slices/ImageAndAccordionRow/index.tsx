@@ -47,10 +47,10 @@ const ImageAndAccordionRow = ({
       data-slice-variation={slice.variation}
       className="bg-white flex-col"
     >
-      <div className="w-full text-center text-6xl text-gray-700">
+      <div className="w-full text-center text-6xl text-black">
         <PrismicRichText field={slice.primary.heading} />
       </div>
-      <div className="w-full text-center text-3xl text-gray-700">
+      <div className="w-full text-center text-3xl text-black">
         <PrismicRichText field={slice.primary.subheading} />
       </div>
 

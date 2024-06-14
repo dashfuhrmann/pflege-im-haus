@@ -225,7 +225,7 @@ const Wheel = ({ slice }: WheelProps): JSX.Element => {
       className="flex flex-col"
     >
       <div className="flex flex-col gap-2">
-        <h1 className="font-bold text-6xl text-center text-gray-700">
+        <h1 className="font-bold text-6xl text-center text-black">
           <>{slice.primary.heading}</>
         </h1>
         <div className="text-3xl text-center text-balance">
