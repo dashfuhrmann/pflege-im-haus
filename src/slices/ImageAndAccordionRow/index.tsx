@@ -45,7 +45,7 @@ const ImageAndAccordionRow = ({
             <A11yAccordion
               key={index}
               id="test"
-              title={item.heading}
+              title={item.heading_richtext}
               content={AccordionContent({ content: item.description })}
               initalOpen={index === 0}
             />
