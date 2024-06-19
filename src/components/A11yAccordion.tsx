@@ -1,18 +1,19 @@
 "use client";
 
-import { KeyTextField } from "@prismicio/client";
+import { RichTextField } from "@prismicio/client";
 import React, { ReactNode, useRef, useState } from "react";
+import RichTextWithComponents from "./RichTextWithComponents";
 
 type AccordionProps = {
   id: string;
-  title: KeyTextField;
+  title: RichTextField;
   content: ReactNode;
   initalOpen?: boolean;
   backgroundColor?: string;
 };
 
 function AccordionTitle(props: {
-  heading: KeyTextField;
+  heading: RichTextField;
   isOpen: boolean;
   backgroundColor?: string;
 }) {
@@ -20,7 +21,9 @@ function AccordionTitle(props: {
     <div
       className={`flex w-full flex-row gap-4 justify-between rounded-2xl p-4 items-center transition-all ${props.isOpen ? "rounded-b-none" : ""} ${props.backgroundColor}`}
     >
-      <span className="text-3xl font-semibold text-left">{props.heading}</span>
+      <span className="text-left">
+        <RichTextWithComponents richText={props.heading} />
+      </span>
       <svg
         width="16"
         height="16"

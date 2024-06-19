@@ -1,11 +1,6 @@
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
-import {
-  Content,
-  ImageField,
-  KeyTextField,
-  RichTextField,
-} from "@prismicio/client";
+import { Content, ImageField, RichTextField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";

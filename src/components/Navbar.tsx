@@ -2,10 +2,8 @@
 
 import { Content, KeyTextField } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   FiAlignJustify,
   FiArrowDown,
@@ -189,8 +187,7 @@ export default function Navbar({ settings }: NavbarProps) {
             <FiX className="h-8 w-8" />
           </button>
         </div>
-        <ul className="h-full">
-          <li></li>
+        {/* <ul className="h-full">
           {settings.data.navigation.map((heading, index) => (
             <li
               key={index}
@@ -216,7 +213,7 @@ export default function Navbar({ settings }: NavbarProps) {
               )}
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </nav>
   );

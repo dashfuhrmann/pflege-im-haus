@@ -38,7 +38,7 @@ const FullWidthAccordion = ({
         <A11yAccordion
           id="accordion"
           key={index}
-          title={item.heading}
+          title={item.heading_richtext}
           content={AccordionContent({ content: item.content })}
           backgroundColor="bg-white"
         />
