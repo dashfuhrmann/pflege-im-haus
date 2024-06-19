@@ -12,28 +12,34 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
           <p className="text-balance text-lg">{children}</p>
         ),
         heading1: ({ children }) => (
-          <h1 className="text-4xl font-bold text-balance">{children}</h1>
+          <h1 className="text-4xl font-bold ">{children}</h1>
         ),
         heading2: ({ children }) => <h2 className="text-3xl">{children}</h2>,
         heading3: ({ children }) => <h3 className="text-2xl">{children}</h3>,
         heading4: ({ children }) => (
-          <h4 className="text-xl font-bold text-balance">{children}</h4>
+          <h4 className="text-xl font-bold">{children}</h4>
         ),
         heading5: ({ children }) => (
-          <h5 className="text-lg font-bold text-balance">{children}</h5>
+          <h5 className="text-lg font-bold">{children}</h5>
         ),
         heading6: ({ children }) => (
-          <h6 className="text-base font-bold text-balance">{children}</h6>
+          <h6 className="text-base font-bold">{children}</h6>
         ),
         list: ({ children }) => <ol className="list-disc ml-4">{children}</ol>,
         oList: ({ children }) => (
           <ol className="list-decimal ml-4">{children}</ol>
         ),
-        oListItem: ({ children }) => (
-          <li className="text-balance  text-lg">{children}</li>
-        ),
-        listItem: ({ children }) => (
-          <li className="text-balance text-lg">{children}</li>
+        oListItem: ({ children }) => <li className="text-lg">{children}</li>,
+        listItem: ({ children }) => <li className="text-lg">{children}</li>,
+        hyperlink: ({ children, node }) => (
+          <a
+            className="underline"
+            href={node.data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {children}
+          </a>
         ),
       }}
     />
