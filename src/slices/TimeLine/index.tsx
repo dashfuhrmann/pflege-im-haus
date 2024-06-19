@@ -1,5 +1,5 @@
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import BoundedFull from "@/components/BoundedFull";
 import { PrismicNextImage } from "@prismicio/next";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
@@ -58,11 +58,11 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
                 ) : null}
               </div>
               <div className="order-1 bg-secondary rounded-lg shadow-xl w-5/12 px-6 py-4">
-                <h3 className="mb-3 font-bold text-gray-900 text-xl">
-                  {item.heading}
-                </h3>
-                <div className="text-lg leading-snug tracking-wide text-gray-900 text-opacity-100">
-                  <PrismicRichText field={item.text} />
+                <div className="mb-3 text-black">
+                  <RichTextWithComponents richText={item.heading_richtext} />
+                </div>
+                <div className="leading-snug tracking-wide text-black text-opacity-100">
+                  <RichTextWithComponents richText={item.text} />
                 </div>
               </div>
             </div>

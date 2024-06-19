@@ -2,8 +2,8 @@ import BoundedFull from "@/components/BoundedFull";
 import ButtonLink from "@/components/ButtonLink";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
+import { SliceComponentProps } from "@prismicio/react";
 import { FiArrowRight } from "react-icons/fi";
 
 /**
@@ -35,12 +35,10 @@ const ImageAndCallToAction = ({
           />
         </div>
         <div className="flex w-full flex-col justify-center md:w-1/2 md:gap-4 gap-4 pl-12 pr-12">
-          <h3 className="w-fit text-3xl font-bold after:block after:h-1 after:bg-secondary after:rounded-xl">
-            {slice.primary.heading}
-          </h3>
-          <div className="text-5xl text-balance">
-            <RichTextWithComponents richText={slice.primary.description} />
+          <div className="w-fit after:block after:h-1 after:bg-secondary after:rounded-xl">
+            <RichTextWithComponents richText={slice.primary.heading_richtext} />
           </div>
+          <RichTextWithComponents richText={slice.primary.description} />
           <ButtonLink
             field={slice.primary.link}
             className="flex flex-row gap-4 items-center text-2xl bg-secondary text-black"

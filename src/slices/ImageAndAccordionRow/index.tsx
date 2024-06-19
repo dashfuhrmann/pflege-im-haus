@@ -1,8 +1,9 @@
 import A11yAccordion from "@/components/A11yAccordion";
 import BoundedFull from "@/components/BoundedFull";
-import { Content, KeyTextField, RichTextField } from "@prismicio/client";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
+import { Content, RichTextField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `ImageAndAccordionRow`.
@@ -17,23 +18,7 @@ export type ImageAndAccordionRowProps =
 function AccordionContent(props: { content: RichTextField }) {
   return (
     <div id="content" className="p-4 font-medium text-lg leading-relaxed">
-      <PrismicRichText
-        field={props.content}
-        components={{
-          list: ({ children }) => (
-            <ol className="list-disc ml-4">{children}</ol>
-          ),
-          oList: ({ children }) => (
-            <ol className="list-decimal ml-4">{children}</ol>
-          ),
-          oListItem: ({ children }) => (
-            <li className="text-balance">{children}</li>
-          ),
-          listItem: ({ children }) => (
-            <li className="text-balance">{children}</li>
-          ),
-        }}
-      />
+      <RichTextWithComponents richText={props.content} />
     </div>
   );
 }
@@ -47,11 +32,11 @@ const ImageAndAccordionRow = ({
       data-slice-variation={slice.variation}
       className="bg-white flex-col"
     >
-      <div className="w-full text-center text-6xl text-black">
-        <PrismicRichText field={slice.primary.heading} />
+      <div className="w-full text-center text-black">
+        <RichTextWithComponents richText={slice.primary.heading} />
       </div>
-      <div className="w-full text-center text-3xl text-black">
-        <PrismicRichText field={slice.primary.subheading} />
+      <div className="w-full text-center text-black">
+        <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
 
       <div className="flex flex-col md:flex-row items-start gap-4 md:gap-4">

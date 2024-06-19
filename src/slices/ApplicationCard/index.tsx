@@ -7,13 +7,13 @@ import {
   RichTextField,
 } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
 
 const ImageAndText = (props: {
   image: ImageField;
   heading: String;
-  text: RichTextField | KeyTextField;
+  startDate: RichTextField;
 }) => {
   return (
     <div className="flex w-full flex-row gap-4 p-4 bg-secondary">
@@ -27,11 +27,7 @@ const ImageAndText = (props: {
       </div>
       <div className="flex flex-col text-lg text-white">
         <span>{props.heading}</span>
-        {typeof props.text === "string" ? (
-          <span>{props.text}</span>
-        ) : (
-          <PrismicRichText field={props.text} />
-        )}
+        <RichTextWithComponents richText={props.startDate} />
       </div>
     </div>
   );
@@ -53,23 +49,23 @@ const ApplicationCard = ({ slice }: ApplicationCardProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="flex-col bg-gray-200"
     >
-      <h1 className="text-4xl font-bold">{slice.primary.job_title}</h1>
+      <RichTextWithComponents richText={slice.primary.title_richtext} />
       <div className="flex flex-row gap-8">
         <ImageAndText
           image={slice.primary.address_image}
           heading={"Arbeitsort:"}
-          text={slice.primary.address}
+          startDate={slice.primary.address}
         />
 
         <ImageAndText
           image={slice.primary.working_hours_image}
           heading={"Arbeitszeit:"}
-          text={slice.primary.working_hours}
+          startDate={slice.primary.working_hours}
         />
         <ImageAndText
           image={slice.primary.start_date_image}
           heading={"Startdatum:"}
-          text={slice.primary.start_date}
+          startDate={slice.primary.start_date_richtext}
         />
       </div>
       <ul className="grid grid-cols-2 gap-6 p-8">

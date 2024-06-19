@@ -4,8 +4,9 @@ import BoundedFull from "@/components/BoundedFull";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { useEffect, useRef, useState } from "react";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 
 /**
  * Props for `Wheel`.
@@ -228,8 +229,8 @@ const Wheel = ({ slice }: WheelProps): JSX.Element => {
         <h1 className="font-bold text-6xl text-center text-black">
           <>{slice.primary.heading}</>
         </h1>
-        <div className="text-3xl text-center text-balance">
-          <PrismicRichText field={slice.primary.description} />
+        <div className="text-center">
+          <RichTextWithComponents richText={slice.primary.description} />
         </div>
       </div>
       <div className="flex flex-row mt-[170px]">
@@ -296,23 +297,7 @@ const Wheel = ({ slice }: WheelProps): JSX.Element => {
                   <div
                     className={`description description-${index} w-[${textWidth}px] h-0 flex overflow-hidden text-wrap max-w-[${textWidth}px]`}
                   >
-                    <PrismicRichText
-                      field={circles[numberOfTransitions].description}
-                      components={{
-                        list: ({ children }) => (
-                          <ol className="list-disc ml-4">{children}</ol>
-                        ),
-                        oList: ({ children }) => (
-                          <ol className="list-decimal ml-4">{children}</ol>
-                        ),
-                        oListItem: ({ children }) => (
-                          <li className="text-balance">{children}</li>
-                        ),
-                        listItem: ({ children }) => (
-                          <li className="text-balance">{children}</li>
-                        ),
-                      }}
-                    />
+                    <RichTextWithComponents richText={item.description} />
                   </div>
                 </div>
               );

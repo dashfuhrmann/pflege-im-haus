@@ -1,6 +1,6 @@
 import BoundedFull from "@/components/BoundedFull";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { PrismicNextImage } from "@prismicio/next";
 
@@ -19,11 +19,11 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="bg-secondary flex-col"
     >
-      <div className="w-full text-center text-6xl">
-        <PrismicRichText field={slice.primary.heading} />
+      <div className="w-full">
+        <RichTextWithComponents richText={slice.primary.heading} />
       </div>
-      <div className="w-full text-center text-3xl text-black">
-        <PrismicRichText field={slice.primary.subheading} />
+      <div className="w-full text-center">
+        <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
       <ul className="grid grid-cols-1 md:grid-cols-2">
         {slice.items.map((item, index) => (

@@ -1,9 +1,7 @@
 "use client";
 
-import { KeyTextField, RichTextField } from "@prismicio/client";
-import { PrismicRichText } from "@prismicio/react";
+import { KeyTextField } from "@prismicio/client";
 import React, { ReactNode, useRef, useState } from "react";
-import { Colors } from "@/colors";
 
 type AccordionProps = {
   id: string;

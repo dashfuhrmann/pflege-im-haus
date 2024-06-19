@@ -1,8 +1,9 @@
 "use client";
 
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { useEffect, useState } from "react";
 
 /**
@@ -36,25 +37,25 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
       <div className="flex flex-col w-full h-[800px]">
         <div className="absolute w-full lg:w-1/2 p-32 z-10 gap-4 flex flex-col">
           {isFilled.keyText(slice.primary.title) && (
-            <h1 className="text-5xl text-white font-bold">
-              {slice.primary.title}
-            </h1>
+            <div className="text-white">
+              <RichTextWithComponents richText={slice.primary.title_richtext} />
+            </div>
           )}
 
           {isFilled.richText(slice.primary.sub_heading_1) && (
-            <div className="text-slate-300 text-lg text-balance max-w-md">
-              <PrismicRichText field={slice.primary.sub_heading_1} />
+            <div className="text-slate-300 max-w-md">
+              <RichTextWithComponents richText={slice.primary.sub_heading_1} />
             </div>
           )}
 
           {isFilled.richText(slice.primary.sub_heading_2) && (
-            <div className="text-slate-300 text-lg text-balance max-w-md">
-              <PrismicRichText field={slice.primary.sub_heading_2} />
+            <div className="text-slate-300 max-w-md">
+              <RichTextWithComponents richText={slice.primary.sub_heading_2} />
             </div>
           )}
           {isFilled.richText(slice.primary.sub_heading_3) && (
-            <div className="text-slate-300 text-lg text-balance max-w-md">
-              <PrismicRichText field={slice.primary.sub_heading_3} />
+            <div className="text-slate-300 max-w-md">
+              <RichTextWithComponents richText={slice.primary.sub_heading_3} />
             </div>
           )}
 

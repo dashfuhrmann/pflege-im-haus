@@ -1,5 +1,6 @@
 import BoundedFull from "@/components/BoundedFull";
 import ButtonLink from "@/components/ButtonLink";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
@@ -27,12 +28,14 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
         />
       </div>
       <div className="absolute top-[50%] -translate-y-[50%] w-full flex flex-col justify-center items-center gap-4">
-        <h1 className="text-5xl text-white font-bold">
-          {slice.primary.heading}
-        </h1>
+        <div className="text-white">
+          <RichTextWithComponents richText={slice.primary.heading_richtext} />
+        </div>
         <span className="bg-dunkelblau rounded-full w-20 h-2" />
-        <div className="text-gray-100 font-bold text-3xl text-center max-w-md ">
-          {slice.primary.subheading}
+        <div className="text-white text-center max-w-md">
+          <RichTextWithComponents
+            richText={slice.primary.subheading_richtext}
+          />
         </div>
         {isFilled.keyText(slice.primary.link_label) && (
           <ButtonLink field={slice.primary.link} className="text-lg">

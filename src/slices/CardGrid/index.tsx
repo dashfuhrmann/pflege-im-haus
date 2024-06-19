@@ -1,7 +1,8 @@
 import BoundedFull from "@/components/BoundedFull";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `CardGrid`.
@@ -19,11 +20,11 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
       className="bg-gray-200 bg-opacity-50 flex-col md:flex-row"
     >
       <div className="flex flex-col w-full md:w-1/2 justify-end p-24 mb-auto mt-auto gap-4">
-        <h1 className="font-bold text-3xl text-center">
-          <>{slice.primary.heading}</>
-        </h1>
+        <div className="font-bold text-3xl text-center">
+          <RichTextWithComponents richText={slice.primary.heading_richtext} />
+        </div>
         <div className="text-lg text-center">
-          <PrismicRichText field={slice.primary.description} />
+          <RichTextWithComponents richText={slice.primary.description} />
         </div>
         <div className="flex-shrink-0 bg-gray-200 mx-auto rounded-full h-[240px] w-[240px] p-4">
           <PrismicNextImage
@@ -46,9 +47,11 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
                 height={64}
               />
             </div>
-            <h1 className="text-xl text-center">{testemonial.name}</h1>
+            <div className="text-center">
+              <RichTextWithComponents richText={testemonial.name_richtext} />
+            </div>
             <div className="text-lg text-center">
-              <PrismicRichText field={testemonial.quote} />
+              <RichTextWithComponents richText={testemonial.quote} />
             </div>
           </div>
         ))}

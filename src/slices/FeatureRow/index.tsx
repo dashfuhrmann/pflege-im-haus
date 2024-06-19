@@ -1,12 +1,13 @@
 import { Content } from "@prismicio/client";
 
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import community from "../../public/community.svg";
 import healthcare from "../../public/healthcare.svg";
 import competence from "../../public/competence.svg";
 import networking from "../../public/networking.svg";
 import BoundedFull from "@/components/BoundedFull";
 import Image from "next/image";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 
 const icons = {
   community: community,
@@ -30,8 +31,8 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="flex-col"
     >
-      <span className="w-full text-center text-6xl text-black">
-        <PrismicRichText field={slice.primary.heading} />
+      <span className="w-full text-center">
+        <RichTextWithComponents richText={slice.primary.heading} />
       </span>
       <ul className="flex flex-col md:flex-row w-full gap-4">
         {slice.items.map((card, index) => (
@@ -50,11 +51,11 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
                 />
               )}
             </div>
-            <div className="text-xl font-bold text-gray-500 text-center text-balance">
-              <PrismicRichText field={card.heading} />
+            <div className=" text-gray-500 text-center">
+              <RichTextWithComponents richText={card.heading} />
             </div>
-            <div className="text-lg font-normal text-center text-balance">
-              <PrismicRichText field={card.description} />
+            <div className="text-center">
+              <RichTextWithComponents richText={card.description} />
             </div>
           </li>
         ))}

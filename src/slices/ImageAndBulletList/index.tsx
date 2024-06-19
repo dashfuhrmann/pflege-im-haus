@@ -1,7 +1,8 @@
 import BoundedFull from "@/components/BoundedFull";
 import ImageSection from "@/components/ImageSection";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `ImageAndBulletList`.
@@ -21,17 +22,17 @@ const ImageAndBulletList = ({
       data-slice-variation={slice.variation}
       className="bg-secondary bg-opacity-50 flex-col"
     >
-      <div className="w-full text-center text-6xl break-words">
-        <PrismicRichText field={slice.primary.heading} />{" "}
+      <div className="w-full text-center break-words">
+        <RichTextWithComponents richText={slice.primary.heading} />{" "}
       </div>
-      <div className="w-full text-center text-3xl text-black">
-        <PrismicRichText field={slice.primary.subheading} />
+      <div className="w-full text-center">
+        <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
       <ImageSection
         items={slice.items}
         image={slice.primary.image}
-        cardHeading={slice.primary.card_heading}
-        cardDescription={slice.primary.card_description}
+        cardHeading={slice.primary.card_heading_richtext}
+        cardDescription={slice.primary.card_description_richtext}
         buttonText={slice.primary.button_text}
         buttonLink={slice.primary.button_link}
       />
