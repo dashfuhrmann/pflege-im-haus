@@ -2,7 +2,6 @@ import { Colors } from "@/colors";
 import BoundedFull from "@/components/BoundedFull";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import RichText from "../RichText";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 
 /**
