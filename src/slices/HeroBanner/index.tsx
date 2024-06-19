@@ -28,7 +28,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
         />
       </div>
       <div className="absolute top-[50%] -translate-y-[50%] w-full flex flex-col justify-center items-center gap-4">
-        <div className="text-white">
+        <div className="text-white text-center max-w-md">
           <RichTextWithComponents richText={slice.primary.heading_richtext} />
         </div>
         <span className="bg-dunkelblau rounded-full w-20 h-2" />
