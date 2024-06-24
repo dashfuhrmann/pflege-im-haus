@@ -16,7 +16,7 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
         heading3: ({ children }) => <h3 className="text-3xl">{children}</h3>,
         heading4: ({ children }) => <h4 className="text-2xl">{children}</h4>,
         heading5: ({ children }) => <h5 className="text-xl">{children}</h5>,
-        heading6: ({ children }) => <h6 className="text-large">{children}</h6>,
+        heading6: ({ children }) => <h6 className="text-lg">{children}</h6>,
         list: ({ children }) => <ol className="list-disc ml-4">{children}</ol>,
         oList: ({ children }) => (
           <ol className="list-decimal ml-4">{children}</ol>

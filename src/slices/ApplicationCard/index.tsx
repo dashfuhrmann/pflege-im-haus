@@ -20,7 +20,7 @@ const ImageAndText = (props: {
           className="w-20 h-20 p-3"
         />
       </div>
-      <div className="flex flex-col text-lg text-white">
+      <div className="flex flex-col text-2xl text-white">
         <span>{props.heading}</span>
         <RichTextWithComponents richText={props.startDate} />
       </div>
