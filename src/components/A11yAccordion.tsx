@@ -10,6 +10,7 @@ type AccordionProps = {
   content: ReactNode;
   initalOpen?: boolean;
   backgroundColor?: string;
+  noBorder?: boolean;
 };
 
 function AccordionTitle(props: {
@@ -82,7 +83,7 @@ function A11yAccordion(props: AccordionProps) {
         flexGrow: 1,
         flexDirection: "column",
       }}
-      className={`border-2 border-black rounded-2xl transition-all`}
+      className={`${props.noBorder ? "border-none" : "border-2 border-black rounded-2xl transition-all"}`}
     >
       <h3>
         <button
