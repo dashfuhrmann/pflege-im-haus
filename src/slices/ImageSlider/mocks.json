@@ -144,5 +144,273 @@
 				]
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textBottom",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "policeman",
+				"type": "Text"
+			},
+			"title_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod eu enim culpa laboris dolor id velit eiusmod aliqua ad excepteur deserunt. Sunt irure sunt cupidatat velit eu eu Lorem."
+						}
+					}
+				]
+			},
+			"sub_heading_1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat enim cupidatat velit pariatur ea consequat non id anim incididunt est sunt laboris.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"sub_heading_2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum minim reprehenderit ad cillum nisi consectetur id anim incididunt. ",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"sub_heading_3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod incididunt amet veniam pariatur consectetur non. Deserunt excepteur exercitation in pariatur aute ex laboris dolor quis ullamco eiusmod. ",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "someone",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+								"width": 3648,
+								"height": 4560
+							},
+							"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+							"width": 3648,
+							"height": 4560,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1582789760972-c8916cebe649?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE5MjE4MDAyfDA&ixlib=rb-4.0.3&q=85",
+							"alt": "orange fruit in water with water",
+							"origin": {
+								"id": "uYM_PQJ8VvY",
+								"url": "https://images.unsplash.com/photo-1582789760972-c8916cebe649?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE5MjE4MDAyfDA&ixlib=rb-4.0.3&q=85",
+								"width": 4380,
+								"height": 2901
+							},
+							"width": 4380,
+							"height": 2901,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textCenter",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "thought",
+				"type": "Text"
+			},
+			"title_richtext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consectetur est minim occaecat voluptate eiusmod magna deserunt dolore magna sit excepteur est deserunt."
+						}
+					}
+				]
+			},
+			"sub_heading_1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit fugiat commodo in Lorem enim reprehenderit commodo fugiat incididunt aliquip laboris officia officia. Pariatur velit do duis duis velit amet consequat non ipsum esse ut."
+						}
+					}
+				]
+			},
+			"sub_heading_2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi nostrud cupidatat excepteur eu veniam eiusmod incididunt cupidatat adipisicing incididunt in ut nostrud exercitation."
+						}
+					}
+				]
+			},
+			"sub_heading_3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Anim nostrud occaecat ullamco ut cillum ipsum ut velit officia irure ullamco officia est elit. Exercitation mollit quis exercitation incididunt est nisi dolore ea laboris id ut pariatur dolor. Culpa id veniam elit ea in ullamco ea aliquip aliqua sit."
+						}
+					}
+				]
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "missing",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+								"width": 4010,
+								"height": 4010
+							},
+							"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+							"width": 4010,
+							"height": 4010,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1582789760972-c8916cebe649?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE5MjE4MDAyfDA&ixlib=rb-4.0.3&q=85",
+							"alt": "orange fruit in water with water",
+							"origin": {
+								"id": "uYM_PQJ8VvY",
+								"url": "https://images.unsplash.com/photo-1582789760972-c8916cebe649?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE5MjE4MDAyfDA&ixlib=rb-4.0.3&q=85",
+								"width": 4380,
+								"height": 2901
+							},
+							"width": 4380,
+							"height": 2901,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
 	}
 ]

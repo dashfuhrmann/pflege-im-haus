@@ -34,8 +34,10 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex flex-col w-full h-[800px]">
-        <div className="absolute w-full lg:w-1/2 p-32 z-10 gap-4 flex flex-col">
+      <div className="flex flex-col w-full h-[800px] relative">
+        <div
+          className={`absolute w-full ${slice.variation === "default" && "left-[25%] top-[25%] translate-x-[-25%] translate-y-[-25%]"} ${slice.variation === "textBottom" && "left-[25%] top-[75%] translate-x-[-25%] translate-y-[-75%]"} ${slice.variation === "textCenter" && "left-[25%] top-[50%] translate-x-[-25%] translate-y-[-50%]"} lg:w-1/2  z-10 gap-4 flex flex-col`}
+        >
           {isFilled.keyText(slice.primary.title) && (
             <div className="text-white">
               <RichTextWithComponents richText={slice.primary.title_richtext} />
