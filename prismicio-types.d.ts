@@ -1169,7 +1169,7 @@ export interface HeroBannerSliceDefaultPrimary {
 }
 
 /**
- * Default variation for HeroBanner Slice
+ * Text Center variation for HeroBanner Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -1182,9 +1182,188 @@ export type HeroBannerSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *HeroBanner → Primary*
+ */
+export interface HeroBannerSliceTextLeftPrimary {
+  /**
+   * Image field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Heading Richtext field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
+   * Subheading field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subheading: prismic.KeyTextField;
+
+  /**
+   * Subheading Richtext field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.subheading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading_richtext: prismic.RichTextField;
+
+  /**
+   * Link field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Link Label field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.link_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_label: prismic.KeyTextField;
+}
+
+/**
+ * Text Left variation for HeroBanner Slice
+ *
+ * - **API ID**: `textLeft`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroBannerSliceTextLeft = prismic.SharedSliceVariation<
+  "textLeft",
+  Simplify<HeroBannerSliceTextLeftPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *HeroBanner → Primary*
+ */
+export interface HeroBannerSliceTextRightPrimary {
+  /**
+   * Image field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Heading Richtext field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
+   * Subheading field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subheading: prismic.KeyTextField;
+
+  /**
+   * Subheading Richtext field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.subheading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading_richtext: prismic.RichTextField;
+
+  /**
+   * Link field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Link Label field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.link_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_label: prismic.KeyTextField;
+}
+
+/**
+ * Text Right variation for HeroBanner Slice
+ *
+ * - **API ID**: `textRight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroBannerSliceTextRight = prismic.SharedSliceVariation<
+  "textRight",
+  Simplify<HeroBannerSliceTextRightPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *HeroBanner*
  */
-type HeroBannerSliceVariation = HeroBannerSliceDefault;
+type HeroBannerSliceVariation =
+  | HeroBannerSliceDefault
+  | HeroBannerSliceTextLeft
+  | HeroBannerSliceTextRight;
 
 /**
  * HeroBanner Shared Slice
@@ -1955,8 +2134,12 @@ declare module "@prismicio/client" {
       FullWidthImageSliceDefault,
       HeroBannerSlice,
       HeroBannerSliceDefaultPrimary,
+      HeroBannerSliceTextLeftPrimary,
+      HeroBannerSliceTextRightPrimary,
       HeroBannerSliceVariation,
       HeroBannerSliceDefault,
+      HeroBannerSliceTextLeft,
+      HeroBannerSliceTextRight,
       ImageAndAccordionRowSlice,
       ImageAndAccordionRowSliceDefaultPrimary,
       ImageAndAccordionRowSliceDefaultItem,
