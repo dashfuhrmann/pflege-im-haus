@@ -751,10 +751,7 @@ export interface CenteredTextSliceDefaultPrimary {
    * - **API ID Path**: centered_text.primary.backgroundcolor
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  backgroundcolor: prismic.SelectField<
-    "weiß" | "grau" | "dunkelblau" | "graublau" | "hellgrün",
-    "filled"
-  >;
+  backgroundcolor: prismic.SelectField<"weiß" | "grau" | "secondary", "filled">;
 }
 
 /**

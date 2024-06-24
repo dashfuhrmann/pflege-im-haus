@@ -61,9 +61,7 @@
             "options": [
               "weiß",
               "grau",
-              "dunkelblau",
-              "graublau",
-              "hellgrün"
+              "secondary"
             ],
             "default_value": "weiß"
           }

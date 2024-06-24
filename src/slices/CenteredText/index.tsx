@@ -17,10 +17,7 @@ const CenteredText = ({ slice }: CenteredTextProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      styles={{
-        backgroundColor: Colors[slice.primary.backgroundcolor],
-      }}
-      className={`bg-${slice.primary.backgroundcolor} flex-col`}
+      className={`bg-${slice.primary.backgroundcolor} bg-opacity-50 flex-col`}
     >
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col items-center gap-2">

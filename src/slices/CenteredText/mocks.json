@@ -26,8 +26,8 @@
 			},
 			"backgroundcolor": {
 				"__TYPE__": "FieldContent",
-				"type": "Select",
-				"value": "weiß"
+				"value": "grau",
+				"type": "Select"
 			},
 			"heading": {
 				"__TYPE__": "FieldContent",
