@@ -8,9 +8,7 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
     <PrismicRichText
       field={props.richText}
       components={{
-        paragraph: ({ children }) => (
-          <p className="text-balance text-lg">{children}</p>
-        ),
+        paragraph: ({ children }) => <p className="text-lg">{children}</p>,
         heading1: ({ children }) => <h1 className="text-5xl">{children}</h1>,
         heading2: ({ children }) => <h2 className="text-4xl">{children}</h2>,
         heading3: ({ children }) => <h3 className="text-3xl">{children}</h3>,
