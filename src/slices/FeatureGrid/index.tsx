@@ -31,16 +31,30 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
             className="flex flex-row w-full items-center gap-4 p-4"
             key={index}
           >
-            <div className="flex justify-center bg-gray-200 rounded-full h-[160px] min-w-[160px] items-center">
-              {item.icon && (
-                <PrismicNextImage
-                  width={120}
-                  height={120}
-                  className="flex-grow-1 mx-auto p-4"
-                  field={item.icon}
-                />
-              )}
-            </div>
+            {slice.variation === "noBackgroundImages" && (
+              <div className="flex min-h-[160px] min-w-[160px] ">
+                {item.icon && (
+                  <PrismicNextImage
+                    width={160}
+                    height={160}
+                    className="flex-grow-1 rounded-full"
+                    field={item.icon}
+                  />
+                )}
+              </div>
+            )}
+            {slice.variation === "default" && (
+              <div className="flex justify-center bg-gray-200 rounded-full h-[160px] min-w-[160px] items-center">
+                {item.icon && (
+                  <PrismicNextImage
+                    width={120}
+                    height={120}
+                    className="flex-grow-1 mx-auto p-4"
+                    field={item.icon}
+                  />
+                )}
+              </div>
+            )}
             <div className="flex flex-col gap-2">
               <div className="text-black text-left">
                 <RichTextWithComponents richText={item.heading} />

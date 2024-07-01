@@ -858,9 +858,84 @@ export type FeatureGridSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *FeatureGrid → Primary*
+ */
+export interface FeatureGridSliceNoBackgroundImagesPrimary {
+  /**
+   * Heading field in *FeatureGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Subheading field in *FeatureGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FeatureGrid → Items*
+ */
+export interface FeatureGridSliceNoBackgroundImagesItem {
+  /**
+   * Heading field in *FeatureGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.items[].heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *FeatureGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Icon field in *FeatureGrid → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+}
+
+/**
+ * No Background Images variation for FeatureGrid Slice
+ *
+ * - **API ID**: `noBackgroundImages`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeatureGridSliceNoBackgroundImages = prismic.SharedSliceVariation<
+  "noBackgroundImages",
+  Simplify<FeatureGridSliceNoBackgroundImagesPrimary>,
+  Simplify<FeatureGridSliceNoBackgroundImagesItem>
+>;
+
+/**
  * Slice variation for *FeatureGrid*
  */
-type FeatureGridSliceVariation = FeatureGridSliceDefault;
+type FeatureGridSliceVariation =
+  | FeatureGridSliceDefault
+  | FeatureGridSliceNoBackgroundImages;
 
 /**
  * FeatureGrid Shared Slice
@@ -2325,8 +2400,11 @@ declare module "@prismicio/client" {
       FeatureGridSlice,
       FeatureGridSliceDefaultPrimary,
       FeatureGridSliceDefaultItem,
+      FeatureGridSliceNoBackgroundImagesPrimary,
+      FeatureGridSliceNoBackgroundImagesItem,
       FeatureGridSliceVariation,
       FeatureGridSliceDefault,
+      FeatureGridSliceNoBackgroundImages,
       FeatureRowSlice,
       FeatureRowSliceDefaultPrimary,
       FeatureRowSliceDefaultItem,
