@@ -25,14 +25,13 @@ const ImageAndCallToAction = ({
       className="flex flex-row bg-white py-8 max-h-[400px] justify-center"
     >
       <div className="flex flex-col md:flex-row w-full gap-4 md:gap-16">
-        <div className="flex w-full md:w-1/3 md:max-w-1/3 relative">
+        <div className="flex w-full md:w-1/2 md:max-w-1/2 relative">
           <PrismicNextImage
             field={slice.primary.image}
             className="rounded-2xl"
-            fill={true}
           />
         </div>
-        <div className="flex w-full flex-col justify-center md:w-2/3 md:gap-4 gap-4">
+        <div className="flex w-full flex-col justify-center md:w-1/2 md:gap-4 gap-4">
           <div className="w-fit after:block after:h-1 after:bg-secondary after:rounded-xl">
             <RichTextWithComponents richText={slice.primary.heading_richtext} />
           </div>
