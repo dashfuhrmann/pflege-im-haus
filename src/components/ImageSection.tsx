@@ -30,7 +30,7 @@ function ImageSection({
           height={image.dimensions?.height}
         />
       </div>
-      <div className="flex flex-col w-full md:w-1/2 gap-6 md:pl-12 pl-0">
+      <div className="flex flex-col w-full md:w-1/2 gap-6 md:pl-12 pl-0 justify-between">
         <RichTextWithComponents richText={cardHeading} />
         <div className="mt-4">
           <RichTextWithComponents richText={cardDescription} />
