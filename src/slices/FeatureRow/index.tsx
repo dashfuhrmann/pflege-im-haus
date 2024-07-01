@@ -51,7 +51,7 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
                 />
               )}
             </div>
-            <div className=" text-gray-500 text-center">
+            <div className=" text-black text-center">
               <RichTextWithComponents richText={card.heading} />
             </div>
             <div className="text-center">
