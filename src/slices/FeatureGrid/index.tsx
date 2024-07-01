@@ -19,7 +19,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="bg-secondary flex-col"
     >
-      <div className="w-full">
+      <div className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.heading} />
       </div>
       <div className="w-full text-center">
@@ -27,17 +27,14 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       </div>
       <ul className="grid grid-cols-1 md:grid-cols-2">
         {slice.items.map((item, index) => (
-          <li
-            className="flex flex-row w-full items-center gap-4 p-4"
-            key={index}
-          >
+          <li className="flex flex-row w-full gap-4 p-4" key={index}>
             {slice.variation === "noBackgroundImages" && (
-              <div className="flex min-h-[160px] min-w-[160px] ">
+              <div className="flex items-center justify-center min-h-[280px] min-w-[280px] rounded-full relative">
                 {item.icon && (
                   <PrismicNextImage
-                    width={160}
-                    height={160}
-                    className="flex-grow-1 rounded-full"
+                    width={280}
+                    height={280}
+                    className="flex-grow-1"
                     field={item.icon}
                   />
                 )}
@@ -55,7 +52,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
                 )}
               </div>
             )}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 flex-grow-0">
               <div className="text-black text-left">
                 <RichTextWithComponents richText={item.heading} />
               </div>
