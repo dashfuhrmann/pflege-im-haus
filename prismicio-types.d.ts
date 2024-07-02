@@ -962,24 +962,26 @@ export interface FeatureRowSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Icon Backround Color field in *FeatureRow → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: gray
+   * - **API ID Path**: feature_row.primary.icon_backround_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon_backround_color: prismic.SelectField<
+    "gray" | "white" | "primary" | "secondary",
+    "filled"
+  >;
 }
 
 /**
  * Primary content in *FeatureRow → Items*
  */
 export interface FeatureRowSliceDefaultItem {
-  /**
-   * Icon field in *FeatureRow → Items*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: feature_row.items[].icon
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  icon: prismic.SelectField<
-    "healthcare" | "competence" | "community" | "networking"
-  >;
-
   /**
    * Heading field in *FeatureRow → Items*
    *
@@ -999,6 +1001,16 @@ export interface FeatureRowSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * Icon field in *FeatureRow → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_row.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
 }
 
 /**

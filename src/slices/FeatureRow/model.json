@@ -20,22 +20,23 @@
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
+        },
+        "icon_backround_color": {
+          "type": "Select",
+          "config": {
+            "label": "Icon Backround Color",
+            "placeholder": "",
+            "options": [
+              "gray",
+              "white",
+              "primary",
+              "secondary"
+            ],
+            "default_value": "gray"
+          }
         }
       },
       "items": {
-        "icon": {
-          "type": "Select",
-          "config": {
-            "label": "Icon",
-            "placeholder": "",
-            "options": [
-              "healthcare",
-              "competence",
-              "community",
-              "networking"
-            ]
-          }
-        },
         "heading": {
           "type": "StructuredText",
           "config": {
@@ -52,6 +53,14 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "Icon",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       }

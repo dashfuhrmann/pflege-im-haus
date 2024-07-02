@@ -30,17 +30,16 @@ function ImageSection({
           height={image.dimensions?.height}
         />
       </div>
-      <div className="flex flex-col w-full md:w-1/2 gap-6 md:pl-12 pl-0 justify-between">
+      <div className="flex flex-col w-full md:w-1/2 gap-6 md:pl-12 pl-0 h-auto flex-1">
         <RichTextWithComponents richText={cardHeading} />
         <div className="mt-4">
           <RichTextWithComponents richText={cardDescription} />
         </div>
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-8">
           {items.map((item, index) => (
             <li key={index} className="flex flex-row items-center gap-4">
               {item.iconimage && (
                 <PrismicNextImage
-                  className="flex-shrink-0"
                   field={item.iconimage}
                   width={64}
                   height={64}
