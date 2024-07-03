@@ -1,4 +1,4 @@
-import { Colors } from "@/colors";
+import { ColorsMap } from "@/colors";
 import BoundedFull from "@/components/BoundedFull";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
@@ -17,7 +17,11 @@ const CenteredText = ({ slice }: CenteredTextProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`bg-${slice.primary.backgroundcolor} bg-opacity-50 flex-col`}
+      className={`flex-col ${slice.primary.backgroundcolor === "primary" ? "text-white" : "text-black"}`}
+      styles={{
+        backgroundColor:
+          ColorsMap[slice.primary.backgroundcolor] || ColorsMap.default,
+      }}
     >
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col items-center gap-2">

@@ -59,11 +59,13 @@
             "label": "BackgroundColor",
             "placeholder": "",
             "options": [
-              "weiß",
-              "grau",
-              "secondary"
+              "default",
+              "primary",
+              "secondary",
+              "secondary50",
+              "lightGray"
             ],
-            "default_value": "weiß"
+            "default_value": "default"
           }
         }
       },
