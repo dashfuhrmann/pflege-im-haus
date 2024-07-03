@@ -9,6 +9,7 @@ import BoundedFull from "@/components/BoundedFull";
 import Image from "next/image";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { PrismicNextImage } from "@prismicio/next";
+import { ColorsMap, ColorsType } from "@/colors";
 
 const icons = {
   community: community,
@@ -42,7 +43,12 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
             key={index}
           >
             <div
-              className={`flex justify-center bg-${slice.primary.icon_backround_color} rounded-full h-[160px] w-[160px] items-center`}
+              style={{
+                backgroundColor:
+                  ColorsMap[slice.primary.icon_backround_color] ||
+                  ColorsMap.default,
+              }}
+              className={`flex justify-center rounded-full h-[160px] w-[160px] items-center`}
             >
               {card.icon && (
                 <PrismicNextImage

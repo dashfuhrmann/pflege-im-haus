@@ -10,12 +10,10 @@ module.exports = {
       colors: {
         primary: "#0e5082",
         secondary: "#88c6aa",
-        hellgrün: "#8ac8ad",
-        grau: "#b0b5b5",
+        lightGray: "#e2e8f0",
         dunkelblau: "#084a7b",
         graublau: "#5a7d96",
-        white: "#ffffff",
-        gray: "#E2E8F0",
+        default: "#ffffff",
       },
       fontFamily: {
         sans: ["var(--font-hk-grotesk)"],

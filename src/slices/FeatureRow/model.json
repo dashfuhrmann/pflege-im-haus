@@ -27,12 +27,12 @@
             "label": "Icon Backround Color",
             "placeholder": "",
             "options": [
-              "gray",
-              "white",
+              "lightGray",
+              "default",
               "primary",
               "secondary"
             ],
-            "default_value": "gray"
+            "default_value": "lightGray"
           }
         }
       },

@@ -968,12 +968,12 @@ export interface FeatureRowSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: gray
+   * - **Default Value**: lightGray
    * - **API ID Path**: feature_row.primary.icon_backround_color
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   icon_backround_color: prismic.SelectField<
-    "gray" | "white" | "primary" | "secondary",
+    "lightGray" | "default" | "primary" | "secondary",
     "filled"
   >;
 }

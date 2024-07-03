@@ -16,7 +16,7 @@
 			},
 			"icon_backround_color": {
 				"__TYPE__": "FieldContent",
-				"value": "gray",
+				"value": "primary",
 				"type": "Select"
 			}
 		},
