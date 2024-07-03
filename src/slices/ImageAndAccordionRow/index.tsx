@@ -1,3 +1,4 @@
+import { ColorsMap } from "@/colors";
 import A11yAccordion from "@/components/A11yAccordion";
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
@@ -30,12 +31,16 @@ const ImageAndAccordionRow = ({
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-white flex-col"
+      className={`flex-col ${slice.primary.backgroundcolor === "primary" ? "text-white" : "text-black"}`}
+      styles={{
+        backgroundColor:
+          ColorsMap[slice.primary.backgroundcolor] || ColorsMap.default,
+      }}
     >
-      <div className="w-full text-center text-black">
+      <div className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.heading} />
       </div>
-      <div className="w-full text-center text-black">
+      <div className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
 

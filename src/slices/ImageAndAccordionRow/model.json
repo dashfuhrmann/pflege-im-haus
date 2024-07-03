@@ -37,6 +37,21 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "backgroundcolor": {
+          "type": "Select",
+          "config": {
+            "label": "BackgroundColor",
+            "placeholder": "",
+            "options": [
+              "default",
+              "primary",
+              "secondary",
+              "lightGray",
+              "secondary50"
+            ],
+            "default_value": "default"
+          }
         }
       },
       "items": {

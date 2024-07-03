@@ -1,3 +1,4 @@
+import { ColorsMap } from "@/colors";
 import BoundedFull from "@/components/BoundedFull";
 import ImageSection from "@/components/ImageSection";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
@@ -20,7 +21,11 @@ const ImageAndBulletList = ({
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-secondary bg-opacity-50 flex-col"
+      className={`flex-col ${slice.primary.backgroundcolor === "primary" ? "text-white" : "text-black"}`}
+      styles={{
+        backgroundColor:
+          ColorsMap[slice.primary.backgroundcolor] || ColorsMap.default,
+      }}
     >
       <div className="w-full text-center break-words">
         <RichTextWithComponents richText={slice.primary.heading} />{" "}

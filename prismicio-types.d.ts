@@ -1497,6 +1497,20 @@ export interface ImageAndAccordionRowSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * BackgroundColor field in *ImageAndAccordionRow → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: image_and_accordion_row.primary.backgroundcolor
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  backgroundcolor: prismic.SelectField<
+    "default" | "primary" | "secondary" | "lightGray" | "secondary50",
+    "filled"
+  >;
 }
 
 /**
@@ -1599,16 +1613,6 @@ export interface ImageAndBulletListSliceDefaultPrimary {
   subheading: prismic.RichTextField;
 
   /**
-   * Card Heading field in *ImageAndBulletList → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_and_bullet_list.primary.card_heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  card_heading: prismic.KeyTextField;
-
-  /**
    * Card Heading Richtext field in *ImageAndBulletList → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1617,16 +1621,6 @@ export interface ImageAndBulletListSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   card_heading_richtext: prismic.RichTextField;
-
-  /**
-   * Card Description field in *ImageAndBulletList → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_and_bullet_list.primary.card_description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  card_description: prismic.KeyTextField;
 
   /**
    * Card Description Richtext field in *ImageAndBulletList → Primary*
@@ -1657,6 +1651,20 @@ export interface ImageAndBulletListSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField;
+
+  /**
+   * BackgroundColor field in *ImageAndBulletList → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: image_and_bullet_list.primary.backgroundcolor
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  backgroundcolor: prismic.SelectField<
+    "default" | "primary" | "secondary" | "secondary50" | "lightGray",
+    "filled"
+  >;
 }
 
 /**

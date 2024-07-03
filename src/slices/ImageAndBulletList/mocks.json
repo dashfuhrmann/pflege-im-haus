@@ -48,16 +48,6 @@
 					}
 				]
 			},
-			"card_heading": {
-				"__TYPE__": "FieldContent",
-				"value": "zebra",
-				"type": "Text"
-			},
-			"card_description": {
-				"__TYPE__": "FieldContent",
-				"value": "win",
-				"type": "Text"
-			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
 				"value": "energy",
@@ -91,6 +81,11 @@
 						}
 					}
 				]
+			},
+			"backgroundcolor": {
+				"__TYPE__": "FieldContent",
+				"value": "default",
+				"type": "Select"
 			}
 		},
 		"items": [

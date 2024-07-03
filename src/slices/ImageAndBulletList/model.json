@@ -38,13 +38,6 @@
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "card_heading": {
-          "type": "Text",
-          "config": {
-            "label": "Card Heading",
-            "placeholder": ""
-          }
-        },
         "card_heading_richtext": {
           "type": "StructuredText",
           "config": {
@@ -52,13 +45,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "card_description": {
-          "type": "Text",
-          "config": {
-            "label": "Card Description",
-            "placeholder": ""
           }
         },
         "card_description_richtext": {
@@ -83,6 +69,21 @@
             "label": "Button Link",
             "placeholder": "",
             "select": null
+          }
+        },
+        "backgroundcolor": {
+          "type": "Select",
+          "config": {
+            "label": "BackgroundColor",
+            "placeholder": "",
+            "options": [
+              "default",
+              "primary",
+              "secondary",
+              "secondary50",
+              "lightGray"
+            ],
+            "default_value": "default"
           }
         }
       },
