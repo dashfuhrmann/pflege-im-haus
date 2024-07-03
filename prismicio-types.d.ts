@@ -1145,11 +1145,13 @@ export interface FullWidthImageSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: default
    * - **API ID Path**: full_width_image.primary.backgroundcolor
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   backgroundcolor: prismic.SelectField<
-    "hellgrün" | "grau" | "dunkelblau" | "graublau" | "weiß"
+    "default" | "primary" | "secondary" | "secondary50" | "lightGray",
+    "filled"
   >;
 }
 

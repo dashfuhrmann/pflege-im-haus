@@ -1,4 +1,4 @@
-import { Colors } from "@/colors";
+import { ColorsMap } from "@/colors";
 import BoundedFull from "@/components/BoundedFull";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -19,7 +19,10 @@ const FullWidthImage = ({ slice }: FullWidthImageProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`${slice.primary.backgroundcolor ? Colors[slice.primary.backgroundcolor] : "bg-white"}`}
+      styles={{
+        backgroundColor:
+          ColorsMap[slice.primary.backgroundcolor] || ColorsMap.default,
+      }}
     >
       <PrismicNextImage
         layout="responsive"

@@ -26,12 +26,13 @@
             "label": "BackgroundColor",
             "placeholder": "",
             "options": [
-              "hellgrün",
-              "grau",
-              "dunkelblau",
-              "graublau",
-              "weiß"
-            ]
+              "default",
+              "primary",
+              "secondary",
+              "secondary50",
+              "lightGray"
+            ],
+            "default_value": "default"
           }
         }
       },
