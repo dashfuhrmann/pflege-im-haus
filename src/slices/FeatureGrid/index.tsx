@@ -28,7 +28,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       <ul className="grid grid-cols-1 md:grid-cols-2">
         {slice.items.map((item, index) => (
           <li
-            className="flex flex-row w-full items-center gap-4 p-4"
+            className="flex flex-row w-full items-center gap-4 p-8"
             key={index}
           >
             {slice.variation === "noBackgroundImages" && (

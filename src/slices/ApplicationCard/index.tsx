@@ -11,7 +11,7 @@ const ImageAndText = (props: {
   startDate: RichTextField;
 }) => {
   return (
-    <div className="flex w-full flex-row gap-4 p-4 bg-secondary">
+    <div className="flex w-full flex-row gap-4 p-4 bg-secondary rounded-lg">
       <div className="flex flex-shrink-0 rounded-full bg-white items-center justify-center">
         <PrismicNextImage
           field={props.image}
@@ -42,7 +42,7 @@ const ApplicationCard = ({ slice }: ApplicationCardProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex-col bg-gray-200"
+      className="flex-col bg-white"
     >
       <RichTextWithComponents richText={slice.primary.title_richtext} />
       <div className="flex flex-row gap-8">

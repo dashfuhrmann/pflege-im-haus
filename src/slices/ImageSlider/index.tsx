@@ -45,18 +45,18 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
           )}
 
           {isFilled.richText(slice.primary.sub_heading_1) && (
-            <div className="text-slate-300 max-w-md">
+            <div className="text-white max-w-md">
               <RichTextWithComponents richText={slice.primary.sub_heading_1} />
             </div>
           )}
 
           {isFilled.richText(slice.primary.sub_heading_2) && (
-            <div className="text-slate-300 max-w-md">
+            <div className="text-white max-w-md">
               <RichTextWithComponents richText={slice.primary.sub_heading_2} />
             </div>
           )}
           {isFilled.richText(slice.primary.sub_heading_3) && (
-            <div className="text-slate-300 max-w-md">
+            <div className="text-white max-w-md">
               <RichTextWithComponents richText={slice.primary.sub_heading_3} />
             </div>
           )}

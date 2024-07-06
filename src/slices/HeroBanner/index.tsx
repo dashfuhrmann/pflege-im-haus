@@ -20,13 +20,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <div className="flex relative w-full max-h-[500px]">
-        <PrismicNextImage
-          layout="responsive"
-          field={slice.primary.image}
-          width={slice.primary.image.dimensions?.width}
-          height={slice.primary.image.dimensions?.height}
-          className="object-cover"
-        />
+        <PrismicNextImage field={slice.primary.image} />
         <div
           className={`absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[25%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
         >

@@ -63,7 +63,7 @@ export default function Navbar({ settings }: NavbarProps) {
   return (
     <nav className="relative" ref={container}>
       {/* Desktop Navbar */}
-      <div className="flex flex-row px-8">
+      <div className="flex flex-row px-8 border-b-black border-b-2">
         <ul className="mx-auto hidden w-full flex-row items-center gap-4 lg:flex lg:flex-row">
           <Link href="/">
             <div className="w-32 h-24 items-center flex mr-12">
@@ -84,28 +84,27 @@ export default function Navbar({ settings }: NavbarProps) {
                 | Content.SettingsDocumentDataLeistungenMenuItem[] =
                 settings.data[keyToSelect];
               return (
-                <li
-                  className="group cursor-pointer font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
-                  key={index}
-                >
-                  {link.label}
-                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute z-50 mt-4  max-w-full flex-wrap gap-8 bg-white p-12 shadow-[0_4px_6px_-1px_#0000001a] transition-all duration-500 ease-in">
-                    <ul className="grid grid-cols-3 gap-12 mr-auto">
-                      {arrayToSelect.map((item, index) => (
-                        <li key={item.label}>
-                          <PrismicNextLink
-                            key={index}
-                            field={item.link}
-                            className="font-normal normal-case text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline flex flex-row items-center justify-between gap-4"
-                          >
-                            {item.label}
-                            <FiArrowRight />
-                          </PrismicNextLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
+                <PrismicNextLink field={link.link} key={index}>
+                  <li className="group cursor-pointer font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline relative">
+                    {link.label}
+                    <div className="flex border-2 border-t-0 min-w-max max-w-max invisible opacity-0 border-black group-hover:visible group-hover:opacity-100 absolute top-[64px] left-[50%] translate-x-[-50%] z-50 min-w-content flex-wrap bg-white p-8 shadow-[0_4px_6px_-1px_#0000001a] transition-all duration-500 ease-in">
+                      <ul className="flex flex-col gap-4">
+                        {arrayToSelect.map((item, index) => (
+                          <li key={item.label}>
+                            <PrismicNextLink
+                              key={index}
+                              field={item.link}
+                              className="min-w-full font-normal normal-case text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline flex flex-row items-center gap-6"
+                            >
+                              {item.label}
+                              <FiArrowRight className="ml-auto" />
+                            </PrismicNextLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                </PrismicNextLink>
               );
             }
 
@@ -187,13 +186,51 @@ export default function Navbar({ settings }: NavbarProps) {
             <FiX className="h-8 w-8" />
           </button>
         </div>
-        {/* <ul className="h-full">
-          {settings.data.navigation.map((heading, index) => (
-            <li
-              key={index}
-              className="flex border-b-2 border-solid border-slate-500 p-6"
-            >
-              {heading.label !== "Leistungen" ? (
+        <ul className="h-full">
+          {settings.data.navigation.map((heading, index) => {
+            if (heading.label === "Leistungen" || heading.label === "Jobs") {
+              const keyToSelect: Data =
+                heading.label === "Leistungen"
+                  ? "leistungen_menu"
+                  : "jobs_menu";
+              const arrayToSelect:
+                | Content.SettingsDocumentDataLeistungenMenuItem[]
+                | Content.SettingsDocumentDataJobsMenuItem[] =
+                settings.data[keyToSelect];
+              return (
+                <li
+                  key={index}
+                  className="flex flex-col border-b-2 border-solid border-slate-500 p-6"
+                >
+                  <PrismicNextLink
+                    field={heading.link}
+                    className="flex w-full flex-row items-center justify-between font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
+                  >
+                    {heading.label}
+                    <FiArrowRight />
+                  </PrismicNextLink>
+                  <ul>
+                    {arrayToSelect.map((item, index) => (
+                      <li key={item.label} className="block">
+                        <Link
+                          href={"/"}
+                          className="flex flex-row gap-4 p-6 pr-0 justify-between font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
+                        >
+                          <span>{item.label}</span>
+                          <FiArrowRight />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              );
+            }
+
+            return (
+              <li
+                key={index}
+                className="flex border-b-2 border-solid border-slate-500 p-6"
+              >
                 <PrismicNextLink
                   field={heading.link}
                   className="flex w-full flex-row items-center justify-between font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
@@ -201,19 +238,10 @@ export default function Navbar({ settings }: NavbarProps) {
                   {heading.label}
                   <FiArrowRight />
                 </PrismicNextLink>
-              ) : (
-                <A11yAccordion
-                  title={heading.label}
-                  content={AccordionContent({
-                    settings: settings.data.jobs_menu,
-                    openingState,
-                  })}
-                  id={"test"}
-                />
-              )}
-            </li>
-          ))}
-        </ul> */}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </nav>
   );

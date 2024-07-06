@@ -6,7 +6,7 @@ import RichTextWithComponents from "./RichTextWithComponents";
 
 type AccordionProps = {
   id: string;
-  title: RichTextField;
+  title: RichTextField | string;
   content: ReactNode;
   initalOpen?: boolean;
   backgroundColor?: string;
@@ -14,7 +14,7 @@ type AccordionProps = {
 };
 
 function AccordionTitle(props: {
-  heading: RichTextField;
+  heading: RichTextField | string;
   isOpen: boolean;
   backgroundColor?: string;
 }) {
@@ -22,9 +22,16 @@ function AccordionTitle(props: {
     <div
       className={`flex w-full flex-row gap-4 justify-between rounded-2xl p-4 items-center transition-all ${props.isOpen ? "rounded-b-none" : ""} ${props.backgroundColor}`}
     >
-      <span className="text-left">
+      {typeof props.heading === "string" ? (
+        <span>{props.heading}</span>
+      ) : (
+        <span className="text-left">
+          <RichTextWithComponents richText={props.heading} />
+        </span>
+      )}
+      {/* <span className="text-left">
         <RichTextWithComponents richText={props.heading} />
-      </span>
+      </span> */}
       <svg
         width="16"
         height="16"
