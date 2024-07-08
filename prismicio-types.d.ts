@@ -524,6 +524,31 @@ export type ApplicationCardSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ApplicationForm → Primary*
+ */
+export interface ApplicationFormSliceDefaultPrimary {
+  /**
+   * Heading field in *ApplicationForm → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_form.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Subheading field in *ApplicationForm → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_form.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.RichTextField;
+}
+
+/**
  * Primary content in *ApplicationForm → Items*
  */
 export interface ApplicationFormSliceDefaultItem {
@@ -547,7 +572,7 @@ export interface ApplicationFormSliceDefaultItem {
  */
 export type ApplicationFormSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ApplicationFormSliceDefaultPrimary>,
   Simplify<ApplicationFormSliceDefaultItem>
 >;
 
@@ -2410,6 +2435,7 @@ declare module "@prismicio/client" {
       ApplicationCardSliceVariation,
       ApplicationCardSliceDefault,
       ApplicationFormSlice,
+      ApplicationFormSliceDefaultPrimary,
       ApplicationFormSliceDefaultItem,
       ApplicationFormSliceVariation,
       ApplicationFormSliceDefault,

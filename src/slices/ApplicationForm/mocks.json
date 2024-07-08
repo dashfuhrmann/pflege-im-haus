@@ -2,7 +2,40 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Dann bewerb dich jetzt!",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 23
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Du bist noch auf der Suche nach einem Job?",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
@@ -11,8 +44,47 @@
 						"job_title",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "golden",
-							"type": "Text"
+							"type": "Text",
+							"value": "Pflegefachkraft"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"job_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Hauswirtschatfskraft"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"job_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Betreuungskraft"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"job_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Pflegehilfskraft"
 						}
 					]
 				]
