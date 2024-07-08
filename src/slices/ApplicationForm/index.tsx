@@ -1,5 +1,6 @@
 "use client";
 
+import { sendEmail } from "@/app/lib/sendEmail";
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content } from "@prismicio/client";
@@ -22,12 +23,16 @@ import {
 type InputProps = {
   type: string;
   label: string;
+  name: string;
   block?: boolean;
 };
 
-const CustomInput = ({ type, label, block }: InputProps) => {
+const CustomInput = ({ type, label, name, block }: InputProps) => {
   return (
-    <TextField className={`flex flex-col gap-2 ${block ? "w-full" : "w-auto"}`}>
+    <TextField
+      name={name}
+      className={`flex flex-col gap-2 ${block ? "w-full" : "w-auto"}`}
+    >
       <Label className="text-lg font-bold">{label}</Label>
       <Input
         type={type}
@@ -54,14 +59,38 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // Prevent default browser page refresh.
     e.preventDefault();
-    console.log("submitted");
 
     // Get form data as an object.
     let data = Object.fromEntries(new FormData(e.currentTarget));
 
+    data = {
+      ...data,
+      job: selectedJob,
+    };
+
     // Submit to your backend API...
     console.log(data);
+
+    const formData = new FormData();
+    formData.append("name", data.vorname + " " + data.nachname);
+    formData.append("email", data.email);
+    formData.append("phone", data.phone);
+    formData.append("job", data.job);
+    formData.append("arbeitsort", data.arbeitsort);
+
+    console.log(formData);
+
+    sendEmail(formData);
   };
+
+  const workingPlaces = [
+    {
+      label: "Knüllwald",
+    },
+    {
+      label: "Homberg (Efze)",
+    },
+  ];
 
   return (
     <BoundedFull
@@ -91,15 +120,26 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
       </ul>
       <Form className="flex flex-col w-full gap-4" onSubmit={onSubmit}>
         <div className="flex flex-row w-full gap-4">
-          <CustomInput type="text" label="Vorname*" block={true} />
-          <CustomInput type="text" label="Nachname*" block={true} />
+          <CustomInput
+            type="text"
+            name="vorname"
+            label="Vorname*"
+            block={true}
+          />
+          <CustomInput
+            type="text"
+            name="nachname"
+            label="Nachname*"
+            block={true}
+          />
         </div>
         <div className="flex flex-row w-full">
-          <CustomInput type="email" label="E-Mail*" block={true} />
+          <CustomInput type="email" name="email" label="E-Mail*" block={true} />
         </div>
         <div className="flex flex-row w-full gap-4">
-          <CustomInput type="text" label="Telefon*" block={true} />
+          <CustomInput type="text" name="phone" label="Telefon*" block={true} />
           <Select
+            name="arbeitsort"
             className="flex flex-col w-full gap-2"
             placeholder="Wunschort*"
           >
@@ -110,7 +150,15 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
             </Button>
             <Popover className="w-[--trigger-width] overflow-auto rounded-md bg-white text-base shadow-lg ring-1 ring-black/5 entering:animate-in entering:fade-in exiting:animate-out exiting:fade-ou">
               <ListBox className="flex flex-col w-full outline-none p-1">
-                <ListBoxItem className="w-full p-4">Knüllwald</ListBoxItem>
+                {workingPlaces.map((item, index) => (
+                  <ListBoxItem
+                    key={index}
+                    id={item.label}
+                    className="w-full p-4"
+                  >
+                    {item.label}
+                  </ListBoxItem>
+                ))}
               </ListBox>
             </Popover>
           </Select>
