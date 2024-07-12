@@ -63,7 +63,7 @@ export default function Navbar({ settings }: NavbarProps) {
   return (
     <nav className="relative" ref={container}>
       {/* Desktop Navbar */}
-      <div className="flex flex-row px-8 border-b-black border-b-2">
+      <div className="flex flex-row px-8">
         <ul className="mx-auto hidden w-full flex-row items-center gap-4 lg:flex lg:flex-row">
           <Link href="/">
             <div className="w-32 h-24 items-center flex mr-12">
@@ -87,7 +87,7 @@ export default function Navbar({ settings }: NavbarProps) {
                 <PrismicNextLink field={link.link} key={index}>
                   <li className="group cursor-pointer font-bold uppercase text-lg hover:decoration-slate-700 hover:decoration-offset-2 hover:underline relative">
                     {link.label}
-                    <div className="flex border-2 border-t-0 min-w-max max-w-max invisible opacity-0 border-black group-hover:visible group-hover:opacity-100 absolute top-[64px] left-[50%] translate-x-[-50%] z-50 min-w-content flex-wrap bg-white p-8 shadow-[0_4px_6px_-1px_#0000001a] transition-all duration-500 ease-in">
+                    <div className="flex min-w-max max-w-max invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute top-[62px] left-[50%] translate-x-[-50%] z-50 min-w-content flex-wrap bg-white p-8 shadow-[0_4px_6px_-1px_#0000001a] transition-all duration-500 ease-in">
                       <ul className="flex flex-col gap-4">
                         {arrayToSelect.map((item, index) => (
                           <li key={item.label}>
