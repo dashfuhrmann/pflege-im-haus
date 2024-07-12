@@ -45,7 +45,7 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
             </div>
           )}
 
-          {isFilled.richText(slice.primary.sub_heading_1) && (
+          {isFilled.richText(slice.items[currentIndex].sub_heading_1) && (
             <div className="text-white max-w-md">
               <RichTextWithComponents
                 richText={slice.items[currentIndex].sub_heading_1}
@@ -53,14 +53,14 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
             </div>
           )}
 
-          {isFilled.richText(slice.primary.sub_heading_2) && (
+          {isFilled.richText(slice.items[currentIndex].sub_heading_2) && (
             <div className="text-white max-w-md">
               <RichTextWithComponents
                 richText={slice.items[currentIndex].sub_heading_2}
               />
             </div>
           )}
-          {isFilled.richText(slice.primary.sub_heading_3) && (
+          {isFilled.richText(slice.items[currentIndex].sub_heading_3) && (
             <div className="text-white max-w-md">
               <RichTextWithComponents
                 richText={slice.items[currentIndex].sub_heading_3}
@@ -68,7 +68,7 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
             </div>
           )}
 
-          {isFilled.keyText(slice.primary.button_label) && (
+          {isFilled.keyText(slice.items[currentIndex].button_label) && (
             <ButtonLink
               field={slice.items[currentIndex].button_link}
               className="py-2 text-xl text-center w-1/2 rounded-xl"
