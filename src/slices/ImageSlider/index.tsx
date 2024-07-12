@@ -1,5 +1,6 @@
 "use client";
 
+import ButtonLink from "@/components/ButtonLink";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -38,7 +39,7 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
         <div
           className={`absolute w-full ${slice.variation === "default" && "left-[25%] top-[25%] translate-x-[-25%] translate-y-[-25%]"} ${slice.variation === "textBottom" && "left-[25%] top-[75%] translate-x-[-25%] translate-y-[-75%]"} ${slice.variation === "textCenter" && "left-[25%] top-[50%] translate-x-[-25%] translate-y-[-50%]"} lg:w-1/2  z-10 gap-4 flex flex-col`}
         >
-          {isFilled.keyText(slice.primary.title) && (
+          {isFilled.richText(slice.primary.title_richtext) && (
             <div className="text-white">
               <RichTextWithComponents richText={slice.primary.title_richtext} />
             </div>
@@ -46,25 +47,34 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
 
           {isFilled.richText(slice.primary.sub_heading_1) && (
             <div className="text-white max-w-md">
-              <RichTextWithComponents richText={slice.primary.sub_heading_1} />
+              <RichTextWithComponents
+                richText={slice.items[currentIndex].sub_heading_1}
+              />
             </div>
           )}
 
           {isFilled.richText(slice.primary.sub_heading_2) && (
             <div className="text-white max-w-md">
-              <RichTextWithComponents richText={slice.primary.sub_heading_2} />
+              <RichTextWithComponents
+                richText={slice.items[currentIndex].sub_heading_2}
+              />
             </div>
           )}
           {isFilled.richText(slice.primary.sub_heading_3) && (
             <div className="text-white max-w-md">
-              <RichTextWithComponents richText={slice.primary.sub_heading_3} />
+              <RichTextWithComponents
+                richText={slice.items[currentIndex].sub_heading_3}
+              />
             </div>
           )}
 
           {isFilled.keyText(slice.primary.button_label) && (
-            <button className="bg-white py-2 text-xl text-center w-1/2 rounded-xl">
-              {slice.primary.button_label}
-            </button>
+            <ButtonLink
+              field={slice.items[currentIndex].button_link}
+              className="py-2 text-xl text-center w-1/2 rounded-xl"
+            >
+              {slice.items[currentIndex].button_label}
+            </ButtonLink>
           )}
         </div>
         {slice.items.map((item, index) => (

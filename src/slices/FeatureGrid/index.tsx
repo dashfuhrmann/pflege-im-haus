@@ -3,6 +3,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { PrismicNextImage } from "@prismicio/next";
+import { ColorsMap } from "@/colors";
 
 /**
  * Props for `FeatureGrid`.
@@ -17,7 +18,11 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-secondary flex-col"
+      className={`flex-col ${slice.primary.background_color === "primary" ? "text-white" : "text-black"}`}
+      styles={{
+        backgroundColor:
+          ColorsMap[slice.primary.background_color] || ColorsMap.default,
+      }}
     >
       <div className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.heading} />
@@ -55,7 +60,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
                 )}
               </div>
             )}
-            <div className="flex flex-col gap-2 flex-grow-0">
+            <div className="flex flex-col gap-4 flex-grow-0">
               <div className="text-black text-left">
                 <RichTextWithComponents richText={item.heading} />
               </div>

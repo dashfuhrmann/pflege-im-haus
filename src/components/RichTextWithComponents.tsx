@@ -19,8 +19,12 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
         oList: ({ children }) => (
           <ol className="list-decimal ml-4">{children}</ol>
         ),
-        oListItem: ({ children }) => <li className="text-lg">{children}</li>,
-        listItem: ({ children }) => <li className="text-lg">{children}</li>,
+        oListItem: ({ children }) => (
+          <li className="text-lg leading-loose">{children}</li>
+        ),
+        listItem: ({ children }) => (
+          <li className="text-lg leading-loose">{children}</li>
+        ),
         hyperlink: ({ children, node }) => (
           <a
             className="underline"

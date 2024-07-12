@@ -34,6 +34,21 @@
             ],
             "default_value": "lightGray"
           }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "",
+            "options": [
+              "default",
+              "lightGray",
+              "primary",
+              "secondary",
+              "secondary50"
+            ],
+            "default_value": "default"
+          }
         }
       },
       "items": {

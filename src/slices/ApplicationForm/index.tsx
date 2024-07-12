@@ -5,7 +5,8 @@ import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { DropEvent, DropItem, FileDropItem, TextDropItem } from "react-aria";
 import {
   Button,
   Input,
@@ -18,7 +19,12 @@ import {
   ListBox,
   ListBoxItem,
   Form,
+  DropZone,
+  DropZoneProps,
+  FileTrigger,
+  Text,
 } from "react-aria-components";
+import { useDrop } from "react-aria";
 
 type InputProps = {
   type: string;
@@ -43,6 +49,46 @@ const CustomInput = ({ type, label, name, block }: InputProps) => {
   );
 };
 
+type FileUploadProps = {
+  name: string;
+};
+
+const FileUpload: React.FC<FileUploadProps> = ({ name }) => {
+  const [files, setFiles] = useState<File[]>([]);
+
+  return (
+    <DropZone
+      onDrop={(e) => {
+        const droppedFiles = e.items.filter(
+          (file) => file.kind === "file"
+        ) as FileDropItem[];
+        const filesArray = droppedFiles.map((file) => file.getFile());
+        setFiles(filesArray);
+      }}
+    >
+      <FileTrigger
+        allowsMultiple
+        onSelect={(e) => {
+          const selectedFiles = Array.from(e);
+          setFiles(selectedFiles);
+        }}
+      >
+        <Button>Select files</Button>
+      </FileTrigger>
+      <Text slot="label" style={{ display: "block" }}>
+        {files.length > 0
+          ? files.map((file) => file.name).join(", ")
+          : "Drop files here"}
+      </Text>
+      <input
+        type="hidden"
+        name={name}
+        value={files.map((file) => file.name).join(", ")}
+      />
+    </DropZone>
+  );
+};
+
 /**
  * Props for `ApplicationForm`.
  */
@@ -62,6 +108,13 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
 
     // Get form data as an object.
     let data = Object.fromEntries(new FormData(e.currentTarget));
+
+    const formDataForFiles = new FormData(e.currentTarget);
+    console.log(formDataForFiles);
+    const files = (formDataForFiles.get("files") as string)
+      ?.split(", ")
+      .map((fileName) => fileName.trim());
+    console.log(files);
 
     data = {
       ...data,
@@ -162,6 +215,9 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
               </ListBox>
             </Popover>
           </Select>
+        </div>
+        <div>
+          <FileUpload name="files" />
         </div>
         <Button
           className="w-full text-white bg-secondary hover:bg-secondary50 text-2xl font-bold px-4 py-4 rounded-lg"

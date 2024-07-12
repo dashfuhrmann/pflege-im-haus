@@ -31,7 +31,11 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex-col"
+      className={`flex-col ${slice.primary.background_color === "primary" ? "text-white" : "text-black"}`}
+      styles={{
+        backgroundColor:
+          ColorsMap[slice.primary.background_color] || ColorsMap.default,
+      }}
     >
       <span className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.heading} />

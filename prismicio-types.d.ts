@@ -836,6 +836,20 @@ export interface FeatureGridSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subheading: prismic.RichTextField;
+
+  /**
+   * Background Color field in *FeatureGrid → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: feature_grid.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "default" | "lightGray" | "primary" | "secondary" | "secondary50",
+    "filled"
+  >;
 }
 
 /**
@@ -1003,6 +1017,20 @@ export interface FeatureRowSliceDefaultPrimary {
    */
   icon_backround_color: prismic.SelectField<
     "lightGray" | "default" | "primary" | "secondary",
+    "filled"
+  >;
+
+  /**
+   * Background Color field in *FeatureRow → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: feature_row.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "default" | "lightGray" | "primary" | "secondary" | "secondary50",
     "filled"
   >;
 }
@@ -1898,16 +1926,6 @@ export type ImageBannerSlice = prismic.SharedSlice<
  */
 export interface ImageSliderSliceDefaultPrimary {
   /**
-   * Title field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
    * Title Richtext field in *ImageSlider → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1916,56 +1934,6 @@ export interface ImageSliderSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title_richtext: prismic.RichTextField;
-
-  /**
-   * Sub Heading 1 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_1
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_1: prismic.RichTextField;
-
-  /**
-   * Sub Heading 2 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_2
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_2: prismic.RichTextField;
-
-  /**
-   * Sub Heading 3 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_3
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_3: prismic.RichTextField;
-
-  /**
-   * Button Link field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_link: prismic.LinkField;
-
-  /**
-   * Button Label field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  button_label: prismic.KeyTextField;
 }
 
 /**
@@ -1981,6 +1949,56 @@ export interface ImageSliderSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Sub Heading 1 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_1: prismic.RichTextField;
+
+  /**
+   * Sub Heading 2 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_2: prismic.RichTextField;
+
+  /**
+   * Sub Heading 3 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_3: prismic.RichTextField;
+
+  /**
+   * Button Link field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Button Label field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
 }
 
 /**
@@ -1999,121 +2017,8 @@ export type ImageSliderSliceDefault = prismic.SharedSliceVariation<
 /**
  * Primary content in *ImageSlider → Primary*
  */
-export interface ImageSliderSliceTextBottomPrimary {
-  /**
-   * Title field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Title Richtext field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.title_richtext
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title_richtext: prismic.RichTextField;
-
-  /**
-   * Sub Heading 1 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_1
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_1: prismic.RichTextField;
-
-  /**
-   * Sub Heading 2 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_2
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_2: prismic.RichTextField;
-
-  /**
-   * Sub Heading 3 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_3
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_3: prismic.RichTextField;
-
-  /**
-   * Button Link field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_link: prismic.LinkField;
-
-  /**
-   * Button Label field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  button_label: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *ImageSlider → Items*
- */
-export interface ImageSliderSliceTextBottomItem {
-  /**
-   * Image field in *ImageSlider → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.items[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Text Bottom variation for ImageSlider Slice
- *
- * - **API ID**: `textBottom`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImageSliderSliceTextBottom = prismic.SharedSliceVariation<
-  "textBottom",
-  Simplify<ImageSliderSliceTextBottomPrimary>,
-  Simplify<ImageSliderSliceTextBottomItem>
->;
-
-/**
- * Primary content in *ImageSlider → Primary*
- */
 export interface ImageSliderSliceTextCenterPrimary {
   /**
-   * Title field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
    * Title Richtext field in *ImageSlider → Primary*
    *
    * - **Field Type**: Rich Text
@@ -2122,56 +2027,6 @@ export interface ImageSliderSliceTextCenterPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title_richtext: prismic.RichTextField;
-
-  /**
-   * Sub Heading 1 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_1
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_1: prismic.RichTextField;
-
-  /**
-   * Sub Heading 2 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_2
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_2: prismic.RichTextField;
-
-  /**
-   * Sub Heading 3 field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.sub_heading_3
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  sub_heading_3: prismic.RichTextField;
-
-  /**
-   * Button Link field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_link: prismic.LinkField;
-
-  /**
-   * Button Label field in *ImageSlider → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_slider.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  button_label: prismic.KeyTextField;
 }
 
 /**
@@ -2187,6 +2042,56 @@ export interface ImageSliderSliceTextCenterItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Sub Heading 1 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_1: prismic.RichTextField;
+
+  /**
+   * Sub Heading 2 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_2: prismic.RichTextField;
+
+  /**
+   * Sub Heading 3 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_3: prismic.RichTextField;
+
+  /**
+   * Button Link field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Button Label field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
 }
 
 /**
@@ -2203,12 +2108,105 @@ export type ImageSliderSliceTextCenter = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ImageSlider → Primary*
+ */
+export interface ImageSliderSliceTextBottomPrimary {
+  /**
+   * Title Richtext field in *ImageSlider → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.primary.title_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_richtext: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ImageSlider → Items*
+ */
+export interface ImageSliderSliceTextBottomItem {
+  /**
+   * Image field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Sub Heading 1 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_1: prismic.RichTextField;
+
+  /**
+   * Sub Heading 2 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_2: prismic.RichTextField;
+
+  /**
+   * Sub Heading 3 field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].sub_heading_3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_heading_3: prismic.RichTextField;
+
+  /**
+   * Button Link field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Button Label field in *ImageSlider → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_slider.items[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+}
+
+/**
+ * Text Bottom variation for ImageSlider Slice
+ *
+ * - **API ID**: `textBottom`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSliderSliceTextBottom = prismic.SharedSliceVariation<
+  "textBottom",
+  Simplify<ImageSliderSliceTextBottomPrimary>,
+  Simplify<ImageSliderSliceTextBottomItem>
+>;
+
+/**
  * Slice variation for *ImageSlider*
  */
 type ImageSliderSliceVariation =
   | ImageSliderSliceDefault
-  | ImageSliderSliceTextBottom
-  | ImageSliderSliceTextCenter;
+  | ImageSliderSliceTextCenter
+  | ImageSliderSliceTextBottom;
 
 /**
  * ImageSlider Shared Slice
@@ -2500,14 +2498,14 @@ declare module "@prismicio/client" {
       ImageSliderSlice,
       ImageSliderSliceDefaultPrimary,
       ImageSliderSliceDefaultItem,
-      ImageSliderSliceTextBottomPrimary,
-      ImageSliderSliceTextBottomItem,
       ImageSliderSliceTextCenterPrimary,
       ImageSliderSliceTextCenterItem,
+      ImageSliderSliceTextBottomPrimary,
+      ImageSliderSliceTextBottomItem,
       ImageSliderSliceVariation,
       ImageSliderSliceDefault,
-      ImageSliderSliceTextBottom,
       ImageSliderSliceTextCenter,
+      ImageSliderSliceTextBottom,
       TimeLineSlice,
       TimeLineSliceDefaultPrimary,
       TimeLineSliceDefaultItem,

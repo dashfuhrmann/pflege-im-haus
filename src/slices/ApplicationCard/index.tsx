@@ -65,7 +65,7 @@ const ApplicationCard = ({ slice }: ApplicationCardProps): JSX.Element => {
       </div>
       <ul className="grid grid-cols-2 gap-6 p-8">
         {slice.items.map((item, index) => (
-          <li key={index} className="flex flex-col gap-2">
+          <li key={index} className="flex flex-col gap-4">
             <RichTextWithComponents richText={item.description} />
           </li>
         ))}
