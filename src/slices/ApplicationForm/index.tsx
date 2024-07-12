@@ -56,29 +56,30 @@ type FileUploadProps = {
 const FileUpload: React.FC<FileUploadProps> = ({ name }) => {
   const [files, setFiles] = useState<File[]>([]);
 
+  const handleDrop = async (e: DropEvent) => {
+    const droppedFilesPromises = e.items
+      .filter((item) => item.kind === "file")
+      .map((item) => (item as FileDropItem).getFile());
+
+    const droppedFiles = await Promise.all(droppedFilesPromises);
+    setFiles((prevFiles) => [...prevFiles, ...droppedFiles]);
+  };
+
+  const handleSelect = (e: FileList | null) => {
+    if (e === null) return;
+    const selectedFiles = Array.from(e);
+    setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+  };
+
   return (
-    <DropZone
-      onDrop={(e) => {
-        const droppedFiles = e.items.filter(
-          (file) => file.kind === "file"
-        ) as FileDropItem[];
-        const filesArray = droppedFiles.map((file) => file.getFile());
-        setFiles(filesArray);
-      }}
-    >
-      <FileTrigger
-        allowsMultiple
-        onSelect={(e) => {
-          const selectedFiles = Array.from(e);
-          setFiles(selectedFiles);
-        }}
-      >
-        <Button>Select files</Button>
+    <DropZone onDrop={handleDrop}>
+      <FileTrigger allowsMultiple onSelect={handleSelect}>
+        <Button>Hier klicken um Dokumente hinzuzufügen</Button>
       </FileTrigger>
-      <Text slot="label" style={{ display: "block" }}>
+      <Text slot="label" className="border-2 border-black p-4 block text-black">
         {files.length > 0
           ? files.map((file) => file.name).join(", ")
-          : "Drop files here"}
+          : "Oder per Drag & Drop hinzufügen"}
       </Text>
       <input
         type="hidden"
@@ -138,7 +139,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
 
   const workingPlaces = [
     {
-      label: "Knüllwald",
+      label: "Knüllwald Rengshausen",
     },
     {
       label: "Homberg (Efze)",
