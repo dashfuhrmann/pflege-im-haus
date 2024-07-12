@@ -923,6 +923,20 @@ export interface FeatureGridSliceNoBackgroundImagesPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subheading: prismic.RichTextField;
+
+  /**
+   * Background Color field in *FeatureGrid → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: feature_grid.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "default" | "lightGray" | "primary" | "secondary" | "secondary50",
+    "filled"
+  >;
 }
 
 /**
