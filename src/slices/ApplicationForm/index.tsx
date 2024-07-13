@@ -25,6 +25,7 @@ import {
   Text,
 } from "react-aria-components";
 import { useDrop } from "react-aria";
+import { FiDelete, FiFileMinus, FiMinusCircle } from "react-icons/fi";
 
 type InputProps = {
   type: string;
@@ -51,11 +52,11 @@ const CustomInput = ({ type, label, name, block }: InputProps) => {
 
 type FileUploadProps = {
   name: string;
+  files: File[];
+  setFiles: React.Dispatch<React.SetStateAction<File[]>>;
 };
 
-const FileUpload: React.FC<FileUploadProps> = ({ name }) => {
-  const [files, setFiles] = useState<File[]>([]);
-
+const FileUpload: React.FC<FileUploadProps> = ({ name, files, setFiles }) => {
   const handleDrop = async (e: DropEvent) => {
     const droppedFilesPromises = e.items
       .filter((item) => item.kind === "file")
@@ -71,21 +72,53 @@ const FileUpload: React.FC<FileUploadProps> = ({ name }) => {
     setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
   };
 
+  const handleDelete = (index: number) => {
+    setFiles((prevFiles) => {
+      const newFiles = [...prevFiles];
+      newFiles.splice(index, 1);
+      return newFiles;
+    });
+  };
+
   return (
     <DropZone onDrop={handleDrop}>
-      <FileTrigger allowsMultiple onSelect={handleSelect}>
-        <Button>Hier klicken um Dokumente hinzuzufügen</Button>
-      </FileTrigger>
-      <Text slot="label" className="border-2 border-black p-4 block text-black">
+      <div className="flex flex-col gap-4">
+        <FileTrigger allowsMultiple onSelect={handleSelect}>
+          <Button className="w-fit">
+            Hier klicken um Dokumente hinzuzufügen
+          </Button>
+        </FileTrigger>
+        {/* <Text slot="label" className="border-2 border-black p-4 block text-black">
         {files.length > 0
           ? files.map((file) => file.name).join(", ")
           : "Oder per Drag & Drop hinzufügen"}
-      </Text>
-      <input
-        type="hidden"
-        name={name}
-        value={files.map((file) => file.name).join(", ")}
-      />
+      </Text> */}
+        <Text
+          slot="description"
+          className="flex flex-col w-full items-center justify-center border-2 border-black p-4 rounded-lg"
+        >
+          Oder per Drag & Drop hier hinzufügen
+          <ul>
+            {files.map((file, index) => (
+              <li
+                key={index}
+                className="flex flex-row gap-4 justify-center items-center"
+              >
+                {file.name}{" "}
+                <Button onPress={() => handleDelete(index)}>
+                  <FiMinusCircle width={24} height={24} />
+                </Button>
+              </li>
+            ))}
+          </ul>
+        </Text>
+
+        <input
+          type="hidden"
+          name={name}
+          value={files.map((file) => file.name).join(", ")}
+        />
+      </div>
     </DropZone>
   );
 };
@@ -101,6 +134,7 @@ export type ApplicationFormProps =
  */
 const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
   const [selectedJob, setSelectedJob] = useState<string>("");
+  const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(null);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -109,13 +143,6 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
 
     // Get form data as an object.
     let data = Object.fromEntries(new FormData(e.currentTarget));
-
-    const formDataForFiles = new FormData(e.currentTarget);
-    console.log(formDataForFiles);
-    const files = (formDataForFiles.get("files") as string)
-      ?.split(", ")
-      .map((fileName) => fileName.trim());
-    console.log(files);
 
     data = {
       ...data,
@@ -131,6 +158,12 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
     formData.append("phone", data.phone);
     formData.append("job", data.job);
     formData.append("arbeitsort", data.arbeitsort);
+
+    if (files.length > 0) {
+      files.forEach((file) => {
+        formData.append("files", file);
+      });
+    }
 
     console.log(formData);
 
@@ -218,7 +251,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
           </Select>
         </div>
         <div>
-          <FileUpload name="files" />
+          <FileUpload name="files" files={files} setFiles={setFiles} />
         </div>
         <Button
           className="w-full text-white bg-secondary hover:bg-secondary50 text-2xl font-bold px-4 py-4 rounded-lg"

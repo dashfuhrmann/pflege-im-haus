@@ -4,19 +4,26 @@ import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
   const data = await request.formData();
-  // console.log(data.getAll("files"));
-  // const files: File[] | null = data.getAll("files") as unknown as File[];
+  console.log(data.getAll("files"));
+  const files: File[] | null = data.getAll("files") as unknown as File[];
   const name: string = data.get("name") as string;
   const email: string = data.get("email") as string;
 
   // console.log(files);
 
-  // if (!files) {
-  //   return NextResponse.json({ success: false });
-  // }
+  if (!files) {
+    return NextResponse.json({ success: false });
+  }
+  const arr: Mail.Attachment[] = [];
 
-  // const bytes = await file.arrayBuffer();
-  // const buffer = Buffer.from(bytes);
+  for (const file of files) {
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    arr.push({
+      filename: file.name,
+      content: buffer,
+    });
+  }
   console.log(data);
   console.log(name, email);
 
@@ -28,23 +35,18 @@ export async function POST(request: NextRequest) {
     },
   });
 
-  const arr: Mail.Attachment[] = [];
-
-  // for (const file of files) {
-  //   const bytes = await file.arrayBuffer();
-  //   const buffer = Buffer.from(bytes);
-  //   arr.push({
-  //     filename: file.name,
-  //     content: buffer,
-  //   });
-  // }
-
   const mailOptions: Mail.Options = {
-    from: email,
-    to: process.env.MY_EMAIL,
+    from: process.env.MY_EMAIL,
+    to: "henriette.hoehle@gmail.com",
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: `Application from ${name} (${email})`,
-    text: "Application",
+    text: `
+      Name: ${name}
+      Email: ${email}
+      Phone: ${data.get("phone")}
+      Job: ${data.get("job")}
+      Arbeitsort: ${data.get("arbeitsort")}
+    `,
     attachments: arr,
   };
 
