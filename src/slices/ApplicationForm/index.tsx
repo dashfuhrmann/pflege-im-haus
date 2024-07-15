@@ -23,6 +23,8 @@ import {
   DropZoneProps,
   FileTrigger,
   Text,
+  FieldError,
+  ValidationResult,
 } from "react-aria-components";
 import { useDrop } from "react-aria";
 import { FiDelete, FiFileMinus, FiMinusCircle } from "react-icons/fi";
@@ -31,10 +33,19 @@ type InputProps = {
   type: string;
   label: string;
   name: string;
+  required: boolean;
   block?: boolean;
+  errorMessage?: string | ((validation: ValidationResult) => string);
 };
 
-const CustomInput = ({ type, label, name, block }: InputProps) => {
+const CustomInput = ({
+  type,
+  label,
+  name,
+  block,
+  required,
+  errorMessage,
+}: InputProps) => {
   return (
     <TextField
       name={name}
@@ -44,8 +55,12 @@ const CustomInput = ({ type, label, name, block }: InputProps) => {
       <Input
         type={type}
         placeholder={label}
+        required={required}
         className={`border-solid border-black rounded-lg border-2 px-4 py-4 text-lg font-normal  `}
       />
+      <FieldError className="text-red-500 text-lg font-bold">
+        {errorMessage}
+      </FieldError>
     </TextField>
   );
 };
@@ -88,11 +103,6 @@ const FileUpload: React.FC<FileUploadProps> = ({ name, files, setFiles }) => {
             Hier klicken um Dokumente hinzuzufügen
           </Button>
         </FileTrigger>
-        {/* <Text slot="label" className="border-2 border-black p-4 block text-black">
-        {files.length > 0
-          ? files.map((file) => file.name).join(", ")
-          : "Oder per Drag & Drop hinzufügen"}
-      </Text> */}
         <Text
           slot="description"
           className="flex flex-col w-full items-center justify-center border-2 border-black p-4 rounded-lg"
@@ -135,7 +145,10 @@ export type ApplicationFormProps =
 const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
   const [selectedJob, setSelectedJob] = useState<string>("");
   const [files, setFiles] = useState<File[]>([]);
-  const [submitted, setSubmitted] = useState(null);
+  const [error, setError] = useState({
+    message: "",
+    show: false,
+  });
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // Prevent default browser page refresh.
@@ -152,17 +165,30 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
     // Submit to your backend API...
     console.log(data);
 
+    if (selectedJob === "") {
+      setError({ message: "Bitte wählen Sie eine Stelle aus", show: true });
+      return;
+    } else {
+      setError({ message: "", show: false });
+    }
+
     const formData = new FormData();
     formData.append("name", data.vorname + " " + data.nachname);
     formData.append("email", data.email);
     formData.append("phone", data.phone);
-    formData.append("job", data.job);
+    formData.append("job", selectedJob);
     formData.append("arbeitsort", data.arbeitsort);
 
     if (files.length > 0) {
       files.forEach((file) => {
         formData.append("files", file);
       });
+    } else {
+      setError({
+        message: "Bitte fügen Sie mindestens ein Dokument hinzu",
+        show: true,
+      });
+      return;
     }
 
     console.log(formData);
@@ -190,12 +216,16 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
 
-      <ul className="flex flex-row flex-wrap gap-16">
+      <ul className="flex flex-row flex-wrap gap-16 gap-y-8">
         {slice.items.map((item, index) => (
           <li key={index}>
             <ToggleButton
               isSelected={selectedJob === item.job_title}
               onChange={() => {
+                if (selectedJob === item.job_title) {
+                  setSelectedJob("");
+                  return;
+                }
                 setSelectedJob(item.job_title as string);
               }}
               className="border border-solid border-secondary text-secondary selected:bg-secondary selected:text-white hover:bg-secondary50 hover:text-white rounded-xl px-4 py-4 text-2xl font-bold"
@@ -211,24 +241,43 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
             type="text"
             name="vorname"
             label="Vorname*"
+            required
             block={true}
+            errorMessage="Bitte geben Sie Ihren Vornamen ein"
           />
           <CustomInput
             type="text"
             name="nachname"
             label="Nachname*"
+            required
             block={true}
+            errorMessage="Bitte geben Sie Ihren Nachnamen ein"
           />
         </div>
         <div className="flex flex-row w-full">
-          <CustomInput type="email" name="email" label="E-Mail*" block={true} />
+          <CustomInput
+            type="email"
+            name="email"
+            label="E-Mail*"
+            required
+            block={true}
+            errorMessage="Bitte geben Sie Ihre E-Mail-Adresse ein"
+          />
         </div>
         <div className="flex flex-row w-full gap-4">
-          <CustomInput type="text" name="phone" label="Telefon*" block={true} />
+          <CustomInput
+            type="text"
+            name="phone"
+            label="Telefon*"
+            required
+            block={true}
+            errorMessage="Bitte geben Sie Ihre Telefonnummer ein"
+          />
           <Select
             name="arbeitsort"
             className="flex flex-col w-full gap-2"
             placeholder="Wunschort*"
+            isRequired
           >
             <Label className="text-lg font-bold">Arbeitsort</Label>
             <Button className="border-2 border-black rounded-lg px-4 py-4 flex justify-between">
@@ -248,10 +297,20 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
                 ))}
               </ListBox>
             </Popover>
+            <FieldError>
+              Bitte wählen sie einen Arbeitsort aus der List aus
+            </FieldError>
           </Select>
         </div>
         <div>
           <FileUpload name="files" files={files} setFiles={setFiles} />
+        </div>
+        <div>
+          {error.show && (
+            <div className="text-red-500 text-lg font-bold">
+              {error.message}
+            </div>
+          )}
         </div>
         <Button
           className="w-full text-white bg-secondary hover:bg-secondary50 text-2xl font-bold px-4 py-4 rounded-lg"

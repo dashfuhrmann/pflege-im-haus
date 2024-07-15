@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
 
   const mailOptions: Mail.Options = {
     from: process.env.MY_EMAIL,
-    to: "henriette.hoehle@gmail.com",
+    to: process.env.MY_EMAIL,
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: `Application from ${name} (${email})`,
     text: `
