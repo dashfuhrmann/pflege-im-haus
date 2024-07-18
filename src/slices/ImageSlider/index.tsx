@@ -25,7 +25,7 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
       } else {
         setCurrentIndex(currentIndex + 1);
       }
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(intervalId);
   }, [currentIndex, slice.items.length]);
@@ -35,7 +35,7 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex flex-col w-full h-[800px] relative">
+      <div className="flex flex-col w-full h-[600px] relative">
         <div
           className={`absolute w-full ${slice.variation === "default" && "left-[25%] top-[25%] translate-x-[-25%] translate-y-[-25%]"} ${slice.variation === "textBottom" && "left-[25%] top-[75%] translate-x-[-25%] translate-y-[-75%]"} ${slice.variation === "textCenter" && "left-[25%] top-[50%] translate-x-[-25%] translate-y-[-50%]"} lg:w-1/2  z-10 gap-4 flex flex-col`}
         >
@@ -80,13 +80,13 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
         {slice.items.map((item, index) => (
           <div
             key={index}
-            className={`w-full h-[800px] absolute transition-opacity duration-[2000ms] ${
+            className={`w-full h-[600px] absolute transition-opacity duration-[2000ms] ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
           >
             <PrismicNextImage
               field={item.image}
-              className="relative w-full h-[800px] object-cover"
+              className="relative w-full h-[600px] object-cover"
             />
           </div>
         ))}

@@ -40,11 +40,11 @@ const ImageAndAccordionRow = ({
       <div className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.heading} />
       </div>
-      <div className="w-full text-center">
+      <div className="w-full text-center mb-4">
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
 
-      <div className="flex flex-col md:flex-row items-start gap-4 md:gap-4">
+      <div className="flex flex-col md:flex-row items-start md:gap-4">
         <div className="flex flex-col w-full md:w-[40%] gap-4">
           {slice.items.map((item, index) => (
             <A11yAccordion

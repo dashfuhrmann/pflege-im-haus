@@ -33,7 +33,10 @@ const FullWidthAccordion = ({
       data-slice-variation={slice.variation}
       className="bg-gray-200 flex-col"
     >
-      <RichTextWithComponents richText={slice.primary.heading} />
+      <div className="mb-8">
+        <RichTextWithComponents richText={slice.primary.heading} />
+      </div>
+
       {slice.items.map((item, index) => (
         <A11yAccordion
           id="accordion"

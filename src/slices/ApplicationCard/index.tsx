@@ -42,7 +42,7 @@ const ApplicationCard = ({ slice }: ApplicationCardProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex-col bg-white"
+      className="flex-col bg-white gap-8"
     >
       <RichTextWithComponents richText={slice.primary.title_richtext} />
       <div className="flex flex-row gap-8">
@@ -63,7 +63,7 @@ const ApplicationCard = ({ slice }: ApplicationCardProps): JSX.Element => {
           startDate={slice.primary.start_date_richtext}
         />
       </div>
-      <ul className="grid grid-cols-2 gap-6 p-8">
+      <ul className="grid grid-cols-2 gap-6 gap-y-12 p-8">
         {slice.items.map((item, index) => (
           <li key={index} className="flex flex-col gap-4">
             <RichTextWithComponents richText={item.description} />

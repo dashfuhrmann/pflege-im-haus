@@ -30,7 +30,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       <div className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
-      <ul className="grid grid-cols-1 md:grid-cols-2">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4">
         {slice.items.map((item, index) => (
           <li
             className="flex flex-row w-full items-center gap-4 p-8"
