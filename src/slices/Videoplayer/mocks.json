@@ -1,0 +1,62 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit eu pariatur reprehenderit reprehenderit enim reprehenderit nostrud. Officia mollit Lorem consectetur nisi cillum mollit proident dolor in in. Commodo irure exercitation incididunt veniam esse nostrud do commodo elit sit."
+						}
+					}
+				]
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Lorem id tempor est officia nulla occaecat adipisicing ipsum esse."
+						}
+					}
+				]
+			},
+			"video": {
+				"embed_url": "https://www.youtube.com/watch?v=Q8Ypj4EzBy0",
+				"__TYPE__": "EmbedContent",
+				"type": "video",
+				"version": "1.0",
+				"title": "UNBELIEVABLE 525 zercher deadlift",
+				"author_name": "Eric Bugenhagen",
+				"author_url": "https://www.youtube.com/@ericbugenhagenOfficial",
+				"provider_name": "YouTube",
+				"provider_url": "https://www.youtube.com/",
+				"thumbnail_url": "https://i.ytimg.com/vi/Q8Ypj4EzBy0/hqdefault.jpg",
+				"thumbnail_width": 480,
+				"thumbnail_height": 360,
+				"html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/Q8Ypj4EzBy0?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"UNBELIEVABLE 525 zercher deadlift\"></iframe>",
+				"all": {
+					"embed_url": "https://www.youtube.com/watch?v=Q8Ypj4EzBy0",
+					"type": "video",
+					"version": "1.0",
+					"title": "UNBELIEVABLE 525 zercher deadlift",
+					"author_name": "Eric Bugenhagen",
+					"author_url": "https://www.youtube.com/@ericbugenhagenOfficial",
+					"provider_name": "YouTube",
+					"provider_url": "https://www.youtube.com/",
+					"thumbnail_url": "https://i.ytimg.com/vi/Q8Ypj4EzBy0/hqdefault.jpg",
+					"thumbnail_width": 480,
+					"thumbnail_height": 360,
+					"html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/Q8Ypj4EzBy0?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"UNBELIEVABLE 525 zercher deadlift\"></iframe>",
+					"height": 113,
+					"width": 200
+				}
+			}
+		},
+		"items": []
+	}
+]

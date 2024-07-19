@@ -2472,6 +2472,71 @@ export type TimeLineSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Videoplayer → Primary*
+ */
+export interface VideoplayerSliceDefaultPrimary {
+  /**
+   * Heading field in *Videoplayer → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: videoplayer.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Subheading field in *Videoplayer → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: videoplayer.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.RichTextField;
+
+  /**
+   * Video field in *Videoplayer → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: videoplayer.primary.video
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video: prismic.EmbedField;
+}
+
+/**
+ * Default variation for Videoplayer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoplayerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoplayerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Videoplayer*
+ */
+type VideoplayerSliceVariation = VideoplayerSliceDefault;
+
+/**
+ * Videoplayer Shared Slice
+ *
+ * - **API ID**: `videoplayer`
+ * - **Description**: Videoplayer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoplayerSlice = prismic.SharedSlice<
+  "videoplayer",
+  VideoplayerSliceVariation
+>;
+
+/**
  * Primary content in *Wheel → Primary*
  */
 export interface WheelSliceDefaultPrimary {
@@ -2668,6 +2733,10 @@ declare module "@prismicio/client" {
       TimeLineSliceDefaultItem,
       TimeLineSliceVariation,
       TimeLineSliceDefault,
+      VideoplayerSlice,
+      VideoplayerSliceDefaultPrimary,
+      VideoplayerSliceVariation,
+      VideoplayerSliceDefault,
       WheelSlice,
       WheelSliceDefaultPrimary,
       WheelSliceDefaultItem,
