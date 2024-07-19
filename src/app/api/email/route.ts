@@ -8,6 +8,10 @@ export async function POST(request: NextRequest) {
   const files: File[] | null = data.getAll("files") as unknown as File[];
   const name: string = data.get("name") as string;
   const email: string = data.get("email") as string;
+  const job: string = data.get("job") as string;
+  const arbeitsort: string = data.get("arbeitsort") as string;
+  const message: string = data.get("message") as string;
+  const phone: string = data.get("phone") as string;
 
   // console.log(files);
 
@@ -39,13 +43,14 @@ export async function POST(request: NextRequest) {
     from: process.env.MY_EMAIL,
     to: process.env.MY_EMAIL,
     // cc: email, (uncomment this line if you want to send a copy to the sender)
-    subject: `Application from ${name} (${email})`,
+    subject: `${job ? `Bewerbung von ${name} (${email}) als ${job}` : `Kontaktanfrage von ${name} (${email})`}`,
     text: `
       Name: ${name}
       Email: ${email}
-      Phone: ${data.get("phone")}
-      Job: ${data.get("job")}
-      Arbeitsort: ${data.get("arbeitsort")}
+      Phone: ${phone}
+      Job: ${job}
+      Arbeitsort: ${arbeitsort}
+      Nachricht: ${message}
     `,
     attachments: arr,
   };

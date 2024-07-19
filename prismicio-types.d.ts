@@ -590,9 +590,64 @@ export type ApplicationFormSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ApplicationForm → Primary*
+ */
+export interface ApplicationFormSliceContactzFormPrimary {
+  /**
+   * Heading field in *ApplicationForm → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_form.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Subheading field in *ApplicationForm → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_form.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ApplicationForm → Items*
+ */
+export interface ApplicationFormSliceContactzFormItem {
+  /**
+   * Job Title field in *ApplicationForm → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_form.items[].job_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  job_title: prismic.KeyTextField;
+}
+
+/**
+ * Contactz Form variation for ApplicationForm Slice
+ *
+ * - **API ID**: `contactzForm`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ApplicationFormSliceContactzForm = prismic.SharedSliceVariation<
+  "contactzForm",
+  Simplify<ApplicationFormSliceContactzFormPrimary>,
+  Simplify<ApplicationFormSliceContactzFormItem>
+>;
+
+/**
  * Slice variation for *ApplicationForm*
  */
-type ApplicationFormSliceVariation = ApplicationFormSliceDefault;
+type ApplicationFormSliceVariation =
+  | ApplicationFormSliceDefault
+  | ApplicationFormSliceContactzForm;
 
 /**
  * ApplicationForm Shared Slice
@@ -2532,8 +2587,11 @@ declare module "@prismicio/client" {
       ApplicationFormSlice,
       ApplicationFormSliceDefaultPrimary,
       ApplicationFormSliceDefaultItem,
+      ApplicationFormSliceContactzFormPrimary,
+      ApplicationFormSliceContactzFormItem,
       ApplicationFormSliceVariation,
       ApplicationFormSliceDefault,
+      ApplicationFormSliceContactzForm,
       CardGridSlice,
       CardGridSliceDefaultPrimary,
       CardGridSliceDefaultItem,
