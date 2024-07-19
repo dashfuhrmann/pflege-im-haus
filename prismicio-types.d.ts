@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | DividerSlice
   | ApplicationFormSlice
   | FullWidthAccordionSlice
   | ApplicationCardSlice
@@ -364,6 +365,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   copyright: prismic.KeyTextField;
+
+  /**
+   * Fax field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.fax
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  fax: prismic.KeyTextField;
 }
 
 /**
@@ -814,6 +826,36 @@ export type CenteredTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for Divider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DividerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Divider*
+ */
+type DividerSliceVariation = DividerSliceDefault;
+
+/**
+ * Divider Shared Slice
+ *
+ * - **API ID**: `divider`
+ * - **Description**: Divider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DividerSlice = prismic.SharedSlice<
+  "divider",
+  DividerSliceVariation
+>;
+
+/**
  * Primary content in *FeatureGrid → Primary*
  */
 export interface FeatureGridSliceDefaultPrimary {
@@ -885,6 +927,26 @@ export interface FeatureGridSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   icon: prismic.ImageField<never>;
+
+  /**
+   * Link Label field in *FeatureGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.items[].link_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_label: prismic.KeyTextField;
+
+  /**
+   * Link field in *FeatureGrid → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -972,6 +1034,26 @@ export interface FeatureGridSliceNoBackgroundImagesItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   icon: prismic.ImageField<never>;
+
+  /**
+   * Link Label field in *FeatureGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.items[].link_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_label: prismic.KeyTextField;
+
+  /**
+   * Link field in *FeatureGrid → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -2461,6 +2543,9 @@ declare module "@prismicio/client" {
       CenteredTextSliceDefaultPrimary,
       CenteredTextSliceVariation,
       CenteredTextSliceDefault,
+      DividerSlice,
+      DividerSliceVariation,
+      DividerSliceDefault,
       FeatureGridSlice,
       FeatureGridSliceDefaultPrimary,
       FeatureGridSliceDefaultItem,

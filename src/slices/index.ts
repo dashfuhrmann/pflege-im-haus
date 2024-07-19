@@ -7,6 +7,7 @@ export const components = {
   application_form: dynamic(() => import("./ApplicationForm")),
   card_grid: dynamic(() => import("./CardGrid")),
   centered_text: dynamic(() => import("./CenteredText")),
+  divider: dynamic(() => import("./Divider")),
   feature_grid: dynamic(() => import("./FeatureGrid")),
   feature_row: dynamic(() => import("./FeatureRow")),
   full_width_accordion: dynamic(() => import("./FullWidthAccordion")),

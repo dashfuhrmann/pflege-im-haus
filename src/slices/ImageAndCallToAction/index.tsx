@@ -38,7 +38,7 @@ const ImageAndCallToAction = ({
           <RichTextWithComponents richText={slice.primary.description} />
           <ButtonLink
             field={slice.primary.link}
-            className="flex flex-row gap-4 items-center text-2xl bg-secondary text-black"
+            className="flex flex-row gap-4 items-center text-2xl bg-secondary hover:bg-secondary50 text-black"
           >
             {slice.primary.link_label}
             <FiArrowRight />

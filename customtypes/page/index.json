@@ -27,6 +27,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "divider": {
+              "type": "SharedSlice"
+            },
             "application_form": {
               "type": "SharedSlice"
             },

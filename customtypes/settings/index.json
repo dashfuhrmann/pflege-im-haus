@@ -183,6 +183,13 @@
           "label": "Copyright",
           "placeholder": ""
         }
+      },
+      "fax": {
+        "type": "Text",
+        "config": {
+          "label": "Fax",
+          "placeholder": ""
+        }
       }
     }
   }

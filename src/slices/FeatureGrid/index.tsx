@@ -1,9 +1,11 @@
 import BoundedFull from "@/components/BoundedFull";
-import { Content } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { PrismicNextImage } from "@prismicio/next";
 import { ColorsMap } from "@/colors";
+import ButtonLink from "@/components/ButtonLink";
+import { FiArrowRight } from "react-icons/fi";
 
 /**
  * Props for `FeatureGrid`.
@@ -67,6 +69,15 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               <div className="text-left">
                 <RichTextWithComponents richText={item.description} />
               </div>
+              {isFilled.link(item.link) && (
+                <ButtonLink
+                  field={item.link}
+                  className="flex flex-row gap-4 items-center text-2xl bg-secondary hover:bg-secondary50 text-white"
+                >
+                  {item.link_label}
+                  <FiArrowRight />
+                </ButtonLink>
+              )}
             </div>
           </li>
         ))}

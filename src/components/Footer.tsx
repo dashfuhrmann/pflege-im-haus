@@ -55,8 +55,11 @@ export default async function Footer() {
           <h1 className="text-xl text-bold underline decoration-slate-700 decoration-offset-2">
             Kontakt
           </h1>
-          <span className="text-lg">{settings.data.phone_number}</span>
-          <span className="text-lg">{settings.data.email}</span>
+          <div className="flex flex-col">
+            <span className="text-lg">{settings.data.phone_number}</span>
+            <span className="text-lg">{settings.data.email}</span>
+            <span className="text-lg">{settings.data.fax}</span>
+          </div>
         </div>
       </div>
       <hr className="h-1 bg-black border-0 w-full" />
