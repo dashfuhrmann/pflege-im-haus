@@ -209,21 +209,6 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
     formData.append("arbeitsort", data.arbeitsort);
     formData.append("message", data.message);
 
-    // check only if application form
-    if (slice.variation === "default") {
-      if (files.length > 0) {
-        files.forEach((file) => {
-          formData.append("files", file);
-        });
-      } else {
-        setError({
-          message: "Bitte fügen Sie mindestens ein Dokument hinzu",
-          show: true,
-        });
-        return;
-      }
-    }
-
     console.log(formData);
 
     sendEmail(formData);
@@ -343,17 +328,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
           <CustomTextArea name="message" label="Nachricht" required={false} />
         </div>
         {slice.variation === "default" && (
-          <div>
-            <FileUpload name="files" files={files} setFiles={setFiles} />
-
-            <div>
-              {error.show && (
-                <div className="text-red-500 text-lg font-bold">
-                  {error.message}
-                </div>
-              )}
-            </div>
-          </div>
+          <FileUpload name="files" files={files} setFiles={setFiles} />
         )}
         <Button
           className="w-full text-white bg-secondary hover:bg-secondary50 text-2xl font-bold px-4 py-4 rounded-lg"
