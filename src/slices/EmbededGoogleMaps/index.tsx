@@ -20,8 +20,6 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
       <iframe
         width="600"
         height="450"
-        Loading="lazy"
-        allowfullscreen
         src="https://www.google.com/maps/embed/v1/place?q=34593+Nenterörder+Kirchweg+9&key=AIzaSyBYLn7rJWS_BdBLGJD6mO0gpiNZV0HMB0g"
       ></iframe>
     </BoundedFull>
