@@ -32,7 +32,7 @@ const ImageAndCallToAction = ({
           />
         </div>
         <div className="flex w-full flex-col justify-center md:w-1/2 md:gap-4 gap-4">
-          <div className="w-fit after:block after:h-1 after:bg-secondary after:rounded-xl">
+          <div className="w-fit ">
             <RichTextWithComponents richText={slice.primary.heading_richtext} />
           </div>
           <RichTextWithComponents richText={slice.primary.description} />

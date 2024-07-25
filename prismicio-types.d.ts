@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | VideoplayerSlice
   | DividerSlice
   | ApplicationFormSlice
   | FullWidthAccordionSlice
@@ -36,6 +37,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
+
+  /**
+   * Structured Data field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.structured_data
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  structured_data: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *Page*
@@ -911,6 +923,36 @@ export type DividerSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for EmbededGoogleMaps Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmbededGoogleMapsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *EmbededGoogleMaps*
+ */
+type EmbededGoogleMapsSliceVariation = EmbededGoogleMapsSliceDefault;
+
+/**
+ * EmbededGoogleMaps Shared Slice
+ *
+ * - **API ID**: `embeded_google_maps`
+ * - **Description**: EmbededGoogleMaps
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmbededGoogleMapsSlice = prismic.SharedSlice<
+  "embeded_google_maps",
+  EmbededGoogleMapsSliceVariation
+>;
+
+/**
  * Primary content in *FeatureGrid → Primary*
  */
 export interface FeatureGridSliceDefaultPrimary {
@@ -1264,6 +1306,30 @@ export interface FullWidthAccordionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Subheading field in *FullWidthAccordion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_accordion.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.RichTextField;
+
+  /**
+   * Background Color field in *FullWidthAccordion → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: full_width_accordion.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_color: prismic.SelectField<
+    "default" | "primary" | "secondary" | "secondary50" | "lightGray",
+    "filled"
+  >;
 }
 
 /**
@@ -2669,6 +2735,9 @@ declare module "@prismicio/client" {
       DividerSlice,
       DividerSliceVariation,
       DividerSliceDefault,
+      EmbededGoogleMapsSlice,
+      EmbededGoogleMapsSliceVariation,
+      EmbededGoogleMapsSliceDefault,
       FeatureGridSlice,
       FeatureGridSliceDefaultPrimary,
       FeatureGridSliceDefaultItem,

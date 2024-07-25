@@ -1,11 +1,13 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { SliceZone } from "@prismicio/react";
+import { PrismicRichText, SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+
+import Head from "next/head";
 
 type Params = { uid: string };
 
@@ -42,6 +44,37 @@ export default async function Page({ params }: { params: Params }) {
   const page = await client
     .getByUID("page", params.uid)
     .catch(() => notFound());
+
+  // console.log(page.data.structured_data);
+  // const structuredData = JSON.parse(page.data.structured_data as string);
+  // console.log(structuredData);
+
+  const structured_data = page.data.structured_data;
+  console.log(structured_data);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "test",
+    image: "test",
+    description: "test",
+  };
+
+  return (
+    <>
+      <Head>
+        <script type="application/ld+json">{structured_data}</script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <meta name="description" content={"TEST!"} />
+      </Head>
+      <main>
+        <SliceZone slices={page.data.slices} components={components} />
+      </main>
+    </>
+  );
 
   return <SliceZone slices={page.data.slices} components={components} />;
 }

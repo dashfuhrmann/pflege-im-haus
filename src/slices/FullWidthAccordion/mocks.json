@@ -13,6 +13,22 @@
 						}
 					}
 				]
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ea labore dolore enim dolore enim id tempor esse ad dolore. Consequat voluptate fugiat consectetur. Occaecat officia et proident et aliqua mollit cupidatat aliquip mollit."
+						}
+					}
+				]
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "secondary",
+				"type": "Select"
 			}
 		},
 		"items": [

@@ -22,11 +22,21 @@
           "single": "heading1"
         }
       },
+      "structured_data": {
+        "type": "Text",
+        "config": {
+          "label": "Structured Data",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "videoplayer": {
+              "type": "SharedSlice"
+            },
             "divider": {
               "type": "SharedSlice"
             },

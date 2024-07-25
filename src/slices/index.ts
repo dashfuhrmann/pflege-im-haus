@@ -8,6 +8,7 @@ export const components = {
   card_grid: dynamic(() => import("./CardGrid")),
   centered_text: dynamic(() => import("./CenteredText")),
   divider: dynamic(() => import("./Divider")),
+  embeded_google_maps: dynamic(() => import("./EmbededGoogleMaps")),
   feature_grid: dynamic(() => import("./FeatureGrid")),
   feature_row: dynamic(() => import("./FeatureRow")),
   full_width_accordion: dynamic(() => import("./FullWidthAccordion")),
