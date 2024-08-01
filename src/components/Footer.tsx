@@ -34,11 +34,11 @@ export default async function Footer() {
           <h1 className="text-xl text-bold underline decoration-slate-700 decoration-offset-2">
             Adresse
           </h1>
-          <ul className="flex flex-row gap-8">
+          <ul className="flex flex-row gap-24">
             {settings.data.addresses.map((address, index) => (
               <li key={index}>
                 <div className="flex flex-col">
-                  <span key={index} className="text-lg">
+                  <span key={index} className="text-lg font-bold">
                     {address.name}
                   </span>
                   <span className="text-lg">
