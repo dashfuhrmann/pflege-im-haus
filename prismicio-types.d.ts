@@ -923,6 +923,81 @@ export type DividerSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *EmbededGoogleMaps → Primary*
+ */
+export interface EmbededGoogleMapsSliceDefaultPrimary {
+  /**
+   * Heading field in *EmbededGoogleMaps → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: embeded_google_maps.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Subheading field in *EmbededGoogleMaps → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: embeded_google_maps.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.RichTextField;
+
+  /**
+   * Address field in *EmbededGoogleMaps → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: embeded_google_maps.primary.address
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  address: prismic.RichTextField;
+
+  /**
+   * Phone field in *EmbededGoogleMaps → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: embeded_google_maps.primary.phone
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  phone: prismic.RichTextField;
+
+  /**
+   * Fax field in *EmbededGoogleMaps → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: embeded_google_maps.primary.fax
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  fax: prismic.RichTextField;
+
+  /**
+   * Email field in *EmbededGoogleMaps → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: embeded_google_maps.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  email: prismic.RichTextField;
+
+  /**
+   * Opening Hours field in *EmbededGoogleMaps → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: embeded_google_maps.primary.opening_hours
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  opening_hours: prismic.RichTextField;
+}
+
+/**
  * Default variation for EmbededGoogleMaps Slice
  *
  * - **API ID**: `default`
@@ -931,7 +1006,7 @@ export type DividerSlice = prismic.SharedSlice<
  */
 export type EmbededGoogleMapsSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<EmbededGoogleMapsSliceDefaultPrimary>,
   never
 >;
 
@@ -2736,6 +2811,7 @@ declare module "@prismicio/client" {
       DividerSliceVariation,
       DividerSliceDefault,
       EmbededGoogleMapsSlice,
+      EmbededGoogleMapsSliceDefaultPrimary,
       EmbededGoogleMapsSliceVariation,
       EmbededGoogleMapsSliceDefault,
       FeatureGridSlice,

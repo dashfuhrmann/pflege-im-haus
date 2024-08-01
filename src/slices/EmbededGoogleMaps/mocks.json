@@ -2,7 +2,116 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Team Sandrock-Höhle",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 19
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Kontaktieren Sie uns gerne bei Fragen aller Art rund um das Thema Pflege und die Leistungen unseres Pflegedienstes.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"address": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nenteröder Kirchweg 9\n34593 Knüllwald",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"phone": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "05685-633",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"fax": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "05685-633",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"email": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "sandrock-hoehle@pflege-im-haus.com",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 0,
+									"end": 34,
+									"data": {
+										"__TYPE__": "ExternalLink",
+										"url": "mailto:sandrock-hoehle@pflege-im-haus.com",
+										"target": "_blank"
+									}
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"opening_hours": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mo. - Fr. 08:00 - 17:00",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]
