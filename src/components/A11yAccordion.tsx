@@ -12,14 +12,14 @@ type AccordionProps = {
   initalOpen?: boolean;
   backgroundColor?: string;
   noBorder?: boolean;
-  itemColor?: PrismicColorsType;
+  itemColor: PrismicColorsType;
 };
 
 function AccordionTitle(props: {
   heading: RichTextField | string;
   isOpen: boolean;
   backgroundColor?: string;
-  itemColor?: PrismicColorsType;
+  itemColor: PrismicColorsType;
 }) {
   return (
     <div
