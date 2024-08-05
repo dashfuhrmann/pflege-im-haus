@@ -26,10 +26,10 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           className="object-cover"
         />
         <div
-          className={`absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[25%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
+          className={`absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[17.5%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
         >
           <div
-            className="text-white text-center max-w-md"
+            className="text-white max-w-[50%] text-center"
             style={{
               color: ColorsMap[slice.primary.text_color] || ColorsMap.default,
             }}
@@ -38,7 +38,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           </div>
           <span className="bg-dunkelblau rounded-full w-20 h-2" />
           <div
-            className="text-white text-center max-w-md"
+            className="text-white max-w-[50%] text-center"
             style={{
               color: ColorsMap[slice.primary.text_color] || ColorsMap.default,
             }}

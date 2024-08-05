@@ -21,16 +21,13 @@ function ImageSection({
   // map over icons and return an array of feather icons plus the icon text
 
   return (
-    <div className="flex flex-col md:flex-row w-full gap-4 md:gap-0">
-      <div className="flex w-full md:w-1/2 max-h-[600px]">
+    <div className="flex flex-col lg:flex-row w-full gap-4">
+      <div className="flex w-full lg:w-1/2">
         <PrismicNextImage
           field={image}
-          layout="responsive"
-          width={image.dimensions?.width}
-          height={image.dimensions?.height}
         />
       </div>
-      <div className="flex flex-col w-full md:w-1/2 gap-6 md:pl-12 pl-0 h-auto flex-1">
+      <div className="flex flex-col w-full lg:w-1/2">
         <RichTextWithComponents richText={cardHeading} />
         <div className="mt-4">
           <RichTextWithComponents richText={cardDescription} />

@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | EmbededGoogleMapsSlice
   | VideoplayerSlice
   | DividerSlice
   | ApplicationFormSlice
@@ -1902,6 +1903,20 @@ export interface ImageAndAccordionRowSliceDefaultPrimary {
    */
   backgroundcolor: prismic.SelectField<
     "default" | "primary" | "secondary" | "lightGray" | "secondary50",
+    "filled"
+  >;
+
+  /**
+   * Item Color field in *ImageAndAccordionRow → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: image_and_accordion_row.primary.item_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  item_color: prismic.SelectField<
+    "default" | "primary" | "secondary" | "secondary50" | "lightGray",
     "filled"
   >;
 }

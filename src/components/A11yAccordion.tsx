@@ -3,6 +3,7 @@
 import { RichTextField } from "@prismicio/client";
 import React, { ReactNode, useRef, useState } from "react";
 import RichTextWithComponents from "./RichTextWithComponents";
+import { ColorsMap, PrismicColors, PrismicColorsType } from "@/colors";
 
 type AccordionProps = {
   id: string;
@@ -11,15 +12,22 @@ type AccordionProps = {
   initalOpen?: boolean;
   backgroundColor?: string;
   noBorder?: boolean;
+  itemColor?: PrismicColorsType;
 };
 
 function AccordionTitle(props: {
   heading: RichTextField | string;
   isOpen: boolean;
   backgroundColor?: string;
+  itemColor?: PrismicColorsType;
 }) {
   return (
     <div
+    style={{
+      backgroundColor:
+      PrismicColors[props.itemColor] || PrismicColors.default,
+      color: PrismicColors[props.itemColor] === PrismicColors.primary ? ColorsMap.default : ColorsMap.black,
+    }}
       className={`flex w-full flex-row gap-4 justify-between rounded-2xl p-4 items-center transition-all ${props.isOpen ? "rounded-b-none" : ""} ${props.backgroundColor}`}
     >
       {typeof props.heading === "string" ? (
@@ -29,9 +37,6 @@ function AccordionTitle(props: {
           <RichTextWithComponents richText={props.heading} />
         </span>
       )}
-      {/* <span className="text-left">
-        <RichTextWithComponents richText={props.heading} />
-      </span> */}
       <svg
         width="16"
         height="16"
@@ -61,7 +66,7 @@ function AccordionTitle(props: {
 }
 
 function A11yAccordion(props: AccordionProps) {
-  const { id, title, content, initalOpen, backgroundColor } = props;
+  const { id, title, content, initalOpen, backgroundColor, itemColor } = props;
 
   const [isOpen, setIsOpen] = useState(initalOpen || false);
 
@@ -106,6 +111,7 @@ function A11yAccordion(props: AccordionProps) {
             heading={title}
             isOpen={isOpen}
             backgroundColor={backgroundColor}
+            itemColor={itemColor}
           />
         </button>
       </h3>

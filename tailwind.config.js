@@ -18,7 +18,7 @@ module.exports = {
         black: "#000000",
       },
       fontFamily: {
-        sans: ["var(--font-hk-grotesk)"],
+        sans: ["var(--font-roboto)"],
       },
     },
   },

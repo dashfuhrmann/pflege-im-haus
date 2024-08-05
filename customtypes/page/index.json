@@ -34,6 +34,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "embeded_google_maps": {
+              "type": "SharedSlice"
+            },
             "videoplayer": {
               "type": "SharedSlice"
             },

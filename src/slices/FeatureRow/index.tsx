@@ -40,10 +40,10 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
       <span className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.heading} />
       </span>
-      <ul className="flex flex-col md:flex-row w-full gap-4">
+      <ul className="flex flex-col xl:flex-row w-full gap-4">
         {slice.items.map((card, index) => (
           <li
-            className="flex flex-col w-full md:w-1/4 gap-4 p-6 items-center"
+            className="flex flex-col w-full xl:w-1/4 gap-4 p-6 items-center"
             key={index}
           >
             <div

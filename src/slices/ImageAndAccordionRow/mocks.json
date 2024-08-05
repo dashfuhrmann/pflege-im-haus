@@ -52,6 +52,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "secondary",
 				"type": "Select"
+			},
+			"item_color": {
+				"__TYPE__": "FieldContent",
+				"value": "lightGray",
+				"type": "Select"
 			}
 		},
 		"items": [

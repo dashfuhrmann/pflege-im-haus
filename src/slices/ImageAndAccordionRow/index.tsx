@@ -1,4 +1,4 @@
-import { ColorsMap } from "@/colors";
+import { ColorsMap,  PrismicColors, PrismicColorsType } from "@/colors";
 import A11yAccordion from "@/components/A11yAccordion";
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
@@ -16,9 +16,13 @@ export type ImageAndAccordionRowProps =
  * Component for "ImageAndAccordionRow" Slices.
  */
 
-function AccordionContent(props: { content: RichTextField }) {
+function AccordionContent(props: { content: RichTextField, color: PrismicColorsType }) {
   return (
-    <div id="content" className="p-4 font-medium text-lg leading-relaxed">
+    <div id="content" className="p-4 font-medium text-lg leading-relaxed" style={{
+      backgroundColor:
+      PrismicColors[props.color] || PrismicColors.default,
+      color: PrismicColors[props.color] === PrismicColors.primary ? ColorsMap.default : ColorsMap.black,
+    }}>
       <RichTextWithComponents richText={props.content} />
     </div>
   );
@@ -51,8 +55,9 @@ const ImageAndAccordionRow = ({
               key={index}
               id="test"
               title={item.heading_richtext}
-              content={AccordionContent({ content: item.description })}
+              content={AccordionContent({ content: item.description, color: slice.primary.item_color })}
               initalOpen={index === 0}
+              itemColor={slice.primary.item_color}
             />
           ))}
         </div>

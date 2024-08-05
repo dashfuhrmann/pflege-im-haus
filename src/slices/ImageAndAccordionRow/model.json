@@ -52,6 +52,21 @@
             ],
             "default_value": "default"
           }
+        },
+        "item_color": {
+          "type": "Select",
+          "config": {
+            "label": "Item Color",
+            "placeholder": "",
+            "options": [
+              "default",
+              "primary",
+              "secondary",
+              "secondary50",
+              "lightGray"
+            ],
+            "default_value": "default"
+          }
         }
       },
       "items": {
