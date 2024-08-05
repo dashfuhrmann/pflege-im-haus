@@ -52,6 +52,7 @@ const FullWidthAccordion = ({
           content={AccordionContent({ content: item.content })}
           backgroundColor="bg-white"
           noBorder={true}
+          itemColor="default"
         />
       ))}
     </BoundedFull>
