@@ -69,6 +69,11 @@
 						}
 					}
 				]
+			},
+			"text_color": {
+				"__TYPE__": "FieldContent",
+				"value": "secondary50",
+				"type": "Select"
 			}
 		},
 		"items": []
@@ -143,6 +148,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "full",
 				"type": "Text"
+			},
+			"text_color": {
+				"__TYPE__": "FieldContent",
+				"value": "default",
+				"type": "Select"
 			}
 		},
 		"items": [
@@ -222,6 +232,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "develop",
 				"type": "Text"
+			},
+			"text_color": {
+				"__TYPE__": "FieldContent",
+				"value": "default",
+				"type": "Select"
 			}
 		},
 		"items": [

@@ -15,6 +15,7 @@ module.exports = {
         dunkelblau: "#084a7b",
         graublau: "#5a7d96",
         default: "#ffffff",
+        black: "#000000",
       },
       fontFamily: {
         sans: ["var(--font-hk-grotesk)"],

@@ -6,6 +6,7 @@ export const ColorsArray = [
   "dunkelblau",
   "graublau",
   "default",
+  "black",
 ] as const;
 
 export const ColorsMap = {
@@ -16,6 +17,7 @@ export const ColorsMap = {
   dunkelblau: "#084a7b",
   graublau: "#5a7d96",
   default: "#fffffff",
+  black: "#000000",
 } as const;
 
 export type ColorsType = (typeof ColorsArray)[number];

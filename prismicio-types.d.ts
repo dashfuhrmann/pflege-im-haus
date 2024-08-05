@@ -1604,6 +1604,20 @@ export interface HeroBannerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   link_label: prismic.KeyTextField;
+
+  /**
+   * Text Color field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: hero_banner.primary.text_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_color: prismic.SelectField<
+    "default" | "primary" | "secondary" | "secondary50" | "black",
+    "filled"
+  >;
 }
 
 /**
@@ -1692,6 +1706,20 @@ export interface HeroBannerSliceTextLeftPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   link_label: prismic.KeyTextField;
+
+  /**
+   * Text Color field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: hero_banner.primary.text_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_color: prismic.SelectField<
+    "default" | "primary" | "secondary" | "secondary50" | "black",
+    "filled"
+  >;
 }
 
 /**
@@ -1780,6 +1808,20 @@ export interface HeroBannerSliceTextRightPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   link_label: prismic.KeyTextField;
+
+  /**
+   * Text Color field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: hero_banner.primary.text_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  text_color: prismic.SelectField<
+    "default" | "primary" | "secondary" | "secondary50" | "black",
+    "filled"
+  >;
 }
 
 /**

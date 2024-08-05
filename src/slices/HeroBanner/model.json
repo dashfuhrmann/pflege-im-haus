@@ -66,6 +66,21 @@
             "label": "Link Label",
             "placeholder": ""
           }
+        },
+        "text_color": {
+          "type": "Select",
+          "config": {
+            "label": "Text Color",
+            "placeholder": "",
+            "options": [
+              "default",
+              "primary",
+              "secondary",
+              "secondary50",
+              "black"
+            ],
+            "default_value": "default"
+          }
         }
       },
       "items": {}
@@ -132,6 +147,21 @@
             "label": "Link Label",
             "placeholder": ""
           }
+        },
+        "text_color": {
+          "type": "Select",
+          "config": {
+            "label": "Text Color",
+            "placeholder": "",
+            "options": [
+              "default",
+              "primary",
+              "secondary",
+              "secondary50",
+              "black"
+            ],
+            "default_value": "default"
+          }
         }
       },
       "items": {}
@@ -197,6 +227,21 @@
           "config": {
             "label": "Link Label",
             "placeholder": ""
+          }
+        },
+        "text_color": {
+          "type": "Select",
+          "config": {
+            "label": "Text Color",
+            "placeholder": "",
+            "options": [
+              "default",
+              "primary",
+              "secondary",
+              "secondary50",
+              "black"
+            ],
+            "default_value": "default"
           }
         }
       },

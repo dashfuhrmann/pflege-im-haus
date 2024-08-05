@@ -1,3 +1,4 @@
+import { ColorsMap } from "@/colors";
 import BoundedFull from "@/components/BoundedFull";
 import ButtonLink from "@/components/ButtonLink";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
@@ -27,11 +28,21 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
         <div
           className={`absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[25%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
         >
-          <div className="text-white text-center max-w-md">
+          <div
+            className="text-white text-center max-w-md"
+            style={{
+              color: ColorsMap[slice.primary.text_color] || ColorsMap.default,
+            }}
+          >
             <RichTextWithComponents richText={slice.primary.heading_richtext} />
           </div>
           <span className="bg-dunkelblau rounded-full w-20 h-2" />
-          <div className="text-white text-center max-w-md">
+          <div
+            className="text-white text-center max-w-md"
+            style={{
+              color: ColorsMap[slice.primary.text_color] || ColorsMap.default,
+            }}
+          >
             <RichTextWithComponents
               richText={slice.primary.subheading_richtext}
             />
