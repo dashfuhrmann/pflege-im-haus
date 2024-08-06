@@ -877,9 +877,93 @@ export type CenteredTextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *CenteredText → Primary*
+ */
+export interface CenteredTextSliceWithoutBorderPrimary {
+  /**
+   * Heading field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: centered_text.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Heading Richtext field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: centered_text.primary.heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
+   * Subheading field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: centered_text.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subheading: prismic.KeyTextField;
+
+  /**
+   * Subheading Richtext field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: centered_text.primary.subheading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading_richtext: prismic.RichTextField;
+
+  /**
+   * Text field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: centered_text.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * BackgroundColor field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: centered_text.primary.backgroundcolor
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  backgroundcolor: prismic.SelectField<
+    "default" | "primary" | "secondary" | "secondary50" | "lightGray",
+    "filled"
+  >;
+}
+
+/**
+ * Without Border variation for CenteredText Slice
+ *
+ * - **API ID**: `withoutBorder`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CenteredTextSliceWithoutBorder = prismic.SharedSliceVariation<
+  "withoutBorder",
+  Simplify<CenteredTextSliceWithoutBorderPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *CenteredText*
  */
-type CenteredTextSliceVariation = CenteredTextSliceDefault;
+type CenteredTextSliceVariation =
+  | CenteredTextSliceDefault
+  | CenteredTextSliceWithoutBorder;
 
 /**
  * CenteredText Shared Slice
@@ -2867,8 +2951,10 @@ declare module "@prismicio/client" {
       CardGridSliceDefault,
       CenteredTextSlice,
       CenteredTextSliceDefaultPrimary,
+      CenteredTextSliceWithoutBorderPrimary,
       CenteredTextSliceVariation,
       CenteredTextSliceDefault,
+      CenteredTextSliceWithoutBorder,
       DividerSlice,
       DividerSliceVariation,
       DividerSliceDefault,
