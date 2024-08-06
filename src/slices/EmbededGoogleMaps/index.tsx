@@ -32,6 +32,11 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
             {slice.items.map((item, index) => (
               <li key={index}>
                 <RichTextWithComponents richText={item.address} />
+                {index === 0 && (
+                  <RichTextWithComponents
+                    richText={slice.primary.opening_hours}
+                  />
+                )}
               </li>
             ))}
           </ul>
@@ -56,11 +61,10 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
               <RichTextWithComponents richText={slice.primary.email} />
             </li>
           </ul>
-          <RichTextWithComponents richText={slice.primary.opening_hours} />
         </div>
         <div className="flex flex-col w-full gap-4">
-        <iframe width="600" height="400"  id="gmap_canvas" src={url1}></iframe>
-        <iframe width="600" height="400"  id="gmap_canvas" src={url2}></iframe>
+          <iframe width="600" height="400" id="gmap_canvas" src={url1}></iframe>
+          <iframe width="600" height="400" id="gmap_canvas" src={url2}></iframe>
         </div>
       </div>
     </BoundedFull>
