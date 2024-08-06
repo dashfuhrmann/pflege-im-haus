@@ -35,19 +35,6 @@
 					}
 				]
 			},
-			"address": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Nenteröder Kirchweg 9\n34593 Knüllwald",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
 			"phone": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -112,6 +99,61 @@
 				]
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"address",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Team Sandrock-Höhle\n34593 Nenterörder Kirchweg 9\nKnüllwald",
+										"spans": [
+											{
+												"type": "strong",
+												"start": 0,
+												"end": 19
+											}
+										]
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"address",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Zweigstelle Homberg (Efze)\n34576 August-Vilmar-Straße 7\nHomberg (Efze)",
+										"spans": [
+											{
+												"type": "strong",
+												"start": 0,
+												"end": 26
+											}
+										]
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

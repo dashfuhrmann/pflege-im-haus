@@ -13,6 +13,10 @@ export type EmbededGoogleMapsProps =
 /**
  * Component for "EmbededGoogleMaps" Slices.
  */
+
+const url1 = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS}&q=Nenter%C3%B6rder%20Kirchweg%209%20Kn%C3%BCllwald+()`;
+const url2 = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS}&q=August-Vilmar-Stra%C3%9Fe%207%20Homberg%20(Efze)+()`;
+
 const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
   return (
     <BoundedFull
@@ -24,7 +28,13 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
         <div className="flex flex-col gap-8">
           <RichTextWithComponents richText={slice.primary.heading} />
           <RichTextWithComponents richText={slice.primary.subheading} />
-          <RichTextWithComponents richText={slice.primary.address} />
+          <ul className="flex flex-col gap-4">
+            {slice.items.map((item, index) => (
+              <li key={index}>
+                <RichTextWithComponents richText={item.address} />
+              </li>
+            ))}
+          </ul>
           <ul className="flex flex-col flex-wrap gap-y-4 gap-x-4">
             <li className="flex flex-row gap-4 items-center">
               <div className="flex p-4 rounded-full bg-primary">
@@ -48,12 +58,9 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
           </ul>
           <RichTextWithComponents richText={slice.primary.opening_hours} />
         </div>
-        <div className="flex w-full">
-          <iframe
-            width={600}
-            height={450}
-            src="https://www.google.com/maps/embed/v1/place?q=34593+Nenterörder+Kirchweg+9&key=AIzaSyBYLn7rJWS_BdBLGJD6mO0gpiNZV0HMB0g"
-          ></iframe>
+        <div className="flex flex-col w-full gap-4">
+        <iframe width="600" height="400"  id="gmap_canvas" src={url1}></iframe>
+        <iframe width="600" height="400"  id="gmap_canvas" src={url2}></iframe>
         </div>
       </div>
     </BoundedFull>

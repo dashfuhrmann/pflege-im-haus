@@ -948,16 +948,6 @@ export interface EmbededGoogleMapsSliceDefaultPrimary {
   subheading: prismic.RichTextField;
 
   /**
-   * Address field in *EmbededGoogleMaps → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: embeded_google_maps.primary.address
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  address: prismic.RichTextField;
-
-  /**
    * Phone field in *EmbededGoogleMaps → Primary*
    *
    * - **Field Type**: Rich Text
@@ -999,6 +989,21 @@ export interface EmbededGoogleMapsSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *EmbededGoogleMaps → Items*
+ */
+export interface EmbededGoogleMapsSliceDefaultItem {
+  /**
+   * Address field in *EmbededGoogleMaps → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: embeded_google_maps.items[].address
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  address: prismic.RichTextField;
+}
+
+/**
  * Default variation for EmbededGoogleMaps Slice
  *
  * - **API ID**: `default`
@@ -1008,7 +1013,7 @@ export interface EmbededGoogleMapsSliceDefaultPrimary {
 export type EmbededGoogleMapsSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<EmbededGoogleMapsSliceDefaultPrimary>,
-  never
+  Simplify<EmbededGoogleMapsSliceDefaultItem>
 >;
 
 /**
@@ -2869,6 +2874,7 @@ declare module "@prismicio/client" {
       DividerSliceDefault,
       EmbededGoogleMapsSlice,
       EmbededGoogleMapsSliceDefaultPrimary,
+      EmbededGoogleMapsSliceDefaultItem,
       EmbededGoogleMapsSliceVariation,
       EmbededGoogleMapsSliceDefault,
       FeatureGridSlice,
