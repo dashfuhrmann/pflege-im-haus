@@ -25,7 +25,7 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
       className="min-h-[450px] bg-secondary50 flex-col"
     >
       <div className="flex flex-col md:flex-row gap-6">
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 md:w-1/2">
           <RichTextWithComponents richText={slice.primary.heading} />
           <RichTextWithComponents richText={slice.primary.subheading} />
           <ul className="flex flex-col gap-4">
@@ -62,7 +62,7 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col w-full gap-4">
+        <div className="flex flex-col w-full gap-4 md:w-1/2">
           <iframe
             className="w-full"
             height="400"
