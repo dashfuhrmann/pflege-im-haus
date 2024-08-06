@@ -22,7 +22,7 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="min-h-[450px] bg-secondary50"
+      className="min-h-[450px] bg-secondary50 flex-col"
     >
       <div className="flex flex-col md:flex-row gap-6">
         <div className="flex flex-col gap-8">
@@ -63,8 +63,18 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
           </ul>
         </div>
         <div className="flex flex-col w-full gap-4">
-          <iframe width="600" height="400" id="gmap_canvas" src={url1}></iframe>
-          <iframe width="600" height="400" id="gmap_canvas" src={url2}></iframe>
+          <iframe
+            className="w-full"
+            height="400"
+            id="gmap_canvas"
+            src={url1}
+          ></iframe>
+          <iframe
+            className="w-full"
+            height="400"
+            id="gmap_canvas"
+            src={url2}
+          ></iframe>
         </div>
       </div>
     </BoundedFull>
