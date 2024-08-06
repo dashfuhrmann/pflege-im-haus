@@ -8,11 +8,11 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
     <PrismicRichText
       field={props.richText}
       components={{
-        paragraph: ({ children }) => <p className="text-base md:text-lg">{children}</p>,
-        heading1: ({ children }) => <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl">{children}</h1>,
-        heading2: ({ children }) => <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">{children}</h2>,
-        heading3: ({ children }) => <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl">{children}</h3>,
-        heading4: ({ children }) => <h4 className="text-lg md:text-xl lg:text-2xl xl:text-3xl">{children}</h4>,
+        paragraph: ({ children }) => <p className="text-sm md:text-base">{children}</p>,
+        heading1: ({ children }) => <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">{children}</h1>,
+        heading2: ({ children }) => <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl">{children}</h2>,
+        heading3: ({ children }) => <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl">{children}</h3>,
+        heading4: ({ children }) => <h4 className="text-base md:text-lg lg:text-xl xl:text-2xl">{children}</h4>,
         heading5: ({ children }) => (
           <h5 className="text-base md:text-lg lg:text-xl xl:text-xl">{children}</h5>
         ),
