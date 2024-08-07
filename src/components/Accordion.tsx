@@ -14,14 +14,14 @@ const Chevron = ({ className }: { className: string }) => {
       className={`fill-black stroke-black`}
     >
       <path
-        d="M8 1V15"
+        d="M12 1.5V22.5"
         strokeWidth="2"
         strokeLinecap="square"
         strokeLinejoin="round"
         className={`${className} transition-transform duration-250 ease-linear origin-center`}
       ></path>
       <path
-        d="M1 8H15"
+        d="M1.5 12H22.5"
         strokeWidth="2"
         strokeLinecap="square"
         strokeLinejoin="round"
@@ -43,25 +43,25 @@ function Accordion({
 }: AccordionProps) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
-  const handleToggle = (event: React.SyntheticEvent<HTMLDetailsElement>) => {
-    const details = event.target as HTMLDetailsElement;
-    const content = details.querySelector(".details-content") as HTMLElement;
-    if (details.open) {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } else {
-      content.style.maxHeight = "0";
-    }
-  };
+  //   const handleToggle = (event: React.SyntheticEvent<HTMLDetailsElement>) => {
+  //     const details = event.target as HTMLDetailsElement;
+  //     const content = details.querySelector(".details-content") as HTMLElement;
+  //     if (details.open) {
+  //       content.style.maxHeight = content.scrollHeight + "px";
+  //     } else {
+  //       content.style.maxHeight = "0";
+  //     }
+  //   };
 
-  const handleTransitionEnd = (event: React.TransitionEvent<HTMLElement>) => {
-    const details = detailsRef.current;
-    if (details === null) return;
-    const content = details.querySelector(".details-content") as HTMLElement;
+  //   const handleTransitionEnd = (event: React.TransitionEvent<HTMLElement>) => {
+  //     const details = detailsRef.current;
+  //     if (details === null) return;
+  //     const content = details.querySelector(".details-content") as HTMLElement;
 
-    if (!details.open) {
-      content.style.maxHeight = "0";
-    }
-  };
+  //     if (!details.open) {
+  //       content.style.maxHeight = "0";
+  //     }
+  //   };
 
   return (
     <details
@@ -72,8 +72,8 @@ function Accordion({
         color: backgroundColor === "primary" ? "white" : "black",
       }}
       ref={detailsRef}
-      onToggle={handleToggle}
-      onTransitionEnd={handleTransitionEnd}
+      //   onToggle={handleToggle}
+      //   onTransitionEnd={handleTransitionEnd}
     >
       <summary className="flex flex-row items-center justify-between">
         <h3 className="">
@@ -81,7 +81,7 @@ function Accordion({
         </h3>
         <Chevron className="group-open:rotate-90" />
       </summary>
-      <div className="details-content flex leading-relaxed overflow-hidden transition-maxHeight duration-250 ease-linear max-h-0 group-open:max-h-full">
+      <div className="details-content flex mt-4 leading-relaxed overflow-hidden transition-maxHeight duration-250 ease-linear max-h-0 group-open:max-h-full">
         <RichTextWithComponents richText={content} />
       </div>
     </details>
