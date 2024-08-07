@@ -65,7 +65,7 @@ function Accordion({
 
   return (
     <details
-      className="flex flex-col w-full p-4 rounded-xl group marker:content-none"
+      className="flex flex-col w-full p-4 rounded-xl group"
       style={{
         backgroundColor:
           PrismicColors[backgroundColor] || PrismicColors.default,
