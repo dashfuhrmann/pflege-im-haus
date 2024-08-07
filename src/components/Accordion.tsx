@@ -81,7 +81,7 @@ function Accordion({
         </h3>
         <Chevron className="group-open:rotate-90" />
       </summary>
-      <div className="details-content flex mt-4 leading-relaxed overflow-hidden transition-maxHeight duration-250 ease-linear max-h-0 group-open:max-h-full">
+      <div className="details-content flex flex-col mt-4 leading-relaxed overflow-hidden transition-maxHeight duration-250 ease-linear max-h-0 group-open:max-h-full">
         <RichTextWithComponents richText={content} />
       </div>
     </details>
