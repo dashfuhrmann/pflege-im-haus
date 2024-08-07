@@ -29,6 +29,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "secondary",
 				"type": "Select"
+			},
+			"item_color": {
+				"__TYPE__": "FieldContent",
+				"value": "default",
+				"type": "Select"
 			}
 		},
 		"items": [
@@ -43,8 +48,10 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Esse velit proident velit reprehenderit proident pariatur culpa id aute."
-									}
+										"text": "Aliquip elit excepteur quis ad fugiat mollit laborum minim quis ipsum sint aute labore labore. Proident ullamco irure tempor deserunt labore voluptate laboris dolore aliqua nisi veniam quis. Consequat nostrud pariatur cillum mollit dolore deserunt ipsum cillum tempor ullamco nulla exercitation velit.",
+										"spans": []
+									},
+									"direction": "ltr"
 								}
 							]
 						}

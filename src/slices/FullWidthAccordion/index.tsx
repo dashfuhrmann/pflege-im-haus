@@ -1,5 +1,6 @@
 import { ColorsMap } from "@/colors";
 import A11yAccordion from "@/components/A11yAccordion";
+import Accordion from "@/components/Accordion";
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content, RichTextField } from "@prismicio/client";
@@ -43,16 +44,12 @@ const FullWidthAccordion = ({
 
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
-
       {slice.items.map((item, index) => (
-        <A11yAccordion
-          id="accordion"
+        <Accordion
           key={index}
-          title={item.heading_richtext}
-          content={AccordionContent({ content: item.content })}
-          backgroundColor="bg-white"
-          noBorder={true}
-          itemColor="default"
+          headline={item.heading_richtext}
+          content={item.content}
+          backgroundColor={slice.primary.item_color}
         />
       ))}
     </BoundedFull>

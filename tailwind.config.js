@@ -20,6 +20,13 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-roboto)"],
       },
+      maxHeight: {
+        0: "0",
+        full: "100vh",
+      },
+      transitionProperty: {
+        maxHeight: "max-height",
+      },
     },
   },
   // plugins: [require("@tailwindcss/typography")],

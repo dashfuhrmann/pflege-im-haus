@@ -1495,6 +1495,20 @@ export interface FullWidthAccordionSliceDefaultPrimary {
     "default" | "primary" | "secondary" | "secondary50" | "lightGray",
     "filled"
   >;
+
+  /**
+   * Item Color field in *FullWidthAccordion → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: full_width_accordion.primary.item_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  item_color: prismic.SelectField<
+    "default" | "primary" | "secondary" | "secondary50" | "lightGray",
+    "filled"
+  >;
 }
 
 /**
