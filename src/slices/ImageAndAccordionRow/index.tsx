@@ -1,5 +1,6 @@
-import { ColorsMap,  PrismicColors, PrismicColorsType } from "@/colors";
+import { ColorsMap, PrismicColors, PrismicColorsType } from "@/colors";
 import A11yAccordion from "@/components/A11yAccordion";
+import Accordion from "@/components/Accordion";
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content, RichTextField } from "@prismicio/client";
@@ -16,13 +17,22 @@ export type ImageAndAccordionRowProps =
  * Component for "ImageAndAccordionRow" Slices.
  */
 
-function AccordionContent(props: { content: RichTextField, color: PrismicColorsType }) {
+function AccordionContent(props: {
+  content: RichTextField;
+  color: PrismicColorsType;
+}) {
   return (
-    <div id="content" className="p-4 font-medium text-lg leading-relaxed" style={{
-      backgroundColor:
-      PrismicColors[props.color] || PrismicColors.default,
-      color: PrismicColors[props.color] === PrismicColors.primary ? ColorsMap.default : ColorsMap.black,
-    }}>
+    <div
+      id="content"
+      className="p-4 font-medium text-lg leading-relaxed"
+      style={{
+        backgroundColor: PrismicColors[props.color] || PrismicColors.default,
+        color:
+          PrismicColors[props.color] === PrismicColors.primary
+            ? ColorsMap.default
+            : ColorsMap.black,
+      }}
+    >
       <RichTextWithComponents richText={props.content} />
     </div>
   );
@@ -51,22 +61,17 @@ const ImageAndAccordionRow = ({
       <div className="flex flex-col md:flex-row items-start md:gap-4">
         <div className="flex flex-col w-full md:w-[40%] gap-4">
           {slice.items.map((item, index) => (
-            <A11yAccordion
+            <Accordion
               key={index}
-              id="test"
-              title={item.heading_richtext}
-              content={AccordionContent({ content: item.description, color: slice.primary.item_color })}
-              initalOpen={index === 0}
-              itemColor={slice.primary.item_color}
+              headline={item.heading_richtext}
+              content={item.description}
+              backgroundColor={slice.primary.item_color}
             />
           ))}
         </div>
         <div className="flex w-full md:w-[60%] justify-center align-middle flex-grow-0">
           <div className="flex">
             <PrismicNextImage
-              layout="responsive"
-              width={slice.primary.image.dimensions?.width}
-              height={slice.primary.image.dimensions?.height}
               field={slice.primary.image}
               className="rounded-2xl"
             />
