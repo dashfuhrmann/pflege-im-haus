@@ -188,9 +188,6 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
       job: selectedJob,
     };
 
-    // Submit to your backend API...
-    console.log(data);
-
     // Check only if application form
     if (slice.variation === "default") {
       if (selectedJob === "" && slice.variation === "default") {

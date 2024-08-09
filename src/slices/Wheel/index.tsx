@@ -206,7 +206,6 @@ const Wheel = ({ slice }: WheelProps): JSX.Element => {
       gsap.set(".description", { opacity: "0%" });
       tl.clear();
     } else {
-      console.log("???");
       tl.to(`.description-${numberOfTransitions}`, {
         keyframes: [
           {

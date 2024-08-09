@@ -33,7 +33,6 @@ const Videoplayer = ({ slice }: VideoplayerProps): JSX.Element => {
   let embedUrl = "";
   try {
     embedUrl = convertToEmbedUrl(youtubeUrl);
-    console.log(embedUrl, "url"); // Output: https://www.youtube.com/embed/Q8Ypj4EzBy0
   } catch (error: any) {
     console.error(error.message);
   }

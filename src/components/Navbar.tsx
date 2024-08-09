@@ -179,7 +179,6 @@ export default function Navbar({ settings }: NavbarProps) {
           </Link>
           <button
             onClick={() => {
-              console.log("setNavbarState(false)");
               setNavbarState(false);
             }}
           >

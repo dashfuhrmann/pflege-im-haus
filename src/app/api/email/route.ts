@@ -4,7 +4,6 @@ import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
   const data = await request.formData();
-  console.log(data.getAll("files"));
   const files: File[] | null = data.getAll("files") as unknown as File[];
   const name: string = data.get("name") as string;
   const email: string = data.get("email") as string;
@@ -13,7 +12,7 @@ export async function POST(request: NextRequest) {
   const message: string = data.get("message") as string;
   const phone: string = data.get("phone") as string;
 
-  // console.log(files);
+  console.log(files);
 
   if (!files) {
     return NextResponse.json({ success: false });
