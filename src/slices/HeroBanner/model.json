@@ -81,6 +81,22 @@
             ],
             "default_value": "default"
           }
+        },
+        "scroll_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Scroll Button",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "scroll_target": {
+          "type": "Text",
+          "config": {
+            "label": "Scroll Target",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
@@ -162,6 +178,22 @@
             ],
             "default_value": "default"
           }
+        },
+        "scroll_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Scroll Button",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "scroll_target": {
+          "type": "Text",
+          "config": {
+            "label": "Scroll Target",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
@@ -242,6 +274,22 @@
               "black"
             ],
             "default_value": "default"
+          }
+        },
+        "scroll_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Scroll Button",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "scroll_target": {
+          "type": "Text",
+          "config": {
+            "label": "Scroll Target",
+            "placeholder": ""
           }
         }
       },

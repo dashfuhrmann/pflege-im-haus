@@ -13,7 +13,7 @@ export default async function Footer() {
   const settings = await client.getSingle("settings");
   return (
     <footer className="flex flex-col p-12 bg-secondary bg-opacity-50 justify-center gap-4">
-      <div className="flex flex-row gap-4 justify-between">
+      <div className="flex flex-row gap-8 md:gap-4 justify-between">
         <div className="flex flex-col items-center gap-4">
           <PrismicNextImage
             field={settings.data.fallback_image}
@@ -30,11 +30,11 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="md:flex flex-col gap-4 hidden">
           <h1 className="text-xl text-bold underline decoration-slate-700 decoration-offset-2">
             Adresse
           </h1>
-          <ul className="flex flex-row gap-24">
+          <ul className="flex flex-col gap-12">
             {settings.data.addresses.map((address, index) => (
               <li key={index}>
                 <div className="flex flex-col">
@@ -63,7 +63,7 @@ export default async function Footer() {
         </div>
       </div>
       <hr className="h-1 bg-black border-0 w-full" />
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between gap-4">
         <span className="text-xl text-black text-center">
           {settings.data.copyright}
         </span>

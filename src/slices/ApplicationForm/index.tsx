@@ -226,13 +226,13 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="flex-col gap-8"
     >
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2" id={slice.primary.scroll_id || ""}>
         <RichTextWithComponents richText={slice.primary.heading} />
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
 
       {slice.variation === "default" && (
-        <ul className="flex flex-row flex-wrap gap-16 gap-y-8">
+        <ul className="flex flex-col md:flex-row  flex-wrap gap-16 gap-y-8">
           {slice.items.map((item, index) => (
             <li key={index}>
               <ToggleButton
@@ -244,7 +244,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
                   }
                   setSelectedJob(item.job_title as string);
                 }}
-                className="border border-solid border-secondary text-secondary selected:bg-secondary selected:text-white hover:bg-secondary50 hover:text-white rounded-xl px-4 py-4 text-2xl font-bold"
+                className="border border-solid w-full md:w-fit border-secondary text-secondary selected:bg-secondary selected:text-white hover:bg-secondary50 hover:text-white rounded-xl px-4 py-4 text-2xl font-bold"
               >
                 {item.job_title}
               </ToggleButton>
@@ -253,7 +253,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
         </ul>
       )}
       <Form className="flex flex-col w-full gap-4" onSubmit={onSubmit}>
-        <div className="flex flex-row w-full gap-4">
+        <div className="flex flex-col md:flex-row w-full gap-4">
           <CustomInput
             type="text"
             name="vorname"
@@ -281,7 +281,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
             errorMessage="Bitte geben Sie Ihre E-Mail-Adresse ein"
           />
         </div>
-        <div className="flex flex-row w-full gap-4">
+        <div className="flex flex-col md:flex-row w-full gap-4">
           <CustomInput
             type="text"
             name="phone"

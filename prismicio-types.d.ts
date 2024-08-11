@@ -572,6 +572,16 @@ export interface ApplicationFormSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subheading: prismic.RichTextField;
+
+  /**
+   * Scroll Id field in *ApplicationForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_form.primary.scroll_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  scroll_id: prismic.KeyTextField;
 }
 
 /**
@@ -625,6 +635,16 @@ export interface ApplicationFormSliceContactzFormPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subheading: prismic.RichTextField;
+
+  /**
+   * Scroll Id field in *ApplicationForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: application_form.primary.scroll_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  scroll_id: prismic.KeyTextField;
 }
 
 /**
@@ -1722,6 +1742,27 @@ export interface HeroBannerSliceDefaultPrimary {
     "default" | "primary" | "secondary" | "secondary50" | "black",
     "filled"
   >;
+
+  /**
+   * Scroll Button field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero_banner.primary.scroll_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  scroll_button: prismic.BooleanField;
+
+  /**
+   * Scroll Target field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.scroll_target
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  scroll_target: prismic.KeyTextField;
 }
 
 /**
@@ -1824,6 +1865,27 @@ export interface HeroBannerSliceTextLeftPrimary {
     "default" | "primary" | "secondary" | "secondary50" | "black",
     "filled"
   >;
+
+  /**
+   * Scroll Button field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero_banner.primary.scroll_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  scroll_button: prismic.BooleanField;
+
+  /**
+   * Scroll Target field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.scroll_target
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  scroll_target: prismic.KeyTextField;
 }
 
 /**
@@ -1926,6 +1988,27 @@ export interface HeroBannerSliceTextRightPrimary {
     "default" | "primary" | "secondary" | "secondary50" | "black",
     "filled"
   >;
+
+  /**
+   * Scroll Button field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero_banner.primary.scroll_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  scroll_button: prismic.BooleanField;
+
+  /**
+   * Scroll Target field in *HeroBanner → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.primary.scroll_target
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  scroll_target: prismic.KeyTextField;
 }
 
 /**

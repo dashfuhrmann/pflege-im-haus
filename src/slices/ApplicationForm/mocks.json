@@ -34,6 +34,11 @@
 						"direction": "ltr"
 					}
 				]
+			},
+			"scroll_id": {
+				"__TYPE__": "FieldContent",
+				"value": "broke",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -116,6 +121,11 @@
 						}
 					}
 				]
+			},
+			"scroll_id": {
+				"__TYPE__": "FieldContent",
+				"value": "ready",
+				"type": "Text"
 			}
 		},
 		"items": [

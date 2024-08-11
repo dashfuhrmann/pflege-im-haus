@@ -74,6 +74,15 @@
 				"__TYPE__": "FieldContent",
 				"value": "secondary50",
 				"type": "Select"
+			},
+			"scroll_button": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"scroll_target": {
+				"__TYPE__": "FieldContent",
+				"value": "soil",
+				"type": "Text"
 			}
 		},
 		"items": []
@@ -153,6 +162,15 @@
 				"__TYPE__": "FieldContent",
 				"value": "default",
 				"type": "Select"
+			},
+			"scroll_button": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"scroll_target": {
+				"__TYPE__": "FieldContent",
+				"value": "property",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -237,6 +255,15 @@
 				"__TYPE__": "FieldContent",
 				"value": "default",
 				"type": "Select"
+			},
+			"scroll_button": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"scroll_target": {
+				"__TYPE__": "FieldContent",
+				"value": "fierce",
+				"type": "Text"
 			}
 		},
 		"items": [
