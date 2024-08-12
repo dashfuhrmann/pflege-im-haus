@@ -69,7 +69,7 @@ const ImageAndAccordionRow = ({
             />
           ))}
         </div>
-        <div className="flex w-full md:w-[60%] justify-center align-middle flex-grow-0">
+        <div className="flex w-full mt-4 md:mt-0 md:w-[60%] justify-center align-middle flex-grow-0">
           <div className="flex">
             <PrismicNextImage
               field={slice.primary.image}

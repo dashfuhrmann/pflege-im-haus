@@ -22,7 +22,7 @@ const ImageAndCallToAction = ({
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-row bg-white py-8 max-h-[400px] justify-center"
+      className="flex flex-row bg-white py-8 justify-center"
     >
       <div className="flex flex-col md:flex-row w-full gap-4 md:gap-16">
         <div className="flex w-full md:w-1/2 md:max-w-1/2 relative">
