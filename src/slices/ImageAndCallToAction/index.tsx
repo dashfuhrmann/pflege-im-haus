@@ -24,14 +24,14 @@ const ImageAndCallToAction = ({
       data-slice-variation={slice.variation}
       className="flex flex-row bg-white py-8 justify-center"
     >
-      <div className="flex flex-col md:flex-row w-full gap-4 md:gap-16">
-        <div className="flex w-full md:w-1/2 md:max-w-1/2 relative">
+      <div className="flex flex-col xl:flex-row w-full gap-4 md:gap-16">
+        <div className="flex w-full xl:w-1/2 relative">
           <PrismicNextImage
             field={slice.primary.image}
             className="rounded-2xl"
           />
         </div>
-        <div className="flex w-full flex-col justify-center md:w-1/2 md:gap-4 gap-4">
+        <div className="flex w-full flex-col justify-center xl:w-1/2 xl:gap-4 gap-4">
           <div className="w-fit ">
             <RichTextWithComponents richText={slice.primary.heading_richtext} />
           </div>

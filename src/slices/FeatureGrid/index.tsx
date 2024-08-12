@@ -34,9 +34,9 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       </div>
       <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-4">
         {slice.items.map((item, index) => (
-          <li className="flex flex-row w-full p-8" key={index}>
+          <li className="flex flex-row w-full p-8 gap-4 flex-wrap" key={index}>
             {slice.variation === "noBackgroundImages" && (
-              <div className="flex items-center justify-center min-h-[280px] min-w-[280px] rounded-full">
+              <div className="flex items-center justify-center min-h-[280px] min-w-[280px] rounded-full w-full">
                 {item.icon && (
                   <PrismicNextImage
                     width={280}
@@ -59,7 +59,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
                 )}
               </div>
             )}
-            <div className="flex flex-col gap-4 flex-grow-0">
+            <div className="flex flex-col gap-4">
               <div className="text-black text-left">
                 <RichTextWithComponents richText={item.heading} />
               </div>
