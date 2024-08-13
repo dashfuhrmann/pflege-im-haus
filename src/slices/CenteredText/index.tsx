@@ -32,7 +32,7 @@ const CenteredText = ({ slice }: CenteredTextProps): JSX.Element => {
         </div>
 
         <div
-          className={`text-balance text-lg leading-relaxed text-start mt-8 ${slice.variation === "withoutBorder" ? null : "border-l-4 border-dunkelblau"} pl-12`}
+          className={`text-balance text-lg leading-relaxed text-start mt-8 ${slice.variation === "withoutBorder" ? null : "border-l-4 border-dunkelblau"}`}
         >
           <RichTextWithComponents richText={slice.primary.text} />
         </div>

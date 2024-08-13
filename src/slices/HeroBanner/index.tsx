@@ -27,10 +27,10 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           className="object-cover"
         />
         <div
-          className={`hidden md:flex absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[17.5%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
+          className={`hidden md:flex absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "max-w-[50%]"} ${(slice.variation === "textLeft" || slice.variation === "textRight") && "max-w-[30%]"}  ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[17.5%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
         >
           <div
-            className="text-white max-w-[30%] text-center"
+            className={`text-white text-center`}
             style={{
               color: ColorsMap[slice.primary.text_color] || ColorsMap.default,
             }}
@@ -62,7 +62,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
         </div>
       </div>
 
-      <BoundedFull className="flex flex-col md:hidden gap-4 p-4 bg-white items-center text-center pb-4">
+      <BoundedFull className="flex flex-col md:hidden gap-4 bg-white items-center text-center">
         <div className="font-bold">
           <RichTextWithComponents richText={slice.primary.heading_richtext} />
         </div>

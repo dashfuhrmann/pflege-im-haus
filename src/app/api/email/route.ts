@@ -12,8 +12,6 @@ export async function POST(request: NextRequest) {
   const message: string = data.get("message") as string;
   const phone: string = data.get("phone") as string;
 
-  console.log(files);
-
   if (!files) {
     return NextResponse.json({ success: false });
   }
@@ -27,8 +25,6 @@ export async function POST(request: NextRequest) {
       content: buffer,
     });
   }
-  console.log(data);
-  console.log(name, email);
 
   const transport = nodemailer.createTransport({
     service: "gmail",

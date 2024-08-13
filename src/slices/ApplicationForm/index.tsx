@@ -206,8 +206,6 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
     formData.append("arbeitsort", data.arbeitsort);
     formData.append("message", data.message);
 
-    console.log(formData);
-
     sendEmail(formData);
   };
 
