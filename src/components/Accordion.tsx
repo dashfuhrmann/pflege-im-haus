@@ -72,13 +72,11 @@ function Accordion({
         color: backgroundColor === "primary" ? "white" : "black",
       }}
       ref={detailsRef}
-      //   onToggle={handleToggle}
-      //   onTransitionEnd={handleTransitionEnd}
     >
       <summary className="flex flex-row items-center justify-between">
-        <h3 className="">
+        <div>
           <RichTextWithComponents richText={headline} />
-        </h3>
+        </div>
         <Chevron className="group-open:rotate-90" />
       </summary>
       <div className="details-content flex flex-col mt-4 leading-relaxed overflow-hidden transition-maxHeight duration-250 ease-linear max-h-0 group-open:max-h-full">

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
 import { createClient } from "@/prismicio";
+import { notFound } from "next/navigation";
 
 const dm_sans = Roboto_Flex({
   subsets: ["latin"],
@@ -23,7 +24,9 @@ export async function generateMetadata({
   params: { uid: string };
 }): Promise<Metadata & { jsonLd: string }> {
   const client = createClient();
-  const page = await client.getByUID("page", params.uid);
+  const page = await client
+    .getByUID("page", params.uid)
+    .catch(() => notFound());
 
   return {
     title: "Betreuungskräfte (m/w/d) in Vollzeit gesucht",
