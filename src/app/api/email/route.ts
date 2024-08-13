@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
@@ -65,6 +65,7 @@ export async function POST(request: NextRequest) {
     await sendMailPromise();
     return NextResponse.json({
       message: "Vielen Dank, wir haben ihre Email erhalten.",
+      status: 200,
     });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });

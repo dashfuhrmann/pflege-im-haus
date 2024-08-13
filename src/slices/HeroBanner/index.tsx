@@ -66,6 +66,11 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
         <div className="font-bold">
           <RichTextWithComponents richText={slice.primary.heading_richtext} />
         </div>
+        <div>
+          <RichTextWithComponents
+            richText={slice.primary.subheading_richtext}
+          />
+        </div>
         {slice.primary.scroll_button ? (
           <ScrollButton elementId={slice.primary.scroll_target as string}>
             {slice.primary.link_label}
