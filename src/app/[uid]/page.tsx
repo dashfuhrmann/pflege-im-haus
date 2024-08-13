@@ -43,7 +43,19 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("page", params.uid)
     .catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  const jsonLd = JSON.stringify(page.data.structured_data);
+
+  return (
+    <section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
+      />
+      <SliceZone slices={page.data.slices} components={components} />
+    </section>
+  );
+
+  // return <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateStaticParams() {
