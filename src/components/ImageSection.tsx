@@ -1,6 +1,5 @@
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import React from "react";
 import RichTextWithComponents from "./RichTextWithComponents";
 
 function ImageSection({
@@ -21,11 +20,9 @@ function ImageSection({
   // map over icons and return an array of feather icons plus the icon text
 
   return (
-    <div className="flex flex-col lg:flex-row w-full gap-4">
+    <div className="flex flex-col w-full gap-8 lg:flex-row">
       <div className="flex w-full lg:w-1/2">
-        <PrismicNextImage
-          field={image}
-        />
+        <PrismicNextImage field={image} />
       </div>
       <div className="flex flex-col w-full lg:w-1/2">
         <RichTextWithComponents richText={cardHeading} />
@@ -49,7 +46,7 @@ function ImageSection({
           ))}
         </ul>
         {isFilled.link(buttonLink) && (
-          <button className="rounded-3xl bg-black text-white w-full p-4">
+          <button className="w-full p-4 text-white bg-black rounded-3xl">
             {buttonText}
           </button>
         )}

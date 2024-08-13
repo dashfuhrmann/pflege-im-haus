@@ -5,27 +5,26 @@ import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { useRef, useState } from "react";
-import { DropEvent, DropItem, FileDropItem, TextDropItem } from "react-aria";
+import { useState } from "react";
+import { DropEvent, FileDropItem } from "react-aria";
 import {
   Button,
+  DropZone,
+  FieldError,
+  FileTrigger,
+  Form,
   Input,
   Label,
-  TextField,
-  ToggleButton,
-  Select,
-  SelectValue,
-  Popover,
   ListBox,
   ListBoxItem,
-  Form,
-  DropZone,
-  DropZoneProps,
-  FileTrigger,
+  Popover,
+  Select,
+  SelectValue,
   Text,
-  FieldError,
-  ValidationResult,
   TextArea,
+  TextField,
+  ToggleButton,
+  ValidationResult,
 } from "react-aria-components";
 import { FiMinusCircle } from "react-icons/fi";
 
@@ -41,14 +40,14 @@ const CustomTextArea = ({
   errorMessage?: string | ((validation: ValidationResult) => string);
 }) => {
   return (
-    <TextField name={name} className="flex flex-col gap-2 w-full">
+    <TextField name={name} className="flex flex-col w-full gap-2">
       <Label className="text-lg font-bold">{label}</Label>
       <TextArea
         placeholder={label}
         required={required}
-        className="border-solid border-black rounded-lg border-2 px-4 py-4 text-lg font-normal"
+        className="px-4 py-4 text-lg font-normal border-2 border-black border-solid rounded-lg"
       />
-      <FieldError className="text-red-500 text-lg font-bold">
+      <FieldError className="text-lg font-bold text-red-500">
         {errorMessage}
       </FieldError>
     </TextField>
@@ -82,9 +81,9 @@ const CustomInput = ({
         type={type}
         placeholder={label}
         required={required}
-        className={`border-solid border-black rounded-lg border-2 px-4 py-4 text-lg font-normal  `}
+        className={`border-solid border-black rounded-lg border-2 px-4 py-4 text-lg font-normal`}
       />
-      <FieldError className="text-red-500 text-lg font-bold">
+      <FieldError className="text-lg font-bold text-red-500">
         {errorMessage}
       </FieldError>
     </TextField>
@@ -131,16 +130,16 @@ const FileUpload: React.FC<FileUploadProps> = ({ name, files, setFiles }) => {
         </FileTrigger>
         <Text
           slot="description"
-          className="flex flex-col w-full items-center justify-center border-2 border-black p-4 rounded-lg"
+          className="flex flex-col items-center justify-center w-full p-4 border-2 border-black rounded-lg"
         >
           Oder per Drag & Drop hier hinzufügen
           <ul>
             {files.map((file, index) => (
               <li
                 key={index}
-                className="flex flex-row gap-4 justify-center items-center"
+                className="flex flex-row items-center justify-center gap-4"
               >
-                {file.name}{" "}
+                {file.name}
                 <Button onPress={() => handleDelete(index)}>
                   <FiMinusCircle width={24} height={24} />
                 </Button>
@@ -230,7 +229,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
       </div>
 
       {slice.variation === "default" && (
-        <ul className="flex flex-col md:flex-row  flex-wrap gap-16 gap-y-8">
+        <ul className="flex flex-col flex-wrap gap-16 md:flex-row gap-y-8">
           {slice.items.map((item, index) => (
             <li key={index}>
               <ToggleButton
@@ -242,7 +241,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
                   }
                   setSelectedJob(item.job_title as string);
                 }}
-                className="border border-solid w-full md:w-fit border-secondary text-secondary selected:bg-secondary selected:text-white hover:bg-secondary50 hover:text-white rounded-xl px-4 py-4 text-2xl font-bold"
+                className="w-full px-4 py-4 text-2xl font-bold border border-solid md:w-fit border-secondary text-secondary selected:bg-secondary selected:text-white hover:bg-secondary50 hover:text-white rounded-xl"
               >
                 {item.job_title}
               </ToggleButton>
@@ -251,7 +250,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
         </ul>
       )}
       <Form className="flex flex-col w-full gap-4" onSubmit={onSubmit}>
-        <div className="flex flex-col md:flex-row w-full gap-4">
+        <div className="flex flex-col w-full gap-4 md:flex-row">
           <CustomInput
             type="text"
             name="vorname"
@@ -279,7 +278,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
             errorMessage="Bitte geben Sie Ihre E-Mail-Adresse ein"
           />
         </div>
-        <div className="flex flex-col md:flex-row w-full gap-4">
+        <div className="flex flex-col w-full gap-4 md:flex-row">
           <CustomInput
             type="text"
             name="phone"
@@ -296,12 +295,12 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
               isRequired
             >
               <Label className="text-lg font-bold">Arbeitsort</Label>
-              <Button className="border-2 border-black rounded-lg px-4 py-4 flex justify-between">
+              <Button className="flex justify-between px-4 py-4 border-2 border-black rounded-lg">
                 <SelectValue className="text-lg text-black placeholder-shown:text-gray-400" />
                 <span aria-hidden="true">▼</span>
               </Button>
               <Popover className="w-[--trigger-width] overflow-auto rounded-md bg-white text-base shadow-lg ring-1 ring-black/5 entering:animate-in entering:fade-in exiting:animate-out exiting:fade-ou">
-                <ListBox className="flex flex-col w-full outline-none p-1">
+                <ListBox className="flex flex-col w-full p-1 outline-none">
                   {workingPlaces.map((item, index) => (
                     <ListBoxItem
                       key={index}
@@ -326,7 +325,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
           <FileUpload name="files" files={files} setFiles={setFiles} />
         )}
         <Button
-          className="w-full text-white bg-secondary hover:bg-secondary50 text-2xl font-bold px-4 py-4 rounded-lg"
+          className="w-full px-4 py-4 text-2xl font-bold text-white rounded-lg bg-secondary hover:bg-secondary50"
           type="submit"
         >
           {slice.variation === "default"

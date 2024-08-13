@@ -1,10 +1,9 @@
-import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
-import { Roboto_Flex } from "next/font/google";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { createClient, repositoryName } from "@/prismicio";
+import { PrismicPreview } from "@prismicio/next";
 import { Metadata } from "next";
-import { createClient } from "@/prismicio";
+import { Roboto_Flex } from "next/font/google";
 import { notFound } from "next/navigation";
 
 const dm_sans = Roboto_Flex({

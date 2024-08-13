@@ -24,7 +24,7 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="min-h-[450px] bg-secondary50 flex-col"
     >
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col gap-6 md:flex-row">
         <div className="flex flex-col gap-8 md:w-1/2">
           <RichTextWithComponents richText={slice.primary.heading} />
           <RichTextWithComponents richText={slice.primary.subheading} />
@@ -41,20 +41,20 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
             ))}
           </ul>
           <ul className="flex flex-col flex-wrap gap-y-4 gap-x-4">
-            <li className="flex flex-row gap-4 items-center">
+            <li className="flex flex-row items-center gap-4">
               <div className="flex p-4 rounded-full bg-primary">
                 <FiPhone size={24} color="white" />
               </div>
               <RichTextWithComponents richText={slice.primary.phone} />
             </li>
-            <li className="flex flex-row gap-4  items-center">
+            <li className="flex flex-row items-center gap-4">
               <div className="flex p-4 rounded-full bg-primary">
                 <FiPrinter size={24} color="white" />
               </div>
 
               <RichTextWithComponents richText={slice.primary.fax} />
             </li>
-            <li className="flex flex-row gap-4 items-center">
+            <li className="flex flex-row items-center gap-4">
               <div className="flex p-4 rounded-full bg-primary">
                 <FiMail size={24} color="white" />
               </div>

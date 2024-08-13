@@ -1,8 +1,8 @@
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
 import BoundedFull from "@/components/BoundedFull";
-import { PrismicNextImage } from "@prismicio/next";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
+import { Content } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
+import { SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `TimeLine`.
@@ -18,8 +18,8 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="container w-full h-full flex flex-col xl:flex-row">
-        <div className="flex flex-col w-full xl:w-2/5 gap-4">
+      <div className="container flex flex-col w-full h-full xl:flex-row">
+        <div className="flex flex-col w-full gap-4 xl:w-2/5">
           <div className="text-center">
             <RichTextWithComponents richText={slice.primary.heading} />
           </div>
@@ -35,9 +35,9 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
           </div>
         </div>
 
-        <div className="relative wrap overflow-hidden p-10 h-full w-full xl:w-3/5">
+        <div className="relative w-full h-full p-10 overflow-hidden wrap xl:w-3/5">
           {/* <div
-            className="border-2 absolute border-opacity-20 border-black h-full"
+            className="absolute h-full border-2 border-black border-opacity-20"
             style={{ left: "50%" }}
           ></div> */}
           {slice.items.map((item, index) => (
@@ -47,9 +47,9 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
                 index % 2 === 0 ? "xl:flex-row" : "xl:flex-row-reverse"
               }`}
             >
-              <div className="order-1 w-5/12 hidden xl:block"></div>
+              <div className="order-1 hidden w-5/12 xl:block"></div>
               <div className="z-20 flex flex-col items-center order-1">
-                <span className="flex items-center justify-center text-center font-semibold text-lg text-white bg-primary w-8 h-8 rounded-full">
+                <span className="flex items-center justify-center w-8 h-8 text-lg font-semibold text-center text-white rounded-full bg-primary">
                   {index + 1}
                 </span>
 
@@ -57,7 +57,7 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
                   <div className="absolute mt-8 h-[calc(100%-32px)] w-1 bg-black"></div>
                 ) : null}
               </div>
-              <div className="order-1 bg-secondary rounded-lg shadow-xl w-full xl:w-5/12 px-6 py-4 mb-4 ml-4 xl:m-0">
+              <div className="order-1 w-full px-6 py-4 mb-4 ml-4 rounded-lg shadow-xl bg-secondary xl:w-5/12 xl:m-0">
                 <div className="mb-3 text-black">
                   <RichTextWithComponents richText={item.heading_richtext} />
                 </div>

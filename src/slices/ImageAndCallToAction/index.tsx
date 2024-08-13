@@ -22,23 +22,23 @@ const ImageAndCallToAction = ({
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-row bg-white py-8 justify-center"
+      className="flex flex-row justify-center py-8 bg-white"
     >
-      <div className="flex flex-col xl:flex-row w-full gap-4 md:gap-16">
-        <div className="flex w-full xl:w-1/2 relative">
+      <div className="flex flex-col w-full gap-4 xl:flex-row md:gap-16">
+        <div className="relative flex w-full xl:w-1/2">
           <PrismicNextImage
             field={slice.primary.image}
             className="rounded-2xl"
           />
         </div>
-        <div className="flex w-full flex-col justify-center xl:w-1/2 xl:gap-4 gap-4">
+        <div className="flex flex-col justify-center w-full gap-4 xl:w-1/2 xl:gap-4">
           <div className="w-fit ">
             <RichTextWithComponents richText={slice.primary.heading_richtext} />
           </div>
           <RichTextWithComponents richText={slice.primary.description} />
           <ButtonLink
             field={slice.primary.link}
-            className="flex flex-row gap-4 items-center text-2xl bg-secondary hover:bg-secondary50 text-black"
+            className="flex flex-row items-center gap-4 text-2xl text-black bg-secondary hover:bg-secondary50"
           >
             {slice.primary.link_label}
             <FiArrowRight />

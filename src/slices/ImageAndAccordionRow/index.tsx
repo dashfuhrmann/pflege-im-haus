@@ -1,5 +1,4 @@
 import { ColorsMap, PrismicColors, PrismicColorsType } from "@/colors";
-import A11yAccordion from "@/components/A11yAccordion";
 import Accordion from "@/components/Accordion";
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
@@ -24,7 +23,7 @@ function AccordionContent(props: {
   return (
     <div
       id="content"
-      className="p-4 font-medium text-lg leading-relaxed"
+      className="p-4 text-lg font-medium leading-relaxed"
       style={{
         backgroundColor: PrismicColors[props.color] || PrismicColors.default,
         color:
@@ -54,11 +53,11 @@ const ImageAndAccordionRow = ({
       <div className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.heading} />
       </div>
-      <div className="w-full text-center mb-4">
+      <div className="w-full mb-4 text-center">
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
 
-      <div className="flex flex-col md:flex-row items-start md:gap-4">
+      <div className="flex flex-col items-start md:flex-row md:gap-4">
         <div className="flex flex-col w-full md:w-[40%] gap-4">
           {slice.items.map((item, index) => (
             <Accordion

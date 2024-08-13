@@ -1,10 +1,10 @@
-import BoundedFull from "@/components/BoundedFull";
-import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
-import RichTextWithComponents from "@/components/RichTextWithComponents";
-import { PrismicNextImage } from "@prismicio/next";
 import { ColorsMap } from "@/colors";
+import BoundedFull from "@/components/BoundedFull";
 import ButtonLink from "@/components/ButtonLink";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
+import { Content, isFilled } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
+import { SliceComponentProps } from "@prismicio/react";
 import { FiArrowRight } from "react-icons/fi";
 
 /**
@@ -34,7 +34,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       </div>
       <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-4">
         {slice.items.map((item, index) => (
-          <li className="flex flex-row w-full p-8 gap-4 flex-wrap" key={index}>
+          <li className="flex flex-row flex-wrap w-full gap-4 p-8" key={index}>
             {slice.variation === "noBackgroundImages" && (
               <div className="flex items-center justify-center min-h-[280px] min-w-[280px] rounded-full w-full">
                 {item.icon && (
@@ -53,14 +53,14 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
                   <PrismicNextImage
                     width={120}
                     height={120}
-                    className="flex-grow-1 mx-auto p-4"
+                    className="p-4 mx-auto flex-grow-1"
                     field={item.icon}
                   />
                 )}
               </div>
             )}
             <div className="flex flex-col gap-4">
-              <div className="text-black text-left">
+              <div className="text-left text-black">
                 <RichTextWithComponents richText={item.heading} />
               </div>
               <div className="text-left">
@@ -69,7 +69,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               {isFilled.link(item.link) && (
                 <ButtonLink
                   field={item.link}
-                  className="flex flex-row gap-4 mt-auto items-center text-2xl bg-secondary hover:bg-secondary50 text-white "
+                  className="flex flex-row items-center gap-4 mt-auto text-2xl text-white bg-secondary hover:bg-secondary50 "
                 >
                   {item.link_label}
                   <FiArrowRight />

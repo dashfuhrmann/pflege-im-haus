@@ -1,4 +1,3 @@
-import BoundedFull from "@/components/BoundedFull";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -17,7 +16,7 @@ const Divider = ({ slice }: DividerProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="px-24 py-4"
     >
-      <hr className="h-1 w-full flex flex-row bg-secondary rounded-2xl"></hr>
+      <hr className="flex flex-row w-full h-1 bg-secondary rounded-2xl"></hr>
     </section>
   );
 };

@@ -46,7 +46,7 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
           )}
 
           {isFilled.richText(slice.items[currentIndex].sub_heading_1) && (
-            <div className="text-white max-w-md">
+            <div className="max-w-md text-white">
               <RichTextWithComponents
                 richText={slice.items[currentIndex].sub_heading_1}
               />
@@ -54,14 +54,14 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
           )}
 
           {isFilled.richText(slice.items[currentIndex].sub_heading_2) && (
-            <div className="text-white max-w-md">
+            <div className="max-w-md text-white">
               <RichTextWithComponents
                 richText={slice.items[currentIndex].sub_heading_2}
               />
             </div>
           )}
           {isFilled.richText(slice.items[currentIndex].sub_heading_3) && (
-            <div className="text-white max-w-md">
+            <div className="max-w-md text-white">
               <RichTextWithComponents
                 richText={slice.items[currentIndex].sub_heading_3}
               />
@@ -71,7 +71,7 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
           {isFilled.keyText(slice.items[currentIndex].button_label) && (
             <ButtonLink
               field={slice.items[currentIndex].button_link}
-              className="py-2 text-xl text-center w-1/2 rounded-xl"
+              className="w-1/2 py-2 text-xl text-center rounded-xl"
             >
               {slice.items[currentIndex].button_label}
             </ButtonLink>

@@ -1,15 +1,14 @@
 import { Content } from "@prismicio/client";
 
-import { SliceComponentProps } from "@prismicio/react";
-import community from "../../public/community.svg";
-import healthcare from "../../public/healthcare.svg";
-import competence from "../../public/competence.svg";
-import networking from "../../public/networking.svg";
+import { ColorsMap } from "@/colors";
 import BoundedFull from "@/components/BoundedFull";
-import Image from "next/image";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { PrismicNextImage } from "@prismicio/next";
-import { ColorsMap, ColorsType } from "@/colors";
+import { SliceComponentProps } from "@prismicio/react";
+import community from "../../public/community.svg";
+import competence from "../../public/competence.svg";
+import healthcare from "../../public/healthcare.svg";
+import networking from "../../public/networking.svg";
 
 const icons = {
   community: community,
@@ -40,10 +39,10 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
       <span className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.heading} />
       </span>
-      <ul className="flex flex-col xl:flex-row w-full gap-4">
+      <ul className="flex flex-col w-full gap-4 xl:flex-row">
         {slice.items.map((card, index) => (
           <li
-            className="flex flex-col w-full xl:w-1/4 gap-4 p-6 items-center"
+            className="flex flex-col items-center w-full gap-4 p-6 xl:w-1/4"
             key={index}
           >
             <div
@@ -63,7 +62,7 @@ const FeatureRow = ({ slice }: FeatureRowProps): JSX.Element => {
                 />
               )}
             </div>
-            <div className=" text-black text-center">
+            <div className="text-center text-black ">
               <RichTextWithComponents richText={card.heading} />
             </div>
             <div className="text-center">

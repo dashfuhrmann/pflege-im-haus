@@ -1,9 +1,9 @@
 "use client";
 
-import { RichTextField } from "@prismicio/client";
-import React, { useRef, useState } from "react";
-import RichTextWithComponents from "./RichTextWithComponents";
 import { PrismicColors, PrismicColorsType } from "@/colors";
+import { RichTextField } from "@prismicio/client";
+import { useRef } from "react";
+import RichTextWithComponents from "./RichTextWithComponents";
 
 const Chevron = ({ className }: { className: string }) => {
   return (
@@ -79,7 +79,7 @@ function Accordion({
         </div>
         <Chevron className="group-open:rotate-90" />
       </summary>
-      <div className="details-content flex flex-col mt-4 leading-relaxed overflow-hidden transition-maxHeight duration-250 ease-linear max-h-0 group-open:max-h-full">
+      <div className="flex flex-col mt-4 overflow-hidden leading-relaxed ease-linear details-content transition-maxHeight duration-250 max-h-0 group-open:max-h-full">
         <RichTextWithComponents richText={content} />
       </div>
     </details>

@@ -37,7 +37,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           >
             <RichTextWithComponents richText={slice.primary.heading_richtext} />
           </div>
-          <span className="bg-dunkelblau rounded-full w-20 h-2" />
+          <span className="w-20 h-2 rounded-full bg-dunkelblau" />
           <div
             className="text-white max-w-[50%] text-center"
             style={{
@@ -62,7 +62,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
         </div>
       </div>
 
-      <BoundedFull className="flex flex-col md:hidden gap-4 bg-white items-center text-center">
+      <BoundedFull className="flex flex-col items-center gap-4 text-center bg-white md:hidden">
         <div className="font-bold">
           <RichTextWithComponents richText={slice.primary.heading_richtext} />
         </div>

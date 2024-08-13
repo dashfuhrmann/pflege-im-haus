@@ -1,5 +1,5 @@
-import { createClient } from "@/prismicio";
 import Navbar from "@/components/Navbar";
+import { createClient } from "@/prismicio";
 export default async function Header() {
   const client = createClient();
   const settings = await client.getSingle("settings");

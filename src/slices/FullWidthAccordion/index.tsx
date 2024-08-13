@@ -1,9 +1,8 @@
 import { ColorsMap } from "@/colors";
-import A11yAccordion from "@/components/A11yAccordion";
 import Accordion from "@/components/Accordion";
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
-import { Content, RichTextField } from "@prismicio/client";
+import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**
@@ -11,18 +10,6 @@ import { SliceComponentProps } from "@prismicio/react";
  */
 export type FullWidthAccordionProps =
   SliceComponentProps<Content.FullWidthAccordionSlice>;
-
-function AccordionContent(props: { content: RichTextField }) {
-  return (
-    <div
-      id="content"
-      className="p-4 font-medium text-lg leading-relaxed bg-white"
-    >
-      <RichTextWithComponents richText={props.content} />
-    </div>
-  );
-}
-
 /**
  * Component for "FullWidthAccordion" Slices.
  */

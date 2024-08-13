@@ -1,9 +1,9 @@
 "use client";
 
+import { ColorsMap, PrismicColors, PrismicColorsType } from "@/colors";
 import { RichTextField } from "@prismicio/client";
 import React, { ReactNode, useRef, useState } from "react";
 import RichTextWithComponents from "./RichTextWithComponents";
-import { ColorsMap, PrismicColors, PrismicColorsType } from "@/colors";
 
 type AccordionProps = {
   id: string;
@@ -23,11 +23,14 @@ function AccordionTitle(props: {
 }) {
   return (
     <div
-    style={{
-      backgroundColor:
-      PrismicColors[props.itemColor] || PrismicColors.default,
-      color: PrismicColors[props.itemColor] === PrismicColors.primary ? ColorsMap.default : ColorsMap.black,
-    }}
+      style={{
+        backgroundColor:
+          PrismicColors[props.itemColor] || PrismicColors.default,
+        color:
+          PrismicColors[props.itemColor] === PrismicColors.primary
+            ? ColorsMap.default
+            : ColorsMap.black,
+      }}
       className={`flex w-full flex-row gap-4 justify-between rounded-2xl p-4 items-center transition-all ${props.isOpen ? "rounded-b-none" : ""} ${props.backgroundColor}`}
     >
       {typeof props.heading === "string" ? (

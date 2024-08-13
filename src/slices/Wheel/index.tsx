@@ -1,12 +1,12 @@
 "use client";
 
 import BoundedFull from "@/components/BoundedFull";
-import gsap from "gsap";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-import RichTextWithComponents from "@/components/RichTextWithComponents";
 
 /**
  * Props for `Wheel`.
@@ -225,7 +225,7 @@ const Wheel = ({ slice }: WheelProps): JSX.Element => {
       className="flex flex-col"
     >
       <div className="flex flex-col gap-2">
-        <h1 className="font-bold text-6xl text-center text-black">
+        <h1 className="text-6xl font-bold text-center text-black">
           <>{slice.primary.heading}</>
         </h1>
         <div className="text-center">

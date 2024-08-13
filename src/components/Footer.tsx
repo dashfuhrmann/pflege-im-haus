@@ -12,8 +12,8 @@ export default async function Footer() {
   const client = createClient();
   const settings = await client.getSingle("settings");
   return (
-    <footer className="flex flex-col p-12 bg-secondary bg-opacity-50 justify-center gap-4">
-      <div className="flex flex-row gap-8 md:gap-4 justify-between">
+    <footer className="flex flex-col justify-center gap-4 p-12 bg-opacity-50 bg-secondary">
+      <div className="flex flex-row justify-between gap-8 md:gap-4">
         <div className="flex flex-col items-center gap-4">
           <PrismicNextImage
             field={settings.data.fallback_image}
@@ -21,7 +21,7 @@ export default async function Footer() {
             height={140}
           />
 
-          <div className="flex flex-row gap-2 justify-center">
+          <div className="flex flex-row justify-center gap-2">
             {settings.data.social_media.map((social, index) => (
               <PrismicNextLink field={social.link} key={index}>
                 {social.icon && icons[social.icon]}
@@ -30,8 +30,8 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="md:flex flex-col gap-4 hidden">
-          <h1 className="text-xl text-bold underline decoration-slate-700 decoration-offset-2">
+        <div className="flex-col hidden gap-4 md:flex">
+          <h1 className="text-xl underline text-bold decoration-slate-700 decoration-offset-2">
             Adresse
           </h1>
           <ul className="flex flex-col gap-12">
@@ -52,7 +52,7 @@ export default async function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h1 className="text-xl text-bold underline decoration-slate-700 decoration-offset-2">
+          <h1 className="text-xl underline text-bold decoration-slate-700 decoration-offset-2">
             Kontakt
           </h1>
           <div className="flex flex-col">
@@ -62,9 +62,9 @@ export default async function Footer() {
           </div>
         </div>
       </div>
-      <hr className="h-1 bg-black border-0 w-full" />
+      <hr className="w-full h-1 bg-black border-0" />
       <div className="flex flex-row justify-between gap-4">
-        <span className="text-xl text-black text-center">
+        <span className="text-xl text-center text-black">
           {settings.data.copyright}
         </span>
         <ul className="flex flex-row gap-4">

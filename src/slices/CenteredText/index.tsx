@@ -1,8 +1,8 @@
 import { ColorsMap } from "@/colors";
 import BoundedFull from "@/components/BoundedFull";
+import RichTextWithComponents from "@/components/RichTextWithComponents";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import RichTextWithComponents from "@/components/RichTextWithComponents";
 
 /**
  * Props for `CenteredText`.

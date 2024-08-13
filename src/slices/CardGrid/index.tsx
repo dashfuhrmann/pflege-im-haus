@@ -17,10 +17,10 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-gray-200 bg-opacity-50 flex-col md:flex-row"
+      className="flex-col bg-gray-200 bg-opacity-50 md:flex-row"
     >
-      <div className="flex flex-col w-full md:w-1/2 justify-end p-24 mb-auto mt-auto gap-4">
-        <div className="font-bold text-3xl text-center">
+      <div className="flex flex-col justify-end w-full gap-4 p-24 mt-auto mb-auto md:w-1/2">
+        <div className="text-3xl font-bold text-center">
           <RichTextWithComponents richText={slice.primary.heading_richtext} />
         </div>
         <div className="text-lg text-center">
@@ -34,13 +34,13 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-1/2 gap-y-8 gap-x-12">
+      <div className="grid w-full grid-cols-1 md:grid-cols-2 md:w-1/2 gap-y-8 gap-x-12">
         {slice.items.map((testemonial, index) => (
           <div
-            className="flex flex-col w-full gap-4 justify-center border-2 rounded-2xl border-black p-8"
+            className="flex flex-col justify-center w-full gap-4 p-8 border-2 border-black rounded-2xl"
             key={index}
           >
-            <div className="flex-shrink-0 bg-gray-200 mx-auto rounded-full p-4 items-center justify-center">
+            <div className="items-center justify-center flex-shrink-0 p-4 mx-auto bg-gray-200 rounded-full">
               <PrismicNextImage
                 field={testemonial.image}
                 width={64}
