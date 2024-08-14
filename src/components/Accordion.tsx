@@ -34,12 +34,14 @@ type AccordionProps = {
   headline: RichTextField;
   content: RichTextField;
   backgroundColor?: PrismicColorsType;
+  open?: boolean;
 };
 
 function Accordion({
   headline,
   content,
   backgroundColor = "default",
+  open = false,
 }: AccordionProps) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
@@ -72,6 +74,7 @@ function Accordion({
         color: backgroundColor === "primary" ? "white" : "black",
       }}
       ref={detailsRef}
+      open={open}
     >
       <summary className="flex flex-row items-center justify-between">
         <div>

@@ -65,6 +65,7 @@ const ImageAndAccordionRow = ({
               headline={item.heading_richtext}
               content={item.description}
               backgroundColor={slice.primary.item_color}
+              open={index === 0}
             />
           ))}
         </div>
