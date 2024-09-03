@@ -28,7 +28,7 @@ const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {
         <div className="flex flex-col gap-8 md:w-1/2">
           <RichTextWithComponents richText={slice.primary.heading} />
           <RichTextWithComponents richText={slice.primary.subheading} />
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-8">
             {slice.items.map((item, index) => (
               <li key={index}>
                 <RichTextWithComponents richText={item.address} />

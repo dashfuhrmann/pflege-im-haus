@@ -31,20 +31,18 @@ export default async function Footer() {
         </div>
 
         <div className="flex-col hidden gap-4 md:flex">
-          <h1 className="text-xl underline text-bold decoration-slate-700 decoration-offset-2">
-            Adresse
-          </h1>
+          <h1 className="text-lg font-bold">Adresse:</h1>
           <ul className="flex flex-col gap-12">
             {settings.data.addresses.map((address, index) => (
               <li key={index}>
                 <div className="flex flex-col">
-                  <span key={index} className="text-lg font-bold">
+                  <span key={index} className="font-bold text-md">
                     {address.name}
                   </span>
-                  <span className="text-lg">
+                  <span className="text-md">
                     {address.plz + " " + address.street}
                   </span>
-                  <span className="text-lg">{address.town}</span>
+                  <span className="text-md">{address.town}</span>
                 </div>
               </li>
             ))}
@@ -52,13 +50,11 @@ export default async function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h1 className="text-xl underline text-bold decoration-slate-700 decoration-offset-2">
-            Kontakt
-          </h1>
+          <h1 className="text-lg font-bold">Kontakt:</h1>
           <div className="flex flex-col">
-            <span className="text-lg">{settings.data.phone_number}</span>
-            <span className="text-lg">{settings.data.email}</span>
-            <span className="text-lg">{settings.data.fax}</span>
+            <span className="text-md">{settings.data.phone_number}</span>
+            <span className="text-md">{settings.data.email}</span>
+            <span className="text-md">{settings.data.fax}</span>
           </div>
         </div>
       </div>

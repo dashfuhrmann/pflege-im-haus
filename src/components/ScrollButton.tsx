@@ -10,7 +10,12 @@ type ScrollButtonProps = {
   children?: React.ReactNode;
 };
 
-function ScrollButton({ className, elementId, children }: ScrollButtonProps) {
+function ScrollButton({
+  className,
+  elementId,
+  children,
+  ...restProps
+}: ScrollButtonProps) {
   const handleClick = () => {
     if (!elementId) return;
     const element = document.getElementById(elementId);
@@ -21,10 +26,11 @@ function ScrollButton({ className, elementId, children }: ScrollButtonProps) {
   return (
     <Button
       className={clsx(
-        "relative inline-flex h-fit w-fit rounded-lg text-white px-3 md:px-6  py-2 md:py-3 bg-primary hover:bg-opacity-50",
+        "relative inline-flex h-fit w-fit rounded-lg text-white px-3 md:px-6 py-2 md:py-3 bg-primary hover:bg-opacity-50",
         className
       )}
       onPress={handleClick}
+      {...restProps}
     >
       {children}
     </Button>

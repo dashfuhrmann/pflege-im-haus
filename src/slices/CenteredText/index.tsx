@@ -24,7 +24,7 @@ const CenteredText = ({ slice }: CenteredTextProps): JSX.Element => {
       }}
     >
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-6">
           <RichTextWithComponents richText={slice.primary.heading_richtext} />
           <RichTextWithComponents
             richText={slice.primary.subheading_richtext}
@@ -32,7 +32,7 @@ const CenteredText = ({ slice }: CenteredTextProps): JSX.Element => {
         </div>
 
         <div
-          className={`text-balance text-lg leading-relaxed text-start mt-8 ${slice.variation === "withoutBorder" ? null : "border-l-4 border-dunkelblau"}`}
+          className={`text-balance text-lg leading-relaxed text-start mt-8 ${slice.variation === "withoutBorder" ? null : "border-l-4 border-dunkelblau pl-8"}`}
         >
           <RichTextWithComponents richText={slice.primary.text} />
         </div>

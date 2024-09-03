@@ -8,7 +8,7 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
       field={props.richText}
       components={{
         paragraph: ({ children }) => (
-          <p className="text-sm md:text-base">{children}</p>
+          <p className="text-sm md:text-base xl:text-lg">{children}</p>
         ),
         heading1: ({ children }) => (
           <h1 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl">
@@ -31,20 +31,30 @@ const RichTextWithComponents = (props: { richText: RichTextField }) => {
           </h4>
         ),
         heading5: ({ children }) => (
-          <h5 className="text-lg md:text-lg lg:text-xl xl:text-xl">
+          <h5 className="text-sm md:text-md lg:text-lg xl:text-xl">
             {children}
           </h5>
         ),
         heading6: ({ children }) => <h6 className="text-lg">{children}</h6>,
-        list: ({ children }) => <ol className="ml-4 list-disc">{children}</ol>,
+        list: ({ children }) => (
+          <ol className="ml-4 text-sm list-disc md:text-base xl:text-lg">
+            {children}
+          </ol>
+        ),
         oList: ({ children }) => (
-          <ol className="ml-4 list-decimal">{children}</ol>
+          <ol className="ml-4 text-sm list-decimal md:text-base xl:text-lg">
+            {children}
+          </ol>
         ),
         oListItem: ({ children }) => (
-          <li className="text-lg leading-loose">{children}</li>
+          <li className="text-sm leading-loose md:text-base xl:text-lg">
+            {children}
+          </li>
         ),
         listItem: ({ children }) => (
-          <li className="text-lg leading-loose">{children}</li>
+          <li className="text-sm leading-loose md:text-base xl:text-lg">
+            {children}
+          </li>
         ),
         hyperlink: ({ children, node }) => (
           <a

@@ -39,7 +39,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           </div>
           <span className="w-20 h-2 rounded-full bg-dunkelblau" />
           <div
-            className="text-white max-w-[50%] text-center"
+            className="max-w-full text-center text-white"
             style={{
               color: ColorsMap[slice.primary.text_color] || ColorsMap.default,
             }}
@@ -49,12 +49,15 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
             />
           </div>
           {slice.primary.scroll_button ? (
-            <ScrollButton elementId={slice.primary.scroll_target as string}>
+            <ScrollButton
+              className="text-2xl"
+              elementId={slice.primary.scroll_target as string}
+            >
               {slice.primary.link_label}
             </ScrollButton>
           ) : (
             isFilled.keyText(slice.primary.link_label) && (
-              <ButtonLink field={slice.primary.link} className="text-lg">
+              <ButtonLink className="text-2xl" field={slice.primary.link}>
                 {slice.primary.link_label}
               </ButtonLink>
             )
