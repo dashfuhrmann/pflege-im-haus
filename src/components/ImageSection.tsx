@@ -26,7 +26,7 @@ function ImageSection({
       </div>
       <div className="flex flex-col w-full lg:w-1/2">
         <RichTextWithComponents richText={cardHeading} />
-        <div className="mt-4">
+        <div className="mt-4 mb-4">
           <RichTextWithComponents richText={cardDescription} />
         </div>
         <ul className="flex flex-col gap-8">

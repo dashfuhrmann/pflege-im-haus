@@ -106,7 +106,7 @@ export function CustomForm({ variation, items }: CustomFormProps) {
                   }
                   setSelectedJob(item.job_title as string);
                 }}
-                className="w-full px-4 py-4 text-2xl font-bold border border-solid md:w-fit border-secondary text-secondary selected:bg-secondary selected:text-white hover:bg-secondary50 hover:border-secondary50 hover:text-white rounded-xl"
+                className="w-full px-4 py-4 text-2xl font-bold border border-solid md:w-fit border-secondary text-secondary selected:bg-secondary selected:text-white hover:bg-secondary50 hover:border-0 hover:text-white rounded-xl"
               >
                 {item.job_title}
               </ToggleButton>

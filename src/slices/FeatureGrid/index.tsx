@@ -69,7 +69,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               {isFilled.link(item.link) && (
                 <ButtonLink
                   field={item.link}
-                  className="flex flex-row items-center gap-4 mt-auto text-2xl text-white bg-secondary hover:bg-secondary50 "
+                  className="flex flex-row items-center gap-4 mt-auto text-2xl text-white bg-secondary hover:bg-secondary50"
                 >
                   {item.link_label}
                   <FiArrowRight />

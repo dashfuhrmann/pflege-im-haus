@@ -8,81 +8,8 @@ import { ToastContainer } from "@/components/ToastContainer";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { DropEvent, FileDropItem } from "react-aria";
-import {
-  Button,
-  DropZone,
-  FieldError,
-  FileTrigger,
-  Input,
-  Label,
-  Text,
-  TextArea,
-  TextField,
-  ValidationResult,
-} from "react-aria-components";
+import { Button, DropZone, FileTrigger, Text } from "react-aria-components";
 import { FiMinusCircle } from "react-icons/fi";
-
-const CustomTextArea = ({
-  label,
-  name,
-  required,
-  errorMessage,
-}: {
-  label: string;
-  name: string;
-  required: boolean;
-  errorMessage?: string | ((validation: ValidationResult) => string);
-}) => {
-  return (
-    <TextField name={name} className="flex flex-col w-full gap-2">
-      <Label className="text-lg font-bold">{label}</Label>
-      <TextArea
-        placeholder={label}
-        required={required}
-        className="px-4 py-4 text-lg font-normal border-2 border-black border-solid rounded-lg"
-      />
-      <FieldError className="text-lg font-bold text-red-500">
-        {errorMessage}
-      </FieldError>
-    </TextField>
-  );
-};
-
-type InputProps = {
-  type: string;
-  label: string;
-  name: string;
-  required: boolean;
-  block?: boolean;
-  errorMessage?: string | ((validation: ValidationResult) => string);
-};
-
-const CustomInput = ({
-  type,
-  label,
-  name,
-  block,
-  required,
-  errorMessage,
-}: InputProps) => {
-  return (
-    <TextField
-      name={name}
-      className={`flex flex-col gap-2 ${block ? "w-full" : "w-auto"}`}
-    >
-      <Label className="text-lg font-bold">{label}</Label>
-      <Input
-        type={type}
-        placeholder={label}
-        required={required}
-        className={`border-solid border-black rounded-lg border-2 px-4 py-4 text-lg font-normal`}
-      />
-      <FieldError className="text-lg font-bold text-red-500">
-        {errorMessage}
-      </FieldError>
-    </TextField>
-  );
-};
 
 type FileUploadProps = {
   name: string;
