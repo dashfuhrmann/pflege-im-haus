@@ -34,7 +34,10 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       </div>
       <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-4">
         {slice.items.map((item, index) => (
-          <li className="flex flex-row flex-wrap w-full gap-4 p-8" key={index}>
+          <li
+            className="flex flex-row flex-wrap w-full gap-4 md:p-8"
+            key={index}
+          >
             {slice.variation === "noBackgroundImages" && (
               <div className="flex items-center justify-center min-h-[280px] min-w-[280px] rounded-full w-full">
                 {item.icon && (
@@ -69,7 +72,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               {isFilled.link(item.link) && (
                 <ButtonLink
                   field={item.link}
-                  className="flex flex-row items-center gap-4 mt-auto text-2xl text-white bg-secondary hover:bg-secondary50"
+                  className="flex flex-row items-center gap-4 mt-auto text-2xl text-black bg-secondary50"
                 >
                   {item.link_label}
                   <FiArrowRight />

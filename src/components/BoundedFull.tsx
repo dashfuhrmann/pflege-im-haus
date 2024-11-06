@@ -17,7 +17,7 @@ export default function BoundedFull({
   return (
     <Comp
       className={clsx(
-        "flex w-full h-full px-12 xl:px-24 gap-4 py-8 xl:p-8 xl:py-16",
+        "flex w-full h-full px-8 xl:px-24 gap-4 py-6 xl:p-8 xl:py-12",
         className
       )}
       style={styles}

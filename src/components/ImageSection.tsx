@@ -20,7 +20,7 @@ function ImageSection({
   // map over icons and return an array of feather icons plus the icon text
 
   return (
-    <div className="flex flex-col w-full gap-8 lg:flex-row">
+    <div className="flex flex-col w-full lg:gap-8 lg:flex-row">
       <div className="flex w-full lg:w-1/2">
         <PrismicNextImage field={image} />
       </div>

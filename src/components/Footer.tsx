@@ -63,7 +63,7 @@ export default async function Footer() {
         <span className="text-xl text-center text-black">
           {settings.data.copyright}
         </span>
-        <ul className="flex flex-row gap-4">
+        <ul className="flex flex-col gap-4 md:flex-row">
           {settings.data.navigation.map((link, index) => {
             if (link.label === "Impressum" || link.label === "Datenschutz") {
               return (

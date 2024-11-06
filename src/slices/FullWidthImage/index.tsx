@@ -24,7 +24,7 @@ const FullWidthImage = ({ slice }: FullWidthImageProps): JSX.Element => {
           ColorsMap[slice.primary.backgroundcolor] || ColorsMap.default,
       }}
     >
-      <div className="flex relative h-[450px] justify-center items-center w-full">
+      <div className="relative flex items-center justify-center w-full">
         <PrismicNextImage field={slice.primary.image} />
       </div>
     </BoundedFull>

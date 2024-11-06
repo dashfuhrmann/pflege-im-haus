@@ -57,8 +57,8 @@ const ImageAndAccordionRow = ({
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
 
-      <div className="flex flex-col items-start md:flex-row md:gap-4">
-        <div className="flex flex-col w-full md:w-[40%] gap-4">
+      <div className="flex flex-col items-start lg:flex-row md:gap-4">
+        <div className="flex flex-col w-full lg:w-[40%] gap-4">
           {slice.items.map((item, index) => (
             <Accordion
               key={index}
@@ -69,7 +69,7 @@ const ImageAndAccordionRow = ({
             />
           ))}
         </div>
-        <div className="flex w-full mt-4 md:mt-0 md:w-[60%] justify-center align-middle flex-grow-0">
+        <div className="flex w-full mt-4 md:mt-0 lg:w-[60%] justify-center align-middle flex-grow-0">
           <div className="flex">
             <PrismicNextImage
               field={slice.primary.image}

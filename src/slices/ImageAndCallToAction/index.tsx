@@ -25,20 +25,20 @@ const ImageAndCallToAction = ({
       className="flex flex-row justify-center py-8 bg-white"
     >
       <div className="flex flex-col w-full gap-4 xl:flex-row md:gap-16">
-        <div className="relative flex w-full xl:w-1/2">
+        <div className="relative flex justify-center w-full lg:w-1/2">
           <PrismicNextImage
             field={slice.primary.image}
-            className="rounded-2xl"
+            className="xl:rounded-2xl"
           />
         </div>
-        <div className="flex flex-col justify-center w-full gap-4 xl:w-1/2 xl:gap-4">
-          <div className="w-fit ">
+        <div className="flex flex-col justify-center w-full gap-4 lg:w-1/2 lg:gap-4">
+          <div className="w-fit">
             <RichTextWithComponents richText={slice.primary.heading_richtext} />
           </div>
           <RichTextWithComponents richText={slice.primary.description} />
           <ButtonLink
             field={slice.primary.link}
-            className="flex flex-row items-center gap-4 text-2xl text-black bg-secondary hover:bg-secondary50"
+            className="flex flex-row items-center gap-4 text-2xl text-black bg-secondary50"
           >
             {slice.primary.link_label}
             <FiArrowRight />

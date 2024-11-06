@@ -30,10 +30,13 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
     return () => clearInterval(intervalId);
   }, [currentIndex, slice.items.length]);
 
+  console.log(slice.items[currentIndex].button_link, "link");
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="hidden lg:flex"
     >
       <div className="flex flex-col w-full h-[600px] relative">
         <div
@@ -71,7 +74,7 @@ const ImageSlider = ({ slice }: ImageSliderProps): JSX.Element => {
           {isFilled.keyText(slice.items[currentIndex].button_label) && (
             <ButtonLink
               field={slice.items[currentIndex].button_link}
-              className="w-1/2 py-2 text-xl text-center rounded-xl"
+              className="w-1/2 py-2 text-xl text-center text-white rounded-xl bg-secondary"
             >
               {slice.items[currentIndex].button_label}
             </ButtonLink>

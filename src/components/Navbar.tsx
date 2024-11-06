@@ -114,26 +114,26 @@ export default function Navbar({ settings }: NavbarProps) {
         >
           <FiAlignJustify className="w-8 h-8" />
         </button>
-        <Link href="/">
+        <PrismicNextLink href="/" onClick={() => setNavbarState(false)}>
           <div className="flex items-center w-32 h-24 mr-12">
             <PrismicNextImage field={settings.data.fallback_image} />
           </div>
 
           <span className="sr-only">Pflege im Haus Sandrock-Höhle</span>
-        </Link>
+        </PrismicNextLink>
       </div>
 
       <div
         className={`fixed left-0 top-0 z-50 flex h-full w-[85%] flex-col overflow-auto bg-white transition-all duration-500 ease-in lg:hidden ${navBarState ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex items-center justify-between p-6">
-          <Link href="/">
+          <PrismicNextLink href="/" onClick={() => setNavbarState(false)}>
             <div className="flex items-center w-32 h-24">
               <PrismicNextImage field={settings.data.fallback_image} />
             </div>
 
             <span className="sr-only">Pflege im Haus Sandrock-Höhle</span>
-          </Link>
+          </PrismicNextLink>
           <button
             onClick={() => {
               setNavbarState(false);
@@ -167,14 +167,18 @@ export default function Navbar({ settings }: NavbarProps) {
                   </PrismicNextLink>
                   <ul>
                     {arrayToSelect.map((item, index) => (
-                      <li key={item.label} className="block">
-                        <Link
-                          href={"/"}
+                      <li
+                        key={item.label}
+                        className="block"
+                        onClick={() => setNavbarState(false)}
+                      >
+                        <PrismicNextLink
+                          field={item.link}
                           className="flex flex-row justify-between gap-4 p-6 pr-0 text-lg font-bold uppercase hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
                         >
                           <span>{item.label}</span>
                           <FiArrowRight />
-                        </Link>
+                        </PrismicNextLink>
                       </li>
                     ))}
                   </ul>

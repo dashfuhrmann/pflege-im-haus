@@ -18,7 +18,7 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="container flex flex-col w-full h-full xl:flex-row">
+      <div className="flex flex-col w-full h-full xl:flex-row">
         <div className="flex flex-col w-full gap-4 xl:w-2/5">
           <div className="text-center">
             <RichTextWithComponents richText={slice.primary.heading} />
@@ -35,7 +35,7 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
           </div>
         </div>
 
-        <div className="relative w-full h-full p-10 overflow-hidden wrap xl:w-3/5">
+        <div className="relative w-full h-full p-0 overflow-hidden xl:p-10 wrap xl:w-3/5">
           {/* <div
             className="absolute h-full border-2 border-black border-opacity-20"
             style={{ left: "50%" }}
@@ -57,7 +57,7 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
                   <div className="absolute mt-8 h-[calc(100%-32px)] w-1 bg-black"></div>
                 ) : null}
               </div>
-              <div className="order-1 w-full px-6 py-4 mb-4 ml-4 rounded-lg shadow-xl bg-secondary xl:w-5/12 xl:m-0">
+              <div className="order-1 w-full px-6 py-4 mb-4 ml-4 rounded-lg shadow-xl bg-secondary50 xl:w-5/12 xl:m-0">
                 <div className="mb-3 text-black">
                   <RichTextWithComponents richText={item.heading_richtext} />
                 </div>
