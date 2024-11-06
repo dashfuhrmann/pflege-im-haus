@@ -60,7 +60,7 @@ export default async function Footer() {
       </div>
       <hr className="w-full h-1 bg-black border-0" />
       <div className="flex flex-row justify-between gap-4">
-        <span className="text-xl text-center text-black">
+        <span className="text-lg text-center text-black">
           {settings.data.copyright}
         </span>
         <ul className="flex flex-col gap-4 md:flex-row">
@@ -70,7 +70,7 @@ export default async function Footer() {
                 <li key={index}>
                   <PrismicNextLink
                     field={link.link}
-                    className="text-xl text-black hover:underline hover:decoration-slate-700 hover:decoration-offset-2"
+                    className="text-lg text-black hover:underline hover:decoration-slate-700 hover:decoration-offset-2"
                   >
                     {link.label}
                   </PrismicNextLink>

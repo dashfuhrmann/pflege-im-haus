@@ -21,7 +21,7 @@ const ImageAndBulletList = ({
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`flex-col ${slice.primary.backgroundcolor === "primary" ? "text-white" : "text-black"}`}
+      className={`hidden md:flex flex-col ${slice.primary.backgroundcolor === "primary" ? "text-white" : "text-black"}`}
       styles={{
         backgroundColor:
           ColorsMap[slice.primary.backgroundcolor] || ColorsMap.default,

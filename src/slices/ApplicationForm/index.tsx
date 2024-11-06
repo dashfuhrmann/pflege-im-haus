@@ -100,8 +100,8 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
       <ToastProvider>
-        <ToastContainer />
         <CustomForm variation={slice.variation} items={slice.items} />
+        <ToastContainer />
       </ToastProvider>
     </BoundedFull>
   );

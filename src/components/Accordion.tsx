@@ -11,7 +11,7 @@ const Chevron = ({ className }: { className: string }) => {
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      className={`fill-black stroke-black`}
+      className={`fill-black stroke-black min-h-6 min-w-6`}
     >
       <path
         d="M12 1.5V22.5"
@@ -76,11 +76,11 @@ function Accordion({
       ref={detailsRef}
       open={open}
     >
-      <summary className="flex flex-row items-center justify-between p-2">
+      <summary className="flex flex-row items-center justify-between gap-6">
         <div>
           <RichTextWithComponents richText={headline} />
         </div>
-        <Chevron className="group-open:rotate-90" />
+        <Chevron className="flex flex-shrink-0 flex-grow-1 group-open:rotate-90" />
       </summary>
       <div className="flex flex-col p-2 mt-4 overflow-hidden leading-relaxed ease-linear details-content transition-maxHeight duration-250 max-h-0 group-open:max-h-full">
         <RichTextWithComponents richText={content} />

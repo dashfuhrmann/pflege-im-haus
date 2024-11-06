@@ -2,7 +2,6 @@
 
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import Link from "next/link";
 import { useRef, useState } from "react";
 import { FiAlignJustify, FiArrowRight, FiX } from "react-icons/fi";
 
@@ -22,7 +21,7 @@ export default function Navbar({ settings }: NavbarProps) {
       {/* Desktop Navbar */}
       <div className="flex flex-row px-8">
         <ul className="flex-row items-center hidden w-full gap-4 mx-auto lg:flex lg:flex-row">
-          <Link href="/">
+          <PrismicNextLink href="/">
             <div className="flex items-center w-32 h-24 mr-12">
               <PrismicNextImage
                 field={settings.data.fallback_image}
@@ -31,7 +30,7 @@ export default function Navbar({ settings }: NavbarProps) {
             </div>
 
             <span className="sr-only">Pflege im Haus Sandrock-Höhle</span>
-          </Link>
+          </PrismicNextLink>
           {settings.data.navigation.map((link, index) => {
             if (link.label === "Leistungen" || link.label === "Jobs") {
               const keyToSelect: Data =
@@ -126,7 +125,7 @@ export default function Navbar({ settings }: NavbarProps) {
       <div
         className={`fixed left-0 top-0 z-50 flex h-full w-[85%] flex-col overflow-auto bg-white transition-all duration-500 ease-in lg:hidden ${navBarState ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <div className="flex items-center justify-between p-6">
+        <div className="flex items-center justify-between p-2 border-b-2 border-solid border-slate-500">
           <PrismicNextLink href="/" onClick={() => setNavbarState(false)}>
             <div className="flex items-center w-32 h-24">
               <PrismicNextImage field={settings.data.fallback_image} />
@@ -156,16 +155,12 @@ export default function Navbar({ settings }: NavbarProps) {
               return (
                 <li
                   key={index}
-                  className="flex flex-col p-6 border-b-2 border-solid border-slate-500"
+                  className="flex flex-col p-4 border-b-2 border-solid border-slate-500"
                 >
-                  <PrismicNextLink
-                    field={heading.link}
-                    className="flex flex-row items-center justify-between w-full text-lg font-bold uppercase hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
-                  >
+                  <span className="flex flex-row items-center justify-between w-full p-2 text-lg font-bold uppercase border-b-2 border-solid border-slate-500">
                     {heading.label}
-                    <FiArrowRight />
-                  </PrismicNextLink>
-                  <ul>
+                  </span>
+                  <ul className="mt-4">
                     {arrayToSelect.map((item, index) => (
                       <li
                         key={item.label}
@@ -174,10 +169,10 @@ export default function Navbar({ settings }: NavbarProps) {
                       >
                         <PrismicNextLink
                           field={item.link}
-                          className="flex flex-row justify-between gap-4 p-6 pr-0 text-lg font-bold uppercase hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
+                          className="flex flex-row items-center justify-between gap-4 p-2 pr-0 text-lg font-bold uppercase hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
                         >
                           <span>{item.label}</span>
-                          <FiArrowRight />
+                          <FiArrowRight className="flex-shrink-0 min-w-4 min-h-4 flex-grow-1" />
                         </PrismicNextLink>
                       </li>
                     ))}
@@ -189,14 +184,15 @@ export default function Navbar({ settings }: NavbarProps) {
             return (
               <li
                 key={index}
-                className="flex p-6 border-b-2 border-solid border-slate-500"
+                className="flex items-center justify-center p-4 align-middle border-b-2 border-solid border-slate-500"
               >
                 <PrismicNextLink
                   field={heading.link}
                   className="flex flex-row items-center justify-between w-full text-lg font-bold uppercase hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
+                  onClick={() => setNavbarState(false)}
                 >
                   {heading.label}
-                  <FiArrowRight />
+                  <FiArrowRight className="flex-shrink-0 min-w-4 min-h-4 flex-grow-1" />
                 </PrismicNextLink>
               </li>
             );

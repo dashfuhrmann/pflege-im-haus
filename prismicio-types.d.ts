@@ -798,9 +798,114 @@ export type CardGridSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *CardGrid → Primary*
+ */
+export interface CardGridSliceNoBackgroundImagePrimary {
+  /**
+   * Heading field in *CardGrid → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Heading RichText field in *CardGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.primary.heading_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_richtext: prismic.RichTextField;
+
+  /**
+   * Description field in *CardGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Main Image field in *CardGrid → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *CardGrid → Items*
+ */
+export interface CardGridSliceNoBackgroundImageItem {
+  /**
+   * Name field in *CardGrid → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Name Richtext field in *CardGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.items[].name_richtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name_richtext: prismic.RichTextField;
+
+  /**
+   * Quote field in *CardGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.items[].quote
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
+
+  /**
+   * Image field in *CardGrid → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_grid.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * NoBackgroundImage variation for CardGrid Slice
+ *
+ * - **API ID**: `noBackgroundImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardGridSliceNoBackgroundImage = prismic.SharedSliceVariation<
+  "noBackgroundImage",
+  Simplify<CardGridSliceNoBackgroundImagePrimary>,
+  Simplify<CardGridSliceNoBackgroundImageItem>
+>;
+
+/**
  * Slice variation for *CardGrid*
  */
-type CardGridSliceVariation = CardGridSliceDefault;
+type CardGridSliceVariation =
+  | CardGridSliceDefault
+  | CardGridSliceNoBackgroundImage;
 
 /**
  * CardGrid Shared Slice
@@ -3044,8 +3149,11 @@ declare module "@prismicio/client" {
       CardGridSlice,
       CardGridSliceDefaultPrimary,
       CardGridSliceDefaultItem,
+      CardGridSliceNoBackgroundImagePrimary,
+      CardGridSliceNoBackgroundImageItem,
       CardGridSliceVariation,
       CardGridSliceDefault,
+      CardGridSliceNoBackgroundImage,
       CenteredTextSlice,
       CenteredTextSliceDefaultPrimary,
       CenteredTextSliceWithoutBorderPrimary,

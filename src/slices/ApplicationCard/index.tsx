@@ -11,7 +11,7 @@ const ImageAndText = (props: {
 }) => {
   return (
     <div className="flex flex-row w-full gap-4 p-4 rounded-lg bg-secondary">
-      <div className="flex flex-row items-center justify-center flex-shrink-0 bg-white rounded-full">
+      <div className="flex flex-row items-center justify-center flex-shrink-0 my-auto bg-white rounded-full max-w-16 max-h-16">
         <PrismicNextImage field={props.image} className="p-3" />
       </div>
       <div className="flex flex-col my-auto text-white">
@@ -39,7 +39,7 @@ const ApplicationCard = ({ slice }: ApplicationCardProps): JSX.Element => {
       className="flex-col gap-8 bg-white"
     >
       <RichTextWithComponents richText={slice.primary.title_richtext} />
-      <div className="flex flex-col gap-8 md:flex-row">
+      <div className="flex flex-col gap-4 md:flex-row">
         <ImageAndText
           image={slice.primary.address_image}
           heading={"Arbeitsort:"}
@@ -57,7 +57,7 @@ const ApplicationCard = ({ slice }: ApplicationCardProps): JSX.Element => {
           startDate={slice.primary.start_date_richtext}
         />
       </div>
-      <ul className="grid grid-cols-1 gap-6 p-8 md:grid-cols-2 gap-y-12">
+      <ul className="grid grid-cols-1 gap-2 lg:grid-cols-2">
         {slice.items.map((item, index) => (
           <li key={index} className="flex flex-col gap-4">
             <RichTextWithComponents richText={item.description} />
