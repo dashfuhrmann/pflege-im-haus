@@ -20,7 +20,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex relative w-full max-h-[500px]">
+      <div className="flex relative w-full max-h-[600px]">
         <PrismicNextImage
           field={slice.primary.image}
           className="object-cover"
