@@ -26,7 +26,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           className="object-cover"
         />
         <div
-          className={`hidden md:flex absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "max-w-[50%]"} ${(slice.variation === "textLeft" || slice.variation === "textRight") && "max-w-[30%]"}  ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[17.5%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
+          className={`hidden p-4 md:flex absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "max-w-[50%]"} ${(slice.variation === "textLeft" || slice.variation === "textRight") && "max-w-[35%]"}  ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[17.5%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
         >
           <div
             className={`text-white text-center`}
@@ -49,7 +49,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           </div>
           {slice.primary.scroll_button ? (
             <ScrollButton
-              className="text-2xl"
+              className="text-2xl text-center text-balance"
               elementId={slice.primary.scroll_target as string}
             >
               {slice.primary.link_label}
@@ -57,7 +57,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           ) : (
             isFilled.keyText(slice.primary.link_label) && (
               <ButtonLink
-                className="text-2xl text-white bg-secondary50"
+                className="text-xl text-center text-white bg-secondary50 text-balance"
                 field={slice.primary.link}
               >
                 {slice.primary.link_label}
