@@ -17,9 +17,9 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex-col bg-gray-200 bg-opacity-50 md:flex-row"
+      className="flex-col bg-gray-200 bg-opacity-50 lg:flex-row"
     >
-      <div className="flex flex-col justify-end w-full gap-4 mt-auto mb-auto md:w-1/2">
+      <div className="flex flex-col justify-end w-full gap-4 mt-auto mb-auto lg:w-1/2">
         <div className="text-3xl font-bold text-center">
           <RichTextWithComponents richText={slice.primary.heading_richtext} />
         </div>
@@ -34,31 +34,22 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
           />
         </div>
       </div>
-      <div className="grid w-full grid-cols-1 md:grid-cols-2 md:w-1/2 gap-y-8 gap-x-12">
+      <div className="grid w-full grid-cols-1 lg:grid-cols-2 lg:w-1/2 gap-y-8 gap-x-12">
         {slice.items.map((testemonial, index) => (
           <div
             className="flex flex-col items-center justify-center w-full gap-4 p-8 border-2 border-black rounded-2xl"
             key={index}
           >
             {slice.variation === "noBackgroundImage" && (
-              <div className="flex items-center justify-center min-h-[280px] min-w-[280px] rounded-full w-full">
+              <div className="flex items-center justify-center lg:h-[200px] lg:w-[200px] md:w-[180px] md:h-[180px] h-[160px] w-[160px] rounded-full">
                 {testemonial.image && (
-                  <PrismicNextImage
-                    width={280}
-                    height={280}
-                    className="flex-grow-0"
-                    field={testemonial.image}
-                  />
+                  <PrismicNextImage field={testemonial.image} />
                 )}
               </div>
             )}
             {slice.variation === "default" && (
-              <div className="items-center justify-center flex-shrink-0 p-4 mx-auto bg-gray-200 rounded-full">
-                <PrismicNextImage
-                  field={testemonial.image}
-                  width={120}
-                  height={120}
-                />
+              <div className="items-center justify-center flex-shrink-0 p-4 mx-auto bg-gray-200 rounded-full  lg:h-[200px] lg:w-[200px] md:w-[180px] md:h-[180px] h-[160px] w-[160px]">
+                <PrismicNextImage field={testemonial.image} />
               </div>
             )}
 

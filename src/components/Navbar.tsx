@@ -157,7 +157,7 @@ export default function Navbar({ settings }: NavbarProps) {
                   key={index}
                   className="flex flex-col p-4 border-b-2 border-solid border-slate-500"
                 >
-                  <span className="flex flex-row items-center justify-between w-full p-2 text-lg font-bold uppercase border-b-2 border-solid border-slate-500">
+                  <span className="flex flex-row items-center justify-between w-full p-2 text-xl font-bold uppercase">
                     {heading.label}
                   </span>
                   <ul className="mt-4">
@@ -169,7 +169,7 @@ export default function Navbar({ settings }: NavbarProps) {
                       >
                         <PrismicNextLink
                           field={item.link}
-                          className="flex flex-row items-center justify-between gap-4 p-2 pr-0 text-lg font-bold uppercase hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
+                          className="flex flex-row items-center justify-between gap-4 p-2 pr-0 text-lg font-semibold hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
                         >
                           <span>{item.label}</span>
                           <FiArrowRight className="flex-shrink-0 min-w-4 min-h-4 flex-grow-1" />
@@ -188,7 +188,7 @@ export default function Navbar({ settings }: NavbarProps) {
               >
                 <PrismicNextLink
                   field={heading.link}
-                  className="flex flex-row items-center justify-between w-full text-lg font-bold uppercase hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
+                  className="flex flex-row items-center justify-between w-full text-lg font-semibold hover:decoration-slate-700 hover:decoration-offset-2 hover:underline"
                   onClick={() => setNavbarState(false)}
                 >
                   {heading.label}

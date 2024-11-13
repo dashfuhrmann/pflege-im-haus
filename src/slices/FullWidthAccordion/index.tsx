@@ -26,7 +26,7 @@ const FullWidthAccordion = ({
           ColorsMap[slice.primary.background_color] || ColorsMap.default,
       }}
     >
-      <div className="flex flex-col mb-8">
+      <div className="flex flex-col gap-2">
         <RichTextWithComponents richText={slice.primary.heading} />
 
         <RichTextWithComponents richText={slice.primary.subheading} />

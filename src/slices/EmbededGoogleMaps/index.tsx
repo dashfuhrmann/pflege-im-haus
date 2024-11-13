@@ -14,7 +14,7 @@ export type EmbededGoogleMapsProps =
  * Component for "EmbededGoogleMaps" Slices.
  */
 
-const url1 = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS}&q=Nenter%C3%B6rder%20Kirchweg%209%20Kn%C3%BCllwald+()`;
+const url1 = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS}&q=Nenter%C3%B6der%20Kirchweg%209%2C%2034593%20Kn%C3%BCllwald`;
 const url2 = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS}&q=August-Vilmar-Stra%C3%9Fe%207%20Homberg%20(Efze)+()`;
 
 const EmbededGoogleMaps = ({ slice }: EmbededGoogleMapsProps): JSX.Element => {

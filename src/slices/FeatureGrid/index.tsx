@@ -32,26 +32,19 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       <div className="w-full text-center">
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
-      <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-4">
+      <ul className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-8 gap-y-4 lg:mt-4">
         {slice.items.map((item, index) => (
           <li
-            className="flex flex-row flex-wrap w-full gap-4 md:p-8"
+            className="flex flex-wrap justify-center w-full row lg:flex-nowrap lg:flex-row-reverse lg:justify-normal"
             key={index}
           >
             {slice.variation === "noBackgroundImages" && (
-              <div className="flex items-center justify-center min-h-[280px] min-w-[280px] rounded-full w-full">
-                {item.icon && (
-                  <PrismicNextImage
-                    width={280}
-                    height={280}
-                    className="flex-grow-0"
-                    field={item.icon}
-                  />
-                )}
+              <div className="flex flex-shrink-0 items-center justify-center lg:h-[240px] lg:w-[240px] md:w-[200px] md:h-[200px] h-[160px] w-[160px] rounded-full">
+                {item.icon && <PrismicNextImage field={item.icon} />}
               </div>
             )}
             {slice.variation === "default" && (
-              <div className="flex justify-center bg-gray-200 rounded-full h-[160px] min-w-[160px] items-center">
+              <div className="flex justify-center bg-gray-200 rounded-full h-[160px] w-[160px] items-center">
                 {item.icon && (
                   <PrismicNextImage
                     width={120}

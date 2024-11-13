@@ -1,5 +1,4 @@
 import { ColorsMap } from "@/colors";
-import BoundedFull from "@/components/BoundedFull";
 import ButtonLink from "@/components/ButtonLink";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
 import ScrollButton from "@/components/ScrollButton";
@@ -57,7 +56,10 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
             </ScrollButton>
           ) : (
             isFilled.keyText(slice.primary.link_label) && (
-              <ButtonLink className="text-2xl" field={slice.primary.link}>
+              <ButtonLink
+                className="text-2xl text-white bg-secondary50"
+                field={slice.primary.link}
+              >
                 {slice.primary.link_label}
               </ButtonLink>
             )
@@ -65,7 +67,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
         </div>
       </div>
 
-      <BoundedFull className="flex flex-col items-center gap-4 text-center bg-white md:hidden">
+      {/* <BoundedFull className="flex flex-col items-center gap-4 text-center bg-white md:hidden">
         <div className="font-bold">
           <RichTextWithComponents richText={slice.primary.heading_richtext} />
         </div>
@@ -85,7 +87,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
             </ButtonLink>
           )
         )}
-      </BoundedFull>
+      </BoundedFull> */}
     </section>
   );
 };

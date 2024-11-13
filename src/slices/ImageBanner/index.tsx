@@ -16,13 +16,21 @@ const ImageBanner = ({ slice }: ImageBannerProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid grid-cols-2 gap-2 md:flex md:flex-row flex-start max-w-screen">
+      {/* <div className="grid grid-cols-1 gap-2 md:grid-cols-2 flex-start max-w-screen">
         {slice.items.map((image, index) => (
-          <div key={index} className="w-full md:w-1/4 h-[400px]">
-            <PrismicNextImage
-              field={image.image}
-              className="object-cover w-full h-[400px]"
-            />
+          <div key={index} className={`w-full h-[400px] relative flex`}>
+            <PrismicNextImage field={image.image} />
+          </div>
+        ))}
+      </div> */}
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {slice.items.map((item, index) => (
+          <div
+            key={index}
+            className={`w-full ${index % 2 !== 0 ? "hidden md:hidden lg:block xl:block" : ""}`}
+          >
+            <PrismicNextImage field={item.image} />
           </div>
         ))}
       </div>

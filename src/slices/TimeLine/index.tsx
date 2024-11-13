@@ -26,12 +26,8 @@ const TimeLine = ({ slice }: TimeLineProps): JSX.Element => {
           <div className="text-center">
             <RichTextWithComponents richText={slice.primary.description} />
           </div>
-          <div className="flex-shrink-0 mx-auto rounded-full h-[240px] w-[240px]">
-            <PrismicNextImage
-              field={slice.primary.image}
-              width={240}
-              height={240}
-            />
+          <div className="flex-shrink-0 mx-auto rounded-full lg:h-[200px] lg:w-[200px] md:w-[180px] md:h-[180px] h-[160px] w-[160px]">
+            <PrismicNextImage field={slice.primary.image} />
           </div>
         </div>
 

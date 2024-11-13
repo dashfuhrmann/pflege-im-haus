@@ -93,7 +93,7 @@ const ApplicationForm = ({ slice }: ApplicationFormProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex-col gap-8"
+      className="flex-col"
     >
       <div className="flex flex-col gap-2" id={slice.primary.scroll_id || ""}>
         <RichTextWithComponents richText={slice.primary.heading} />
