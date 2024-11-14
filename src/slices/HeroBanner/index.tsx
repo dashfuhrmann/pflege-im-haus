@@ -49,7 +49,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           </div>
           {slice.primary.scroll_button ? (
             <ScrollButton
-              className="text-2xl text-center text-balance"
+              className="text-2xl text-center text-white text-balance bg-primary"
               elementId={slice.primary.scroll_target as string}
             >
               {slice.primary.link_label}
