@@ -57,7 +57,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           ) : (
             isFilled.keyText(slice.primary.link_label) && (
               <ButtonLink
-                className="text-xl text-center text-white bg-secondary50 text-balance"
+                className="text-xl text-center text-white bg-primary text-balance"
                 field={slice.primary.link}
               >
                 {slice.primary.link_label}

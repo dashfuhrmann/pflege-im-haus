@@ -194,7 +194,7 @@ export function CustomForm({ variation, items }: CustomFormProps) {
           <FileUpload name="files" files={files} setFiles={setFiles} />
         )}
         <Button
-          className="w-full px-4 py-4 text-2xl font-bold text-white rounded-lg bg-secondary hover:bg-secondary50"
+          className="w-full px-4 py-4 text-2xl font-bold text-black transition-transform duration-200 ease-in-out rounded-lg bg-secondary50 hover:scale-105"
           type="submit"
         >
           {variation === "default"

@@ -26,7 +26,7 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
         <div className="text-lg text-center">
           <RichTextWithComponents richText={slice.primary.description} />
         </div>
-        <div className="flex-shrink-0 items-center justify-center flex bg-gray-200 mx-auto rounded-full h-[240px] w-[240px] p-4">
+        <div className="flex-shrink-0 items-center justify-center flex mx-auto rounded-full h-[240px] w-[240px]">
           <PrismicNextImage
             field={slice.primary.main_image}
             width={240}
