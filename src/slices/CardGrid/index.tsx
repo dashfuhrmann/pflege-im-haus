@@ -41,14 +41,14 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
             key={index}
           >
             {slice.variation === "noBackgroundImage" && (
-              <div className="flex items-center justify-center lg:h-[200px] lg:w-[200px] md:w-[180px] md:h-[180px] h-[160px] w-[160px] rounded-full">
+              <div className="flex items-center justify-center lg:h-[240px] lg:w-[240px] md:w-[180px] md:h-[180px] h-[160px] w-[160px] rounded-full">
                 {testemonial.image && (
                   <PrismicNextImage field={testemonial.image} />
                 )}
               </div>
             )}
             {slice.variation === "default" && (
-              <div className="items-center justify-center flex-shrink-0 p-4 mx-auto bg-gray-200 rounded-full  lg:h-[200px] lg:w-[200px] md:w-[180px] md:h-[180px] h-[160px] w-[160px]">
+              <div className="items-center justify-center flex-shrink-0 p-4 mx-auto bg-gray-200 rounded-full lg:h-[240px] lg:w-[240px] md:w-[180px] md:h-[180px] h-[160px] w-[160px]">
                 <PrismicNextImage field={testemonial.image} />
               </div>
             )}
