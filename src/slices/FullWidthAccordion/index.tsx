@@ -31,14 +31,16 @@ const FullWidthAccordion = ({
 
         <RichTextWithComponents richText={slice.primary.subheading} />
       </div>
-      {slice.items.map((item, index) => (
-        <Accordion
-          key={index}
-          headline={item.heading_richtext}
-          content={item.content}
-          backgroundColor={slice.primary.item_color}
-        />
-      ))}
+      <div className="flex flex-col gap-4 mt-4">
+        {slice.items.map((item, index) => (
+          <Accordion
+            key={index}
+            headline={item.heading_richtext}
+            content={item.content}
+            backgroundColor={slice.primary.item_color}
+          />
+        ))}
+      </div>
     </BoundedFull>
   );
 };

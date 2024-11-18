@@ -35,8 +35,8 @@ function ImageSection({
               {item.iconimage && (
                 <PrismicNextImage
                   field={item.iconimage}
-                  width={64}
-                  height={64}
+                  width={48}
+                  height={48}
                 />
               )}
               {isFilled.richText(item.description) && (

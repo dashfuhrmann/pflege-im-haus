@@ -17,7 +17,7 @@ const CardGrid = ({ slice }: CardGridProps): JSX.Element => {
     <BoundedFull
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex-col bg-gray-200 bg-opacity-50 lg:flex-row"
+      className="flex-col bg-white bg-opacity-50 lg:flex-row"
     >
       <div className="flex flex-col justify-end w-full gap-4 mt-auto mb-auto lg:w-1/2">
         <div className="text-3xl font-bold text-center">
