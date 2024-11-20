@@ -5,6 +5,7 @@ type BoundedProps = {
   className?: string;
   children: React.ReactNode;
   styles?: React.CSSProperties;
+  id?: string;
 };
 
 export default function BoundedFull({
@@ -12,6 +13,7 @@ export default function BoundedFull({
   className,
   children,
   styles,
+  id,
   ...restProps
 }: BoundedProps) {
   return (
@@ -22,6 +24,7 @@ export default function BoundedFull({
       )}
       style={styles}
       {...restProps}
+      id={id}
     >
       {children}
     </Comp>

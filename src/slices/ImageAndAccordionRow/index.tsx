@@ -1,8 +1,8 @@
-import { ColorsMap, PrismicColors, PrismicColorsType } from "@/colors";
+import { ColorsMap } from "@/colors";
 import Accordion from "@/components/Accordion";
 import BoundedFull from "@/components/BoundedFull";
 import RichTextWithComponents from "@/components/RichTextWithComponents";
-import { Content, RichTextField } from "@prismicio/client";
+import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -15,27 +15,6 @@ export type ImageAndAccordionRowProps =
 /**
  * Component for "ImageAndAccordionRow" Slices.
  */
-
-function AccordionContent(props: {
-  content: RichTextField;
-  color: PrismicColorsType;
-}) {
-  return (
-    <div
-      id="content"
-      className="p-4 text-lg font-medium leading-relaxed"
-      style={{
-        backgroundColor: PrismicColors[props.color] || PrismicColors.default,
-        color:
-          PrismicColors[props.color] === PrismicColors.primary
-            ? ColorsMap.default
-            : ColorsMap.black,
-      }}
-    >
-      <RichTextWithComponents richText={props.content} />
-    </div>
-  );
-}
 
 const ImageAndAccordionRow = ({
   slice,
