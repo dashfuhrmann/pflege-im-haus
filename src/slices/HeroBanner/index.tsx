@@ -23,10 +23,10 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
       <div className="flex relative w-full max-h-[600px]">
         <PrismicNextImage
           field={slice.primary.image}
-          className="object-cover"
+          className="object-cover w-full"
         />
         <div
-          className={`hidden p-4 md:flex absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "max-w-[50%]"} ${(slice.variation === "textLeft" || slice.variation === "textRight") && "max-w-[35%]"}  ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[17.5%]"} ${slice.variation === "textRight" && "left-[75%]"} flex flex-col gap-4`}
+          className={`hidden p-4 md:flex absolute items-center top-[50%] translate-x-[-50%] translate-y-[-50%] ${slice.variation === "default" && "max-w-[50%]"} ${(slice.variation === "textLeft" || slice.variation === "textRight") && "max-w-[35%]"}  ${slice.variation === "default" && "left-[50%]"} ${slice.variation === "textLeft" && "left-[17.5%]"} ${slice.variation === "textRight" && "left-[75%]"} ${slice.variation === "textCenterBottom" && "left-[50%] top-[80%] translate-y-[-80%]"} flex flex-col gap-4`}
         >
           <div
             className={`text-white text-center`}

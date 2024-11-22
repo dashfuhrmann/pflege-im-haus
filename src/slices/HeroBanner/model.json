@@ -294,6 +294,103 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "textCenterBottom",
+      "name": "Text Center Bottom",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "heading_richtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Richtext",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "subheading": {
+          "type": "Text",
+          "config": {
+            "label": "Subheading",
+            "placeholder": ""
+          }
+        },
+        "subheading_richtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subheading Richtext",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "link_label": {
+          "type": "Text",
+          "config": {
+            "label": "Link Label",
+            "placeholder": ""
+          }
+        },
+        "text_color": {
+          "type": "Select",
+          "config": {
+            "label": "Text Color",
+            "placeholder": "",
+            "options": [
+              "default",
+              "primary",
+              "secondary",
+              "secondary50",
+              "black"
+            ],
+            "default_value": "default"
+          }
+        },
+        "scroll_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Scroll Button",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "scroll_target": {
+          "type": "Text",
+          "config": {
+            "label": "Scroll Target",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }
