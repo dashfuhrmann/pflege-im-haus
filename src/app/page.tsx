@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: home.data.meta_description,
     icons: [
       {
-        url: "favicon.png",
+        url: "/favicon.png",
         sizes: "32x32",
         type: "image/png",
       },

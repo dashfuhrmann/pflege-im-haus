@@ -28,7 +28,7 @@ export async function generateMetadata({
     description: page.data.meta_description as string,
     icons: [
       {
-        url: "favicon.png",
+        url: "/favicon.png",
         sizes: "32x32",
         type: "image/png",
       },
