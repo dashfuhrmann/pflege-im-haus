@@ -26,6 +26,13 @@ export async function generateMetadata({
   return {
     title: prismic.asText(page.data.title),
     description: page.data.meta_description as string,
+    icons: [
+      {
+        url: "favicon.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
     openGraph: {
       title: page.data.meta_title || undefined,
       images: [
