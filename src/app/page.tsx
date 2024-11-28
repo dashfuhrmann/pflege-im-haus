@@ -19,13 +19,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: prismic.asText(home.data.title),
     description: home.data.meta_description,
-    icons: [
-      {
-        url: "/favicon.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-    ],
     openGraph: {
       title: home.data.meta_title ?? undefined,
       images: [{ url: home.data.meta_image.url ?? "" }],
