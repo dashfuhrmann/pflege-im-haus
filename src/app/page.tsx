@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: home.data.meta_description,
     icons: [
       {
-        url: "/favicon.ico",
+        url: "/favicon.png",
         sizes: "32x32",
         type: "image/png",
       },
@@ -38,5 +38,17 @@ export default async function Index() {
   const client = createClient();
   const home = await client.getByUID("page", "home");
 
-  return <SliceZone slices={home.data.slices} components={components} />;
+  const jsonLd = JSON.stringify(home.data.structured_data);
+
+  return (
+    <section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+      <SliceZone slices={home.data.slices} components={components} />
+    </section>
+  );
 }
