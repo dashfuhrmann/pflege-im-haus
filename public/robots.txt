@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pflege-im-haus-sandrock-hoehle.de/
+
+# Sitemaps
+Sitemap: https://pflege-im-haus-sandrock-hoehle.de/sitemap.xml
