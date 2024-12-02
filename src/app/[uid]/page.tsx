@@ -43,14 +43,9 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("page", params.uid)
     .catch(() => notFound());
 
-  const jsonLd = JSON.stringify(page.data.structured_data);
-
   return (
     <section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd }}
-      />
+      <script type="application/ld+json">{page.data.structured_data}</script>
       <SliceZone slices={page.data.slices} components={components} />
     </section>
   );

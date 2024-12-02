@@ -31,16 +31,9 @@ export default async function Index() {
   const client = createClient();
   const home = await client.getByUID("page", "home");
 
-  const jsonLd = JSON.stringify(home.data.structured_data);
-
   return (
     <section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: jsonLd,
-        }}
-      />
+      <script type="application/ld+json">{home.data.structured_data}</script>
       <SliceZone slices={home.data.slices} components={components} />
     </section>
   );
