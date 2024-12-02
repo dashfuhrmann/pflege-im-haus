@@ -38,7 +38,7 @@ export default async function Index() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
+          __html: jsonLd,
         }}
       />
       <SliceZone slices={home.data.slices} components={components} />
