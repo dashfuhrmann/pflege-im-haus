@@ -44,10 +44,10 @@ export default async function Page({ params }: { params: Params }) {
     .catch(() => notFound());
 
   return (
-    <section>
+    <>
       <script type="application/ld+json">{page.data.structured_data}</script>
       <SliceZone slices={page.data.slices} components={components} />
-    </section>
+    </>
   );
 
   // return <SliceZone slices={page.data.slices} components={components} />;

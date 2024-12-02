@@ -32,9 +32,9 @@ export default async function Index() {
   const home = await client.getByUID("page", "home");
 
   return (
-    <section>
+    <>
       <script type="application/ld+json">{home.data.structured_data}</script>
       <SliceZone slices={home.data.slices} components={components} />
-    </section>
+    </>
   );
 }
